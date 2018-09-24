@@ -1,22 +1,21 @@
 <template>
-  <div id="app">
-    <v-header>
-    </v-header>
+  <div>
+    <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       this is tab  box
       <div class="tab-item">
-        <router-link to="/goods">商品</router-link>
+        <a v-link="{path:'/goods'}">商品</a>
       </div>
       <div class="tab-item">
-        <router-link to="/ratings">评论</router-link>
+        <a v-link="{path:'/ratings'}">评论</a>
       </div>
       <div class="tab-item">
-        <router-link to="/seller">商家</router-link>
+        <a v-link="{path:'/sller'}">商家</a>
       </div>
     </div>
-    <div class="content">
-      this is tab  box
-    </div>
+    <keep-alive>
+      <router-view :seller="seller"></router-view>
+    </keep-alive>
   </div>
 </template>
 
