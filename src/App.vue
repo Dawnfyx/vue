@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-header :seller="seller"></v-header>
+  <div id="app">
+    <v-header></v-header>
     <div class="tab border-1px">
       this is tab  box
       <div class="tab-item">
@@ -14,7 +14,7 @@
       </div>
     </div>
     <keep-alive>
-      <router-view :seller="seller"></router-view>
+      <router-view></router-view>
     </keep-alive>
   </div>
 </template>

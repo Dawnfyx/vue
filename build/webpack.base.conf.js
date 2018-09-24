@@ -40,6 +40,7 @@ module.exports = {
   },
   module: {
     rules: [
+      //关闭 eslint 编码验证
       ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,

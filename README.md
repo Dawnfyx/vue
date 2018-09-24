@@ -1,6 +1,6 @@
-# vueclitest
+# vue sell
 
-> A Vue.js project
+> A Vue sell project
 
 ## Build Setup
 

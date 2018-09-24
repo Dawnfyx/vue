@@ -1,20 +1,42 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue';
-import VueRouter from './router';
+
 import App from './App';
+import router from './router';
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 import goods from './components/goods/goods.vue';
+import ratings from './components/ratings/ratings.vue';
+import seller from './components/seller/seller.vue';
 
-Vue.use(VueRouter);
+Vue.config.productionTip = false;
 
-let app = Vue.extend(App);
-
-let router = new VueRouter();
-
-router.map({
-  '/goods': {
-    component: goods
-  }
+/* eslint-disable no-new */
+new Vue({
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
 });
 
-router.start(app, "#app");
+
+// 2.0以后写法
+Vue.use(VueRouter);
+
+const routes = [{
+    path: '/',
+    redirect: '/goods'
+}, {
+    path: '/goods',
+    component: goods
+}, {
+    path: '/ratings',
+    component: ratings
+}, {
+    path: '/seller',
+    component: seller
+}];
+
+export default new VueRouter({
+    routes
+});
