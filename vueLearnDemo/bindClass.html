@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定Class</title>
+    <script src="./vue.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .blod{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-on:click="handleDivClick" :class="[activated, activeTwo]">hello world</div>
+    </div>
+    <script>
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                activated: "",
+                activeTwo: "blod"
+            },
+            methods: {
+                handleDivClick: function () {
+                    // if(this.activated === "red"){
+                    //     this.activated = ""
+                    // }else{
+                    //     this.activated = "red"
+                    // }
+                    this.activated = this.activated === "red" ? "" : "red"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定Style</title>
+    <script src="./vue.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .blod{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-on:click="handleDivClick" :style="styleObj">hello world</div>
+    </div>
+    <script>
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                styleObj: {
+                    color: "black"
+                }
+            },
+            methods: {
+                handleDivClick: function () {
+                    // if(this.styleObj.color === "black"){
+                    //     this.styleObj.color = "red"
+                    // }else{
+                    //     this.styleObj.color = "black"
+                    // }
+                    this.styleObj.color = this.styleObj.color === "black" ? "red" : "black"
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
