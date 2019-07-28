@@ -18,7 +18,11 @@
             <!--{{item}}-->
         <!--</li>-->
 
-        <todo-item v-for="item in list">
+        <todo-item
+                v-bind:content="item"
+                v-bind:index="index"
+                v-for="(item, index) in list"
+                @delete="handleItemDelete">
         </todo-item>
     </ul>
 </div>
@@ -28,13 +32,21 @@
 
 <script>
 
-    Vue.component("TodoItem", {
-        props: ["content"],
-        template: "<li>{{content}}</li>"
-    })
+    var TodoItem = {
+        props: ["content", "index"],
+        template: "<li v-on:click=\"handleItemClick\">{{content}}</li>",
+        methods: {
+            handleItemClick: function () {
+                this.$emit("delete");
+            }
+        }
+    }
 
     var app = new Vue({
         el: "#app",
+        components: {
+            TodoItem: TodoItem
+        },
         data: {
             inputValue: "sss",
             list:["diyi", "dier"],
@@ -45,6 +57,9 @@
                 this.list.push(this.inputValue);
                 console.log(this.inputValue);
                 this.inputValue = "";
+            },
+            handleItemDelete: function () {
+                this.list.splice(index, 1)
             }
         }
     })
