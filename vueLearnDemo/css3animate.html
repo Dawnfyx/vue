@@ -9,10 +9,15 @@
 <body>
 
 <div id="root">
+    <!--enter 入场动画-->
+    <!--leave 离场动画-->
+    <!--appear 第一次加载动画-->
     <transition
             name="fade"
+            appear
             enter-active-class="animated swing"
             leave-active-class="animated shake"
+            appear-active-class="animated swing"
     >
         <div v-show="show">Hello World</div>
     </transition>
