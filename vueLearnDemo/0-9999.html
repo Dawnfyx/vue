@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    var tem = 0;
+    var reg = new RegExp('9',"g");
+
+    for(var i=0; i<=9999; i++){
+        var j = i + "";
+       if(j.match(reg) !== null){
+           tem += 1;
+
+           if(j.match(reg).length> 1){
+               tem += j.match.length-1;
+           }
+       }
+    }
+
+    console.log(tem);
+    
+    </script>
+</body>
+</html>
