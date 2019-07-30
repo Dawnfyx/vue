@@ -1,6 +1,8 @@
 <template>
-    <city-header></city-header>
-    <city-search></city-search>
+    <div>
+      <city-header></city-header>
+      <city-search></city-search>
+    </div>
 </template>
 
 <script>
