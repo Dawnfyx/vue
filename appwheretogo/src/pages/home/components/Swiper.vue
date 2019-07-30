@@ -2,8 +2,8 @@
   <div class="wrapper">
     <swiper :options="swiperOption">
       <!-- slides -->
-      <swiper-slide v-for="item of swiperList">
-        <img class="swiper-img" :src="item.imgUrl"  :key="item.id">
+      <swiper-slide v-for="item of swiperList" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl" />
       </swiper-slide>
       <!-- Optional controls -->
       <div class="swiper-pagination" slot="pagination"></div>
@@ -17,7 +17,8 @@
     data () {
       return {
         swiperOption: {
-          pagination: '.swiper-pagination'
+          pagination: '.swiper-pagination',
+          loop: true
         },
         swiperList: [{
           id: "0001",
