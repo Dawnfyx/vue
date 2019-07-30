@@ -2,10 +2,10 @@
   <div>
     <home-header :city="city"></home-header>
     <home-swiper :list="swiperList"></home-swiper>
-    <home-icons></home-icons>
-    <home-recommend></home-recommend>
-    <home-weekend></home-weekend>
-    <div>test</div>
+    <home-icons :list="iconList"></home-icons>
+    <home-recommend :list="recommendList"></home-recommend>
+    <home-weekend :list="weekendList"></home-weekend>
+    <div>end div</div>
   </div>
 </template>
 
@@ -29,7 +29,10 @@
     data: function(){
       return{
         city: "",
-        swiperList: []
+        swiperList: [],
+        iconList: [],
+        recommendList: [],
+        weekendList: []
       }
     },
     methods:{
