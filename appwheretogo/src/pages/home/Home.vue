@@ -5,7 +5,7 @@
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
     <home-weekend :list="weekendList"></home-weekend>
-    <div>end div</div>
+    <!--<div>end div</div>-->
   </div>
 </template>
 
