@@ -44,9 +44,11 @@
         }
       }
     },
+    // 绑定
     mounted () {
       window.addEventListener('scroll', this.handleScroll)
     },
+    // 解绑
     unmounted () {
       window.removeEventListener('scroll', this.handleScroll)
     }
