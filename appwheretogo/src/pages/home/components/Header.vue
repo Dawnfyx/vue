@@ -10,7 +10,7 @@
     <!--vue 点击跳转方法-->
     <router-link to='/city'>
       <div class="header-right">
-        {{this.city}} 北京
+        {{this.$store.state.city}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
@@ -20,9 +20,6 @@
 <script>
   export default {
     name: 'HomeHeader',
-    props: {
-      city: String
-    }
   }
 </script>
 

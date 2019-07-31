@@ -67,7 +67,8 @@
     },
     methods: {
       handleCityClick (city){
-        console.log("handleCityClick", city);
+        this.$store.commit("changeCity", city)
+        this.$router.push("/")
       }
     },
     mounted () {
