@@ -10,7 +10,7 @@
     <!--vue 点击跳转方法-->
     <router-link to='/city'>
       <div class="header-right">
-        {{this.city}}
+        {{this.city}} 北京
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
