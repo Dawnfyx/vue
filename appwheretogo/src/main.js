@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
 
-//引入 swiper样式
+// 引入 swiper样式
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 

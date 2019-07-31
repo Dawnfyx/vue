@@ -17,26 +17,25 @@
 </template>
 
 <script>
-  export default {
-    name: 'CommonGallary',
-    props: {
-    },
-    data () {
-      return {
-        swiperOptions: {
-          pagination: '.swiper-pagination',
-          paginationType: 'fraction',
-          observeParents: true,
-          observer: true
-        }
-      }
-    },
-    methods: {
-      handleGallaryClick () {
-        this.$emit('close')
+export default {
+  name: 'CommonGallary',
+  props: {},
+  data () {
+    return {
+      swiperOptions: {
+        pagination: '.swiper-pagination',
+        paginationType: 'fraction',
+        observeParents: true,
+        observer: true
       }
     }
+  },
+  methods: {
+    handleGallaryClick () {
+      this.$emit('close')
+    }
   }
+}
 </script>
 
 

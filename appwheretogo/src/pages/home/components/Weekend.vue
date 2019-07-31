@@ -20,17 +20,17 @@
 </template>
 
 <script>
-  export default {
-    name: 'HomeWeekend',
-    props: {
-      list: Array
-    },
-    computed: {
-      computed (){
+export default {
+  name: 'HomeWeekend',
+  props: {
+    list: Array
+  },
+  computed: {
+    computed () {
 
-      }
     }
   }
+}
 </script>
 
 
