@@ -12,6 +12,8 @@ import 'swiper/dist/css/swiper.css'
 //引入 VUEX
 import store from './store'
 
+import 'babel-polyfill'
+
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
