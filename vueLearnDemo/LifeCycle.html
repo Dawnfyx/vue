@@ -16,30 +16,30 @@
             data: {
                 test: "hello world"
             },
-            beforeCreate: function() {
+            beforeCreate: function() { //部分初始化之前
                 console.log("beforeCreate");
             },
-            created: function() {
+            created: function() {  //初始化
                 console.log("created");
             },
-            beforeMount: function() {
+            beforeMount: function() { //编译之前
                 console.log(this.$el);
                 console.log("beforeMount");
             },
-            mounted: function() {
+            mounted: function() { //编译后 挂在
                 console.log(this.$el);
                 console.log("mounted");
             },
-            beforeDestroy: function() {
+            beforeDestroy: function() { //销毁之前
                 console.log("beforeDestroy");
             },
-            destroyed: function() {
+            destroyed: function() { //销毁
                 console.log("destroyed");
             },
-            beforeUpdate: function() {
+            beforeUpdate: function() { //更新之前
                 console.log("beforeUpdate");
             },
-            updated: function() {
+            updated: function() { //更新
                 console.log("updated");
             }
         })
