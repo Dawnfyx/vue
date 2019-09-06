@@ -1,0 +1,78 @@
+/*
+ *  author: fangyaxi
+ *  date: 2019/09/06
+ * ----------------------
+ */
+@import "main-header";
+@import "main-navbar";
+@import "main-footer";
+
+@clMainBg: #eff0f4;
+@clWhite: #ffffff;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: @clMainBg;
+  color: #7a7676;
+  line-height: 20px;
+}
+
+/* Layout */
+.wrapper {
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.wrapper:before,
+.wrapper:after {
+  content: " ";
+  display: table;
+}
+
+.wrapper:after {
+  clear: both;
+}
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  z-index: 100;
+  background-color: @clWhite;
+
+  .toggle-btn {
+    width: 52px;
+    height: 50px;
+    font-size: 20px;
+    padding: 15px;
+    cursor: pointer;
+    float: left;
+    color: #212121;
+    border-right: 1px solid #e7e7e7;
+    -moz-transition: all 0.2s ease-out 0s;
+    -webkit-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+
+    .toggle-btn:hover {
+      background: #65CEA7;
+      color: #fff;
+      border-right-color: #65CEA7;
+    }
+  }
+}
+
+.main-content {
+  padding-top: 50px;
+}

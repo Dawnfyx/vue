@@ -1,0 +1,78 @@
+.navbar-menu {
+  width: 100%;
+  z-index: 100;
+}
+.navbar-menu .toggle-btn {
+  float: left;
+}
+.navbar-menu .menu-right {
+  float: right;
+}
+.navbar-menu .notification-menu {
+  list-style-type: none;
+}
+.navbar-menu .notification-menu > li {
+  display: inline-block;
+  position: relative;
+  float: left;
+}
+.navbar-menu .notification-menu .info-number {
+  padding: 12px 15px;
+  height: 50px;
+  font-size: 16px;
+  background: #fff;
+  color: #333;
+  border-color: #fff;
+  -moz-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+.navbar-menu .notification-menu .info-number .badge {
+  background: #FF6C60;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 13px;
+  padding: 2px 5px;
+  position: absolute;
+  right: 4px;
+  top: 10px;
+}
+.navbar-menu .notification-menu .dropdown-toggle {
+  padding: 12px 10px;
+  border-color: #fff;
+  background: #fff;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+}
+.navbar-menu .notification-menu .dropdown-toggle > :hover,
+.navbar-menu .notification-menu .dropdown-toggle > :focus,
+.navbar-menu .notification-menu .dropdown-toggle > :active,
+.navbar-menu .notification-menu .dropdown-toggle > .active {
+  background: #424f63;
+  color: #65cea7;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.navbar-menu .notification-menu .dropdown-toggle > :hover img,
+.navbar-menu .notification-menu .dropdown-toggle > :focus img,
+.navbar-menu .notification-menu .dropdown-toggle > :active img,
+.navbar-menu .notification-menu .dropdown-toggle > .active img {
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 26px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.navbar-menu .notification-menu .dropdown-toggle > :hover .caret,
+.navbar-menu .notification-menu .dropdown-toggle > :focus .caret,
+.navbar-menu .notification-menu .dropdown-toggle > :active .caret,
+.navbar-menu .notification-menu .dropdown-toggle > .active .caret {
+  margin-left: 5px;
+}
+/*# sourceMappingURL=main-navbar.css.map */
