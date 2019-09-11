@@ -1,0 +1,13 @@
+/*
+ * Component: Main Side
+ * ----------------------
+ */
+.main-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  z-index: 100;
+  background: #424f63;
+}
+/*# sourceMappingURL=main-side.css.map */

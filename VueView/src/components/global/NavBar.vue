@@ -8,7 +8,7 @@
     <div class="navbar-menu">
 
       <!--toggle button start-->
-      <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+      <a class="toggle-btn" href="javascript:;" @click="leftSideToggle()"><i class="fa fa-bars"></i></a>
       <!--toggle button end-->
 
       <!--search start-->
@@ -32,7 +32,8 @@
                       <div>Database update</div>
                     </div>
                     <div class="progress progress-striped">
-                      <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                      <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40"
+                           role="progressbar" class="progress-bar progress-bar-warning">
                         <span class="">40%</span>
                       </div>
                     </div>
@@ -44,7 +45,8 @@
                       <div>Dashboard done</div>
                     </div>
                     <div class="progress progress-striped">
-                      <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar progress-bar-success">
+                      <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90"
+                           role="progressbar" class="progress-bar progress-bar-success">
                         <span class="">90%</span>
                       </div>
                     </div>
@@ -56,7 +58,8 @@
                       <div>Web Development</div>
                     </div>
                     <div class="progress progress-striped">
-                      <div style="width: 66%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" role="progressbar" class="progress-bar progress-bar-info">
+                      <div style="width: 66%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66"
+                           role="progressbar" class="progress-bar progress-bar-info">
                         <span class="">66% </span>
                       </div>
                     </div>
@@ -68,7 +71,8 @@
                       <div>Mobile App</div>
                     </div>
                     <div class="progress progress-striped">
-                      <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="33" role="progressbar" class="progress-bar progress-bar-danger">
+                      <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="33"
+                           role="progressbar" class="progress-bar progress-bar-danger">
                         <span class="">33% </span>
                       </div>
                     </div>
@@ -80,7 +84,8 @@
                       <div>Issues fixed</div>
                     </div>
                     <div class="progress progress-striped">
-                      <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar">
+                      <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80"
+                           role="progressbar" class="progress-bar">
                         <span class="">80% </span>
                       </div>
                     </div>
@@ -102,7 +107,8 @@
                   <a href="">
                     <span class="thumb"><img src="images/photos/user1.png" alt=""></span>
                     <span class="desc">
-                                          <span class="name">John Doe <span class="badge badge-success">new</span></span>
+                                          <span class="name">Dawn Hope <span
+                                            class="badge badge-success">new</span></span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
                                         </span>
                   </a>
@@ -194,8 +200,8 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-usermenu">
-              <li><a href="#"><i class="fa fa-user"></i>  Profile</a></li>
-              <li><a href="#"><i class="fa fa-cog"></i>  Settings</a></li>
+              <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+              <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
               <li><a href="#"><i class="fa fa-sign-out"></i> Log Out</a></li>
             </ul>
           </li>
@@ -210,9 +216,36 @@
 </template>
 
 <script>
-    export default {
-        name: "NavBar"
+  export default {
+    name: "NavBar",
+    data() {
+      return {
+        isShowSide: ''
+      }
+    },
+    watch: {
+      '$store.state.config.leftSideStatus': function (newVal, oldVal) {
+        this.isShowSide = this.$store.state.config.leftSideStatus;
+      }
+    },
+    methods: {
+      leftSideToggle(){
+        let id = document.getElementById("wrapper");
+        if (!this.isShowSide) {
+          id.classList.add("left-side-show");
+          this.$store.commit("leftSideToggle");
+          this.isShowSide = this.$store.state.config.leftSideStatus;
+        } else {
+          id.classList.remove("left-side-show");
+          this.$store.commit("leftSideToggle");
+          this.isShowSide = this.$store.state.config.leftSideStatus;
+        }
+      }
+    },
+    beforeMount : function () {
+      this.$data.isShowSide = this.$store.state.config.leftSideStatus;
     }
+  }
 </script>
 
 <style scoped>

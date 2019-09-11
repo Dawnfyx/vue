@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+  .left-side-show .header-section {
+    left: 240px;
+  }
+  .left-side-show .main-content {
+    margin-left: 240px;
+  }
+}
+/*# sourceMappingURL=main-responsive.css.map */

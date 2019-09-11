@@ -4,8 +4,12 @@
  * ----------------------
  */
 @import "main-header";
+@import "main-side";
 @import "main-navbar";
+@import "main-content";
 @import "main-footer";
+@import "main-responsive";
+
 
 @clMainBg: #eff0f4;
 @clWhite: #ffffff;
@@ -16,14 +20,11 @@ body {
 }
 
 body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
+  line-height: 20px;
+  background: @clMainBg;
   overflow-x: hidden;
   overflow-y: auto;
-  background: @clMainBg;
   color: #7a7676;
-  line-height: 20px;
 }
 
 /* Layout */
@@ -71,8 +72,4 @@ body {
       border-right-color: #65CEA7;
     }
   }
-}
-
-.main-content {
-  padding-top: 50px;
 }

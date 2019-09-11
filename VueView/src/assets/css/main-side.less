@@ -1,0 +1,163 @@
+/*
+ * Component: Main Side
+ * ----------------------
+ */
+
+@clMain: #222d32;
+@clWhite: #ffffff;
+@clMainBgL: #4b646f;
+@clMainBgS: #1a2226;
+
+@clMainFtActive: #8aa4af;
+
+.main-sidebar{
+    width: 240px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: @clMain;
+
+  ul,
+  .sidebar-menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li{
+      position: relative;
+      margin: 0;
+      padding: 0;
+
+      &:hover{
+        & > a{
+          color: @clWhite;
+          background: @clMainBgS;
+          text-decoration: none;
+        }
+      }
+
+      & > .label,
+      & > .badge{
+        margin-right: 5px;
+      }
+      & > .badge {
+        margin-top: 3px;
+      }
+
+      &.header {
+        padding: 10px 25px 10px 15px;
+        font-size: 12px;
+      }
+
+      & > a{
+          padding: 12px 5px 12px 15px;
+          display: block;
+          color: @clWhite;
+
+          &.fa,
+          &.glyphicon,
+          &.icon{
+            width: 20px;
+          }
+
+          & > .fa-angle-left {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            margin-top: -8px;
+          }
+
+        }
+    }
+
+    li > a > .fa-angle-left,
+    li > a > .pull-right-container > .fa-angle-left {
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin-right: 10px;
+        -webkit-transition: transform 0.5s ease;
+        -o-transition: transform 0.5s ease;
+        transition: transform 0.5s ease;
+    }
+    li.menu-open{
+        & > a > .fa-angle-left,
+        & > a > .pull-right-container > .fa-angle-left {
+          -webkit-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          -o-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+        }
+
+    }
+    .treeview:hover{
+
+    }
+    .treeview-menu{
+        background-color: @clMainBgL;
+        padding-left: 5px;
+        margin: 0 1px;
+
+        a{
+            padding: 5px 5px 5px 15px;
+            display: block;
+            font-size: 14px;
+        }
+    }
+    .active > .treeview-menu {
+      display: block;
+    }
+  }
+}
+
+.user-panel {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+
+  & > .image > img {
+    width: 100%;
+    max-width: 45px;
+    height: auto;
+  }
+  & > .info {
+    padding: 5px 5px 5px 15px;
+    line-height: 1;
+    position: absolute;
+    left: 55px;
+  }
+  & > .info > p {
+    font-weight: 600;
+    margin-bottom: 9px;
+    color: @clWhite;
+  }
+  & > .info > a {
+    text-decoration: none;
+    padding-right: 5px;
+    margin-top: 3px;
+    font-size: 11px;
+  }
+  & > .info > a > .fa,
+  & > .info > a > .ion,
+  & > .info > a > .glyphicon {
+    margin-right: 3px;
+  }
+}
+
+
+.sidebar-menu>li.header {
+  color: @clMainBgL;
+  background: @clMainBgS;
+}

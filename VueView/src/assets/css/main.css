@@ -261,6 +261,159 @@
     right: 40px;
   }
 }
+/*
+ * Component: Main Side
+ * ----------------------
+ */
+.main-sidebar {
+  width: 240px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #222d32;
+}
+.main-sidebar ul,
+.main-sidebar .sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-sidebar ul > li,
+.main-sidebar .sidebar-menu > li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.main-sidebar ul > li:hover > a,
+.main-sidebar .sidebar-menu > li:hover > a {
+  color: #ffffff;
+  background: #1a2226;
+  text-decoration: none;
+}
+.main-sidebar ul > li > .label,
+.main-sidebar .sidebar-menu > li > .label,
+.main-sidebar ul > li > .badge,
+.main-sidebar .sidebar-menu > li > .badge {
+  margin-right: 5px;
+}
+.main-sidebar ul > li > .badge,
+.main-sidebar .sidebar-menu > li > .badge {
+  margin-top: 3px;
+}
+.main-sidebar ul > li.header,
+.main-sidebar .sidebar-menu > li.header {
+  padding: 10px 25px 10px 15px;
+  font-size: 12px;
+}
+.main-sidebar ul > li > a,
+.main-sidebar .sidebar-menu > li > a {
+  padding: 12px 5px 12px 15px;
+  display: block;
+  color: #ffffff;
+}
+.main-sidebar ul > li > a.fa,
+.main-sidebar .sidebar-menu > li > a.fa,
+.main-sidebar ul > li > a.glyphicon,
+.main-sidebar .sidebar-menu > li > a.glyphicon,
+.main-sidebar ul > li > a.icon,
+.main-sidebar .sidebar-menu > li > a.icon {
+  width: 20px;
+}
+.main-sidebar ul > li > a > .fa-angle-left,
+.main-sidebar .sidebar-menu > li > a > .fa-angle-left {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -8px;
+}
+.main-sidebar ul li > a > .fa-angle-left,
+.main-sidebar .sidebar-menu li > a > .fa-angle-left,
+.main-sidebar ul li > a > .pull-right-container > .fa-angle-left,
+.main-sidebar .sidebar-menu li > a > .pull-right-container > .fa-angle-left {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin-right: 10px;
+  -webkit-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+.main-sidebar ul li.menu-open > a > .fa-angle-left,
+.main-sidebar .sidebar-menu li.menu-open > a > .fa-angle-left,
+.main-sidebar ul li.menu-open > a > .pull-right-container > .fa-angle-left,
+.main-sidebar .sidebar-menu li.menu-open > a > .pull-right-container > .fa-angle-left {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.main-sidebar ul .treeview-menu,
+.main-sidebar .sidebar-menu .treeview-menu {
+  background-color: #4b646f;
+  padding-left: 5px;
+  margin: 0 1px;
+}
+.main-sidebar ul .treeview-menu a,
+.main-sidebar .sidebar-menu .treeview-menu a {
+  padding: 5px 5px 5px 15px;
+  display: block;
+  font-size: 14px;
+}
+.main-sidebar ul .active > .treeview-menu,
+.main-sidebar .sidebar-menu .active > .treeview-menu {
+  display: block;
+}
+.user-panel {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+.user-panel:before,
+.user-panel:after {
+  content: " ";
+  display: table;
+}
+.user-panel:after {
+  clear: both;
+}
+.user-panel > .image > img {
+  width: 100%;
+  max-width: 45px;
+  height: auto;
+}
+.user-panel > .info {
+  padding: 5px 5px 5px 15px;
+  line-height: 1;
+  position: absolute;
+  left: 55px;
+}
+.user-panel > .info > p {
+  font-weight: 600;
+  margin-bottom: 9px;
+  color: #ffffff;
+}
+.user-panel > .info > a {
+  text-decoration: none;
+  padding-right: 5px;
+  margin-top: 3px;
+  font-size: 11px;
+}
+.user-panel > .info > a > .fa,
+.user-panel > .info > a > .ion,
+.user-panel > .info > a > .glyphicon {
+  margin-right: 3px;
+}
+.sidebar-menu > li.header {
+  color: #4b646f;
+  background: #1a2226;
+}
+/*
+ * Component: Main navbar
+ * ----------------------
+ */
 .navbar-menu {
   width: 100%;
   z-index: 100;
@@ -346,25 +499,54 @@
     display: none;
   }
 }
+/*
+ * Component: Main Content
+ * ----------------------
+ */
+.main-content {
+  width: 100%;
+  background-color: #eff0f4;
+  padding-top: 50px;
+  position: relative;
+  z-index: 101;
+}
+/*
+ * Component: Main footer
+ * ----------------------
+ */
 .main-footer {
+  width: 100%;
   background: #fff;
+  text-align: center;
   padding: 15px;
   color: #444;
   border-top: 1px solid #d2d6de;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+/*
+ * Component: Main responsive
+ * ----------------------
+ */
+@media screen and (max-width: 768px) {
+  .left-side-show .main-header {
+    left: 240px;
+  }
+  .left-side-show .main-content {
+    margin-left: 240px;
+  }
 }
 html,
 body {
   height: 100%;
 }
 body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
+  line-height: 20px;
+  background: #eff0f4;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #eff0f4;
   color: #7a7676;
-  line-height: 20px;
 }
 /* Layout */
 .wrapper {
@@ -406,8 +588,5 @@ body {
   background: #65CEA7;
   color: #fff;
   border-right-color: #65CEA7;
-}
-.main-content {
-  padding-top: 50px;
 }
 /*# sourceMappingURL=main.css.map */
