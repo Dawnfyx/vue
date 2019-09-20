@@ -40,7 +40,7 @@
           navsData: Array,
         },
         methods:{
-          openCloseMenu(event){
+            openCloseMenu(event){
             // debugger
             if(this.isOpenMenu){
               event.target.parentNode.classList.add("menu-open");

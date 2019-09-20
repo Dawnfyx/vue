@@ -5,7 +5,7 @@
     </div>
     <div class="pull-left info">
       <p>
-        {{ user.name }}
+        {{ user.name }} {{ user.level }}
       </p>
       <a href="#">
         <i class="fa fa-circle text-success"></i>
@@ -24,17 +24,32 @@
           return{
               user: {
                 "name": "",
-                "avatar_url": userImg
+                "avatar_url": userImg,
+                "level": ""
               }
           }
       },
       methods:{
-         test(){
-            debugger
-         }
+         userLevel(userlevel){
+           switch (parseInt(userlevel)) {
+               case 0:
+                    this.$data.user.level = "员工0000"
+                    return;
+               case 1:
+                   this.$data.user.level = "经理1111"
+                   return;
+               case 2:
+                   this.$data.user.level = `老板2222`
+                   return;
+               default:
+                   this.$data.user.level = "员工0000"
+                   return;
+             }
+         },
       },
       beforeMount : function () {
          this.$data.user.name = this.$store.state.config.userinfo.name;
+         this.userLevel(this.$store.state.config.userinfo.userLevel);
       }
   }
 </script>
@@ -42,3 +57,8 @@
 <style scoped>
 
 </style>
+
+
+
+
+
