@@ -6,7 +6,9 @@
       <content-header :contentHeader="contentHeader"  @click="leftSideHide()"></content-header>
       <div  @click="leftSideHide()" style="height: 768px">
         <p>zheshi layout</p>
-        <pagination></pagination>
+        <hr style="border:3px solid #ff000088;">
+        <h2> 分页组件开发</h2>
+        <pagination :currentPage="11" :limit="30" :totalCount="120" :all="true"></pagination>
       </div>
       <content-footer :version="version"  @click="leftSideHide()"></content-footer>
     </div>
