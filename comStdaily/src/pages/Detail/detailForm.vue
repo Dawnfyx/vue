@@ -5,7 +5,7 @@
        <form-title :formData="formData[key]"></form-title>
        <form-item :formData="formData[key]"></form-item>
      </div>
-     <b-button type="submit" variant="primary">提交</b-button>
+     <b-button type="submit" variant="primary">审批</b-button>
      <b-button type="reset" variant="danger">重置</b-button>
    </b-form>
  </div>

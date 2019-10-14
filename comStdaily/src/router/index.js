@@ -7,6 +7,7 @@ import Configs from '@/pages/configs/configs'
 import List from '@/pages/List/list'
 import Search from '@/pages/Search/search'
 import DetailForm from '@/pages/Detail/detailForm'
+import Test from '@/pages/TestDir/test'
 
 Vue.use(Router)
 
@@ -36,6 +37,10 @@ export default new Router({
       path: '/detail',
       name: 'DetailForm',
       component: DetailForm
+    },{
+      path: '/Test',
+      name: 'Test',
+      component: Test
     }
   ]
 })
