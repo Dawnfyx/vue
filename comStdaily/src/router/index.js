@@ -22,7 +22,7 @@ export default new Router({
       name: 'Info',
       component: Info
     },{
-      path: '/Config',
+      path: '/Configs',
       name: 'Configs',
       component: Configs
     },{

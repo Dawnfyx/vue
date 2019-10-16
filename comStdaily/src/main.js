@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min'
 import 'font-awesome/css/font-awesome.min.css'
 
+// 清除一些浏览器默认样式
 // import 'style/reset.css'
 
 Vue.config.productionTip = false
