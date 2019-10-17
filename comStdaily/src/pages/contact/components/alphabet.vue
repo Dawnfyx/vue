@@ -14,15 +14,15 @@
 <script>
     export default {
         name: "alphabet",
+        data: function(){
+            return {
+                touchStatus: false,
+                startY: 0,
+                timer: null
+            }
+        },
         props: {
           contacts: Object
-        },
-        data: function(){
-          return {
-             touchStatus: false,
-             startY: 0,
-             timer: null
-          }
         },
         computed: {
           letters (){ //字母编号
@@ -47,7 +47,7 @@
                     }
                     // setTimeout()性能优化
                     this.timer = setTimeout(()=>{
-                        const touchY = e.touches[0].clientY;
+                        const touchY = e.touches[0].clientY - 43;
                         const index = Math.floor((touchY - this.startY) / 20); //20是每个字母格子的高度
                         if (index >= 0 && index < this.letters.length) {
                           this.$emit('change', this.letters[index])
@@ -56,6 +56,7 @@
                 }
             },
             handleLetterClick(e){
+                console.log("alp", e);
               this.$emit("change", e.target.innerText);
             }
         },
@@ -65,23 +66,26 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+
+  @import '~style/mainColor';
+
   * { touch-action: none; }
   .list{
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: absolute;
-    top: 0;
-    right: 20px;
+    top: 2.7rem;
+    right: 0;
     bottom: 0;
-    width: .4rem;
+    padding-left: 0px;
   }
   .item{
     list-style-type: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 12px;
     width: 20px;
-    color: green;
+    color: @cl333;
   }
 </style>

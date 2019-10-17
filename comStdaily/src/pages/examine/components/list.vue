@@ -2,7 +2,7 @@
   <div>
 <!--    {{listData}}-->
     <b-list-group class="list">
-      <b-list-group-item href="./#/detail" class="flex-column align-items-start"
+      <b-list-group-item href="./#/ExamineDetail/1" class="flex-column align-items-start"
                          v-for="(item, key) of listData.data" :key="key"
       >
         <h5 class="mb-1">姓名：{{getDataValue('new_name', item.attributes)}}</h5>

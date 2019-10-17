@@ -5,7 +5,9 @@ import Home from '@/pages/Home/Home'
 import Info from '@/pages/Info/info'
 import Configs from '@/pages/configs/configs'
 import Examine from '@/pages/examine/examine'
+import ExamineDetail from '@/pages/examineDetail/detail'
 import Contact from '@/pages/contact/contact'
+import Customer from '@/pages/customer/customer'
 
 Vue.use(Router)
 
@@ -28,9 +30,17 @@ export default new Router({
       name: 'examine',
       component: Examine
     },{
+      path: '/examineDetail/:id',
+      name: 'examineDetail',
+      component: ExamineDetail
+    },{
       path: '/contact',
       name: 'contact',
       component: Contact
+    },{
+      path: '/customer',
+      name:'customer',
+      component: Customer
     }
   ]
 })

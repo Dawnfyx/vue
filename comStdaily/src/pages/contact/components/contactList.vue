@@ -13,18 +13,17 @@
     import Bscroll from 'better-scroll'
 
     export default {
-        name: "AlpContacts",
+        name: "contactList",
         props: {
             contacts: Object,
             letter: String
         },
         mounted: function () {
-            console.log(this.$props.contacts);
             this.scroll = new Bscroll(this.$refs.wrapper)
         },
         watch: {
           letter(){
-            console.log("Contacts",this.letter);
+            console.log("ContactList",this.letter);
             if(this.letter){
               const element = this.$refs[this.letter][0];
               this.scroll.scrollToElement(element);
@@ -34,17 +33,34 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+
+  @import '~style/mainColor';
+
   .contacts{
+    padding: 0px 10px;
     overflow: hidden;
     position: absolute;
-    top: 1.58rem;
+    top: 2.7rem;
     left: 0;
     right: 0;
     bottom: 0;
-  }
-  .item{
-    background-color: coral;
-    color: #ffffff;
+
+    .item{
+      color: @cl333;
+
+      h3{
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+      }
+      p{
+        margin-bottom: 0px;
+      }
+
+      &.item{
+        border-top: 1px solid @cleee;
+      }
+    }
   }
 </style>

@@ -13,8 +13,8 @@
 
 <script>
   import axios from 'axios'
-  import formTitle from '@/pages/Detail/components/FormTitle'
-  import formItem from '@/pages/Detail/components/FormItem'
+  import formTitle from '@/pages/examineDetail/components/FormTitle'
+  import formItem from '@/pages/examineDetail/components/FormItem'
 
   export default {
     name: "TestForm",
