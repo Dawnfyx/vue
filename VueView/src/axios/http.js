@@ -69,7 +69,9 @@ export function post (url, data = {}) {
  */
 export function get (url, data = {}) {
   return new Promise((resolve, reject) => {
-    axios.get(url, {params: data})
+    axios.get(url, {
+      params: data
+    })
       .then(response => {
         resolve(response.data);
       }, err => {

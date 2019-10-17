@@ -4,10 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from '@/pages/Home/Home'
 import Info from '@/pages/Info/info'
 import Configs from '@/pages/configs/configs'
-import List from '@/pages/List/list'
-import Search from '@/pages/Search/search'
-import DetailForm from '@/pages/Detail/detailForm'
-import Test from '@/pages/TestDir/test'
+import Examine from '@/pages/examine/examine'
+import Contact from '@/pages/contact/contact'
 
 Vue.use(Router)
 
@@ -15,32 +13,24 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'home',
       component: Home
     },{
-      path: '/Info',
-      name: 'Info',
+      path: '/info',
+      name: 'info',
       component: Info
     },{
-      path: '/Configs',
-      name: 'Configs',
+      path: '/configs',
+      name: 'configs',
       component: Configs
     },{
-      path: '/List',
-      name: 'List',
-      component: List
+      path: '/examine',
+      name: 'examine',
+      component: Examine
     },{
-      path: '/Search',
-      name: 'Search',
-      component: Search
-    },{
-      path: '/detail',
-      name: 'DetailForm',
-      component: DetailForm
-    },{
-      path: '/Test',
-      name: 'Test',
-      component: Test
+      path: '/contact',
+      name: 'contact',
+      component: Contact
     }
   ]
 })

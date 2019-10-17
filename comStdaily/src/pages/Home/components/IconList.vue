@@ -33,6 +33,7 @@
       width: 25%;
       float: left;
     }
+
     .icon-img{
       text-align: center;
 

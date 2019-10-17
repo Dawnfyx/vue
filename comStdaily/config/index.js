@@ -15,7 +15,8 @@ module.exports = {
         target: "http://10.20.100.158",
         changeOrigin: true,
         pathRewrite: {
-          "^/api": ""
+          "^/api": "",
+          "^/img": "/src/assets/img"
         }
       }
     },

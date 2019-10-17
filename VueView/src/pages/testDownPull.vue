@@ -10,7 +10,7 @@
     export default {
         name: "testDownPull",
         components: {
-          DownPull: DownPull
+            DownPull: DownPull
         }
     }
 </script>

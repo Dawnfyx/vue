@@ -10,7 +10,7 @@
         name: "testAxios",
         methods: {
           testAxiosGet(){
-            this.fyxaxios.get('http://localhost:8080/api/tableInfo.json').then(this.handleGetInfoSucc)
+            this.$axios.get('http://localhost:8080/api/tableInfo.json').then(this.handleGetInfoSucc)
             //axios.get('/api/tableInfo.json').then(this.handleGetInfoSucc)
           },
           handleGetInfoSucc(res){

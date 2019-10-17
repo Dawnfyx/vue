@@ -1,5 +1,5 @@
 export default {
-  DOMAIN               : 'http://www.baidu.com',
+  DOMAIN               : 'http://10.20.100.158',
   baseURL              : 'http://localhost:8080/#/',
   /* Util API */
   util: {
