@@ -18,7 +18,8 @@
     export default {
         name: "list",
         props:{
-            listData: Object
+            listData: Object,
+            searchValue: String
         },
         methods:{
             getDataValue(name, dataArray){
@@ -30,6 +31,11 @@
                     }
                 }
                 return  text;
+            }
+        },
+        watch: {
+            searchValue(){
+                console.log("examine-list", this.searchValue);
             }
         }
     }

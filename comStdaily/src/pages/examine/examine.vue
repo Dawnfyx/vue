@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper" id="wrapper">
     <header-title :title="title"></header-title>
-    <child-search></child-search>
-    <child-tabs :listData="listData"></child-tabs>
+    <child-search @change="handleSearchChange"></child-search>
+    <child-tabs :listData="listData" :searchValue="searchValue"></child-tabs>
   </div>
 </template>
 
@@ -18,7 +18,8 @@
         data(){
             return{
                 title: "审批",
-                listData: {}
+                listData: {},
+                searchValue: ""
             }
         },
         components: {
@@ -45,6 +46,9 @@
                     this.listData = data.data;
                 }
             },
+            handleSearchChange(searchValue){
+               this.searchValue = searchValue;
+            }
         },
         mounted() {
             this.getListData();

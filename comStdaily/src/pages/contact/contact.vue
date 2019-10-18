@@ -1,16 +1,18 @@
 <template>
   <div>
     <header-title :title=title></header-title>
-    <contact-list :contacts="contacts" :letter="letter"></contact-list>
-    <alphabet :contacts="contacts" @change="handleLetterChange"></alphabet>
+<!--    <child-search></child-search>-->
+    <child-contact-list :contacts="contacts" :letter="letter"></child-contact-list>
+    <child-alphabet :contacts="contacts" @change="handleLetterChange"></child-alphabet>
   </div>
 </template>
 
 <script>
     import axios from 'axios'
     import headerTitle from "../../components/headerTitle";
-    import alphabet from './components/alphabet'
-    import contactList from './components/contactList'
+    import childSearch from './components/search'
+    import childAlphabet from './components/alphabet'
+    import childContactList from './components/contactList'
     export default {
         name: "contact",
         data(){
@@ -2675,8 +2677,9 @@
         },
         components:{
             headerTitle: headerTitle,
-            alphabet: alphabet,
-            contactList: contactList
+            childSearch: childSearch,
+            childAlphabet: childAlphabet,
+            childContactList: childContactList
         },
         methods:{
             getAlphabet (){

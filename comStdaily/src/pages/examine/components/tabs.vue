@@ -1,8 +1,8 @@
 <template>
   <div>
-    <b-tabs content-class="mt-3">
+    <b-tabs content-class="mt-3" v-if="!searchValue">
       <b-tab title="未审批" active>
-        <child-list :listData="listData"></child-list>
+        <child-list :listData="listData" :searchValue="searchValue"></child-list>
       </b-tab>
       <b-tab title="已审批"><p>I'm the second tab</p></b-tab>
       <b-tab title="代理"><p>I'm a disabled tab!</p></b-tab>
@@ -16,7 +16,8 @@
     export default {
         name: "tabs",
         props: {
-            listData: Object
+            listData: Object,
+            searchValue: String
         },
         components:{
             childList: childList
