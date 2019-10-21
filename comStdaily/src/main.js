@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
 
+//引入 VUEX
+import store from './store'
+
 
 //自己封装的axios
 // import fyxaxios from './axios/http';
@@ -32,6 +35,7 @@ Vue.use(BootstrapVue)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

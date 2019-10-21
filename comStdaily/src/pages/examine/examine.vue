@@ -36,9 +36,9 @@
                     baseURL:"/api",
                     url: api
                 }).then(this.getListDataSucc)
-                    .catch(error=>{
-                        console.log("Error", error.message);
-                    })
+                  .catch(error=>{
+                      console.log("Error", error.message);
+                  })
             },
             getListDataSucc(res) {
                 const data = res.data;

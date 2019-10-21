@@ -8,6 +8,7 @@ import Examine from '@/pages/examine/examine'
 import ExamineDetail from '@/pages/examineDetail/detail'
 import Contact from '@/pages/contact/contact'
 import Customer from '@/pages/customer/customer'
+import testStore from "../pages/TestDir/testStore";
 
 Vue.use(Router)
 
@@ -41,6 +42,10 @@ export default new Router({
       path: '/customer',
       name:'customer',
       component: Customer
+    },{
+      path: '/testStore',
+      name: 'testStore',
+      component: testStore
     }
   ]
 })

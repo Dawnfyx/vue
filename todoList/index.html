@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" >
+    <title>Todo</title>
+    <link rel="stylesheet" href="src/css/index.css">
+    <script type="text/javascript" src="src/js/vue.min.js"></script>
+</head>
+<body>
+    <div id="todo" class="todo">
+        <div class="header">
+            <section>
+                <form action="javascript:void(0)">
+                    <label for="title">ToDoList</label>
+                    <button class="addBtn" v-on:click="addTodo"></button>
+                    <input type="text" name="title" placeholder="add todo..." required="required" autocomplete="off" v-model="title" v-on:keypress.enter="addTodo">
+                </form>
+            </section>
+        </div>
+        <section>
+            <h2>Now<span id="todoCount" class="count">{{willDo.length}}</span></h2>
+            <ol id="todoList">
+                <li v-for="(item,index) in willDo">
+                    <input type="checkbox" v-on:click="checkedTodo(index)" v-model="item.done">
+                    <p>{{item.title}}</p>
+                    <a href="javascript:void(0)" v-on:click="deleteWillTodo(index)">-</a>
+                </li>
+            </ol>
+            <h2>Done<span id="doneCount" class="count">{{doneList.length}}</span></h2>
+            <ol id="doneList">
+                <li v-for="(item,index) in doneList">
+                    <input type="checkbox" v-on:click="checkedDone(index)" v-model="item.done">
+                    <p>{{item.title}}</p>
+                    <a href="javascript:void(0)" v-on:click="deleteDoneTodo(index)">-</a>
+                </li>
+            </ol>
+        </section>
+        <p class="footer">Derek</p>
+    </div>
+    <script type="text/javascript" src="src/js/index.js"></script>
+</body>
+</html>
