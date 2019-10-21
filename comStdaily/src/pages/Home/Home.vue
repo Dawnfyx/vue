@@ -89,14 +89,14 @@
       footerLink: footerLink
     },
     methods:{
-        removelocalStorage(key){
-            // 定时24小时清除缓存
+        setInervalRemovelocalStorage(key){
+            // 检查时间 定时24小时清除缓存
             let curTime = new Date().getTime();
             let data = localStorage.getItem(key);
             let dataObj = JSON.parse(data);
             let exp = 12*60*60*1000;
             if(curTime - dataObj.time > exp){
-                debugger
+                localStorage.removeItem(key)
             }
         }
     },
@@ -105,19 +105,26 @@
             console.log("API-EntityList 数据拿到");
             this.axiosEntityList = JSON.stringify(this.EntityList.data.data);
             localStorage.EntityList = JSON.stringify(this.EntityList.data.data);
+            // 添加时间
             let curTime = new Date().getTime();
-            localStorage.setItem('EntityList', JSON.stringify({data: this.EntityList.data.data, time: curTime}))
-            this.removelocalStorage('EntityList');
+            localStorage.setItem('EntityList', JSON.stringify({data: this.EntityList.data.data, time: curTime}));
         },
         LayoutForm(){
             console.log("API-LayoutForm 数据拿到");
             this.axiosLayoutForm = JSON.stringify(this.LayoutForm.data.data);
             localStorage.LayoutForm = JSON.stringify(this.LayoutForm.data.data);
+            // 添加时间
+            let curTime = new Date().getTime();
+            localStorage.setItem('LayoutForm', JSON.stringify({data: this.LayoutForm.data.data, time: curTime}));
         }
     },
     beforeMount() {
       this.getEntityListInfo;
       this.getLayoutFormInfo;
+    },
+    mounted() {
+        this.setInervalRemovelocalStorage('EntityList');
+        this.setInervalRemovelocalStorage('LayoutForm');
     }
   }
 </script>
