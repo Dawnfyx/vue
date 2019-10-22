@@ -41,7 +41,7 @@
                 for(let i = 0;  i< this.listData.data.length; i++){
                     if(this.listData.data[i].id === id){
                         this.listData.data[i].read = true;
-                        this.$store.commit("updataEntityListInfo",  this.listData)
+                        this.$store.commit("setEntityListInfo",  this.listData)
                     }
                 }
             },

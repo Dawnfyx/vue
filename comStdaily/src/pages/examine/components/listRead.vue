@@ -12,7 +12,7 @@
         <small>Id: <span ref="itemId">{{item.id}}</span></small>
       </b-list-group-item>
     </b-list-group>
-    {{this.listData}}
+    {{this.listData.read}}
   </div>
 </template>
 
@@ -22,18 +22,9 @@
 
     export default {
         name: "listRead",
-        props:{
-            listData: Object
-        },
-        computed:{
-            // 映射 this.EntityList 为 store.state.EntityList
-            // 映射 this.LayoutForm 为 store.state.LayoutForm
-            ...mapState([
-                'EntityList',
-                'LayoutForm'
-            ]),
-            listData(){
-                return this.EntityList
+        data(){
+            return{
+                listData: {}
             }
         },
         methods:{
@@ -49,6 +40,9 @@
             },
         },
         watch: {
+        },
+        mounted(){
+            this.listData = localStorage.EntityList;
         }
     }
 </script>

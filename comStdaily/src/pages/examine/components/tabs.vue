@@ -6,7 +6,7 @@
         <child-list :listData="listData" :searchValue="searchValue" v-if="!searchValue"></child-list>
       </b-tab>
       <b-tab title="已审批">
-        <child-list-read :listData="listData"></child-list-read>
+        <child-list-read></child-list-read>
       </b-tab>
       <!--<b-tab title="代理"><p>I'm a disabled tab!</p></b-tab>-->
     </b-tabs>
