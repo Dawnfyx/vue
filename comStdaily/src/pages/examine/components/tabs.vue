@@ -1,26 +1,43 @@
 <template>
   <div>
-    <b-tabs content-class="mt-3" v-if="!searchValue">
+    <b-tabs content-class="mt-3">
       <b-tab title="未审批" active>
-        <child-list :listData="listData" :searchValue="searchValue"></child-list>
+        <child-search @change="handleSearchChange"></child-search>
+        <child-list :listData="listData" :searchValue="searchValue" v-if="!searchValue"></child-list>
       </b-tab>
-      <b-tab title="已审批"><p>I'm the second tab</p></b-tab>
-      <b-tab title="代理"><p>I'm a disabled tab!</p></b-tab>
+      <b-tab title="已审批">
+        <child-list-read :listData="listData"></child-list-read>
+      </b-tab>
+      <!--<b-tab title="代理"><p>I'm a disabled tab!</p></b-tab>-->
     </b-tabs>
   </div>
 </template>
 
 <script>
-    import childList from '../components/list' //这里路径调到要吐血。。。我调了一个小时
+
+    import childSearch from './search';
+    import childList from '../components/list'; //这条路径有毒调了一个小时
+    import childListRead from '../components/listRead'
 
     export default {
         name: "tabs",
+        data(){
+            return{
+                searchValue: ""
+            }
+        },
         props: {
-            listData: Object,
-            searchValue: String
+            listData: Object
         },
         components:{
-            childList: childList
+            childSearch: childSearch,
+            childList: childList,
+            childListRead: childListRead
+        },
+        methods:{
+          handleSearchChange(searchValue) {
+              this.searchValue = searchValue;
+          }
         }
     }
 </script>

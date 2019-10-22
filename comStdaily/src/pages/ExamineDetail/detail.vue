@@ -29,16 +29,8 @@
       formItem: formItem
     },
     methods: {
-      getFormDataInfo() {
-        // this.$axios.get('http://localhost:8080/api/formData.json').then(this.getFormDataInfoSucc);
-        axios.get('/api/formData.json').then(this.getFormDataInfoSucc)
-      },
-      getFormDataInfoSucc(res) {
-        // debugger
-        const data = res.data;
-        if (data) {
-          this.formData = data.tabs;
-        }
+      getFormlocalStorageData(){
+          this.formData = JSON.parse(localStorage.LayoutForm).data.tabs;
       },
       onSubmit(evt) {
         evt.preventDefault()
@@ -51,7 +43,7 @@
       }
     },
     mounted() {
-      this.getFormDataInfo();
+      this.getFormlocalStorageData();
     }
   }
 </script>

@@ -6,5 +6,8 @@ export default {
   setLayoutFormInfo (state, res) {
     state.LayoutForm = res;
     // console.log("mutations",  state.LayoutForm);
+  },
+  updataEntityListInfo(state, res){
+    state.EntityList = res;
   }
 }

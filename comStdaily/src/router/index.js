@@ -9,6 +9,7 @@ import ExamineDetail from '@/pages/examineDetail/detail'
 import Contact from '@/pages/contact/contact'
 import Customer from '@/pages/customer/customer'
 import testStore from "../pages/TestDir/testStore";
+import loading from '@/components/loading'
 
 Vue.use(Router)
 
@@ -46,6 +47,10 @@ export default new Router({
       path: '/testStore',
       name: 'testStore',
       component: testStore
+    },{
+      path: '/loading',
+      name: 'loading',
+      component: loading
     }
   ]
 })
