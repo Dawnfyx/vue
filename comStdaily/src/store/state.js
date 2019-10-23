@@ -1,8 +1,18 @@
-let EntityListData = {};
-let LayoutFormData = {};
+let EntityList = {};
+let LayoutForm = {};
 try {
-  if(localStorage.EntityListData){
-    EntityListData = localStorage.EntityListData
+  if(localStorage.EntityList){
+    EntityList = localStorage.EntityList
+  }
+} catch(err){
+  console.log("state.error", err);
+} finally {
+
+}
+
+try {
+  if(localStorage.LayoutForm){
+    EntityList = localStorage.LayoutForm
   }
 } catch(err){
   console.log("state.error", err);
@@ -11,6 +21,6 @@ try {
 }
 
 export default {
-  EntityList: EntityListData,
-  LayoutForm: LayoutFormData
+  EntityList: EntityList,
+  LayoutForm: LayoutForm
 }

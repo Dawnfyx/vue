@@ -11,7 +11,7 @@
     import axios from "axios";
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
-    import childTabs from './components/tabs'
+    import childTabs from './components/tabs';
 
     export default {
         name: "examine",

@@ -1,11 +1,13 @@
 <template>
   <div>
+<!--    <p>ssss</p>-->
     <b-list-group class="list">
+<!--      :href="'./#/ExamineDetail/'+item.id"-->
       <b-list-group-item
         class="flex-column align-items-start"
-        :href="'./#/ExamineDetail/'+item.id"
-        v-for="(item, key) of listData.data" :key="key"
-        @click="labelRead(key)"
+
+        v-for="(item, key) of viewListData.data" :key="key"
+        @click="handleLabelHaveRead(key)"
       >
         <h5 class="mb-1">姓名：{{viewDataValue('new_name', item.attributes)}}</h5>
         <small>时间：{{viewDataValue('new_testtime', item.attributes)}}</small>
@@ -19,11 +21,26 @@
 
     export default {
         name: "list",
+        data(){
+            return{
+                labelHaveReadObj: [],
+                labelHaveReadData: []
+            }
+        },
         props:{
             listData: Object,
             searchValue: String
         },
         computed:{
+            viewListData:{
+                get(){
+                    if(sessionStorage.listData){
+                        return JSON.parse(sessionStorage.listData);
+                    } else {
+                        return this.listData
+                    }
+                }
+            }
         },
         methods:{
             viewDataValue(name, dataArray){
@@ -36,23 +53,29 @@
                 }
                 return  text;
             },
-            labelRead(key){
-                let id = this.$refs.itemId[key].innerText;
-                for(let i = 0;  i< this.listData.data.length; i++){
-                    if(this.listData.data[i].id === id){
-                        this.listData.data[i].read = true;
-                        this.$store.commit("setEntityListInfo",  this.listData)
-                    }
+            handleLabelHaveRead(key){
+                this.labelHaveReadObj = this.listData.data[key];
+                this.labelHaveReadData.push(this.labelHaveReadObj);
+                this.$emit("labelHaveRead", this.labelHaveReadObj);
+                if(this.labelHaveReadData != null){
+                    sessionStorage.setItem('listHaveReadData', JSON.stringify(this.labelHaveReadData));
+                }
+                this.listData.data.splice(key, 1);
+                if(this.listData != null){
+                    sessionStorage.setItem('listData', JSON.stringify(this.listData));
                 }
             },
             initUrlDetail(idStr){//截取8位字段
-                return idStr.substring(0,8);
+                return idStr.substring(0, 8);
             }
         },
         watch: {
             searchValue(){
                 console.log("examine-list", this.searchValue);
             }
+        },
+        mounted() {
+
         }
     }
 </script>
@@ -60,7 +83,6 @@
 <style scoped lang="less">
 
   @import '~style/mainColor';
-
 
   .list-group{
     a{

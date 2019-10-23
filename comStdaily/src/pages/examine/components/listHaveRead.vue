@@ -1,30 +1,35 @@
 <template>
   <div>
+<!--    {{viewListData}}-->
     <b-list-group class="list">
       <b-list-group-item
         class="flex-column align-items-start"
         :href="'./#/ExamineDetail/'+item.id"
-        v-for="(item, key) of this.listData.data" :key="key"
-        v-if="listData.data[key].read"
+        v-for="(item, key) of viewListData" :key="key"
       >
         <h5 class="mb-1">姓名：{{viewDataValue('new_name', item.attributes)}}</h5>
         <small>时间：{{viewDataValue('new_testtime', item.attributes)}}</small>
         <small>Id: <span ref="itemId">{{item.id}}</span></small>
       </b-list-group-item>
     </b-list-group>
-    {{this.listData.read}}
   </div>
 </template>
 
 <script>
 
-    import {mapState, mapMutations, mapActions} from "vuex";
-
     export default {
         name: "listRead",
-        data(){
-            return{
-                listData: {}
+        props:{
+            labelHaveReadData: Array
+        },
+        computed:{
+            viewListData:{
+                get(){
+                    return JSON.parse(sessionStorage.listHaveReadData);
+                },
+                set(val){
+                    return JSON.parse(val);
+                }
             }
         },
         methods:{
@@ -37,12 +42,11 @@
                     }
                 }
                 return  text;
-            },
+            }
         },
         watch: {
         },
         mounted(){
-            this.listData = localStorage.EntityList;
         }
     }
 </script>
