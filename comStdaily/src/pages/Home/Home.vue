@@ -76,7 +76,9 @@
             // 映射 this.setInfo 为 this.$store.commit('setInfo')
             ...mapMutations([
                 'mutationsEntityList',
-                'mutationsLayoutForm'
+                'mutationsEntityList2',
+                'mutationsLayoutForm',
+                'mutationsLayoutForm2'
             ]),
             // 映射 this.getInfo 为 this.$store.dispatch('getInfo')
             ...mapActions([
@@ -139,9 +141,10 @@
         beforeMount() {
         },
         mounted() {
-            this.actionsEntityList;
-            this.actionsLayoutForm;
-
+            // this.actionsEntityList;
+            // this.actionsLayoutForm;
+            this.mutationsEntityList2;
+            this.mutationsLayoutForm2;
             this.loadingShow = false;
         }
     }

@@ -18,7 +18,6 @@
         data() {
             return {
                 title: "审批",
-                listData: {},
                 loadingShow: true
             }
         },
@@ -27,10 +26,11 @@
             headerTitle: headerTitle,
             childTabs: childTabs
         },
-        methods: {
-            getLocalStorageListData() {
-                if(localStorage.EntityListData){
-                    this.listData = JSON.parse(localStorage.EntityListData).data.data;
+        computed:{
+            listData(){
+                if(localStorage.vuex){
+                    localStorage.EntityListData = JSON.parse(localStorage.vuex).stateEntityList.data;
+                    return JSON.parse(localStorage.vuex).stateEntityList.data;
                 }
             }
         },

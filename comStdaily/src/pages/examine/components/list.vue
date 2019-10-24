@@ -27,15 +27,15 @@
             }
         },
         props:{
-            listData: Object,
+            listData: Array,
             searchValue: String
         },
         computed:{
             viewListData:{
                 get(){
-                    console.log("list-localStorage-EntityListData", localStorage.EntityListData);
-                    if(localStorage.EntityListData){
-                        return JSON.parse(localStorage.EntityListData).data.data;
+                    if(localStorage.vuex){
+                        localStorage.EntityListData = JSON.stringify(JSON.parse(localStorage.vuex).stateEntityList.data);
+                        return JSON.parse(localStorage.vuex).stateEntityList.data;
                     } else {
                         return this.listData
                     }
@@ -55,18 +55,37 @@
             },
             //事件以后数据分两个记录mutationsExamineListData 和 mutationsExamineListHaveReadData
             handleLabelHaveReadData(item, key){
-                debugger
-                for(let i=0;i<=this.labelHaveReadData.length; i++){
-                    console.log(this.labelHaveReadData[i].id + "=======" + item.id);
-                    if(this.labelHaveReadData[i].id == item.id){
-                        return;
-                    }
-                }
+                // debugger
+                // for(let i=0;i<=this.labelHaveReadData.length; i++){
+                //     console.log(this.labelHaveReadData[i].id + "=======" + item.id);
+                //     if(this.labelHaveReadData[i].id == item.id){
+                //         return;
+                //     }
+                // }
                 this.labelHaveReadObj = item;
-                this.labelHaveReadData.push(this.labelHaveReadObj);
-                localStorage.ExamineListData = JSON.stringify(this.labelHaveReadData);
+                if (this.labelHaveReadData.length > 0){
+                    let sss = true;
+                    for(let i=0; i<= this.labelHaveReadData.length; i++){
+                        if(this.labelHaveReadData[i].id == item.id){
+                            console.log(this.labelHaveReadData[i].id, item.id);
+                            sss = false
+                        }
+                    }
+                    if(sss){
+                        debugger
+                        this.labelHaveReadData.push(this.labelHaveReadObj);
+                    }
+                    // console.log(this.labelHaveReadData);
+                } else {
+                    this.labelHaveReadData.push(this.labelHaveReadObj);
+                }
+
+
+                localStorage.ExamineListData = JSON.stringify(this.labelHaveReadObj);
+                this.$store.commit("mutationsExamineListHaveReadData", this.labelHaveReadData);
                 this.viewListData.splice(key, 1);
                 localStorage.ExamineListHaveReadData = JSON.stringify(this.viewListData);
+                this.$store.commit("mutationsExamineListData", this.viewListData);
             },
             initUrlDetail(idStr){//截取8位字段
                 return idStr.substring(0, 8);
@@ -75,7 +94,6 @@
         watch: {
             viewListData(){
                 console.log("这里是watch");
-                debugger
             }
         },
         mounted() {

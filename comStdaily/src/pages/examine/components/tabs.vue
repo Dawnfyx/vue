@@ -32,7 +32,7 @@
             }
         },
         props: {
-            listData: Object
+            listData: Array
         },
         components:{
             childSearch: childSearch,
