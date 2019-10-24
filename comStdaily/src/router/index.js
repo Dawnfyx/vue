@@ -8,7 +8,9 @@ import Examine from '@/pages/examine/examine'
 import ExamineDetail from '@/pages/examineDetail/detail'
 import Contact from '@/pages/contact/contact'
 import Customer from '@/pages/customer/customer'
+import test from "../pages/TestDir/test"
 import testStore from "../pages/TestDir/testStore";
+import testPersist from "../pages/TestDir/testPersist"
 import loading from '@/components/loading'
 
 Vue.use(Router)
@@ -44,13 +46,17 @@ export default new Router({
       name:'customer',
       component: Customer
     },{
+      path: '/loading',
+      name: 'loading',
+      component: loading
+    },{
       path: '/testStore',
       name: 'testStore',
       component: testStore
     },{
-      path: '/loading',
-      name: 'loading',
-      component: loading
+      path: '/testPersist',
+      name: 'testPersist',
+      component: testPersist
     }
   ]
 })

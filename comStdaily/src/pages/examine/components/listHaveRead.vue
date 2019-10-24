@@ -19,13 +19,12 @@
 
     export default {
         name: "listRead",
-        props:{
-            labelHaveReadData: Array
-        },
         computed:{
             viewListData:{
                 get(){
-                    return JSON.parse(sessionStorage.listHaveReadData);
+                    if(sessionStorage.listHaveReadData){
+                        return JSON.parse(sessionStorage.listHaveReadData);
+                    }
                 },
                 set(val){
                     return JSON.parse(val);

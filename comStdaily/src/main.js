@@ -8,7 +8,6 @@ import fastClick from 'fastclick'
 //引入 VUEX
 import store from './store'
 
-
 //自己封装的axios
 // import fyxaxios from './axios/http';
 

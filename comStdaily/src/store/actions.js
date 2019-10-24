@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default {
-    getEntityListInfo(state){
+    actionsEntityList(state){
       const api = 'Crmapp/EntityList?ent=new_salestest'
       axios({
         method: "get",
@@ -10,13 +10,13 @@ export default {
       })
         .then((res) => {
           // console.log("actions", res);
-          state.commit('setEntityListInfo', res)
+          state.commit('mutationsEntityList', res)
         })
         .catch(error=>{
           console.log("Error", error.message);
         })
     },
-    getLayoutFormInfo(state){
+    actionsLayoutForm(state){
       const api = 'Crmapp/LayoutForm?ent=new_salestest'
       axios({
         method: "get",
@@ -25,7 +25,7 @@ export default {
       })
         .then((res) => {
           // console.log("actions", res);
-          state.commit('setLayoutFormInfo', res)
+          state.commit('mutationsLayoutForm', res)
         })
         .catch(error=>{
           console.log("Error", error.message);

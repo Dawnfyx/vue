@@ -6,13 +6,11 @@
         <child-list
           :listData="listData"
           :searchValue="searchValue"
-          @labelHaveRead="handleLabelHaveRead"
           v-if="!searchValue"></child-list>
       </b-tab>
       <b-tab title="已审批">
-        <child-search @change="handleSearchChange"></child-search>
-        <child-list-have-read
-          :labelHaveReadData="labelHaveReadData">
+        <child-search></child-search>
+        <child-list-have-read>
         </child-list-have-read>
       </b-tab>
       <!--<b-tab title="代理"><p>I'm a disabled tab!</p></b-tab>-->
@@ -30,8 +28,7 @@
         name: "tabs",
         data(){
             return{
-                searchValue: "",
-                labelHaveReadData: []
+                searchValue: ""
             }
         },
         props: {
@@ -45,9 +42,6 @@
         methods:{
           handleSearchChange(searchValue) {
               this.searchValue = searchValue;
-          },
-          handleLabelHaveRead(obj){
-            this.labelHaveReadData.push(obj);
           }
         }
     }

@@ -63,8 +63,6 @@
                         }
                     ]
                 },
-                axiosEntityList: {},
-                axiosLayoutForm: {},
                 loadingShow: true
             }
         },
@@ -72,19 +70,29 @@
             // 映射 this.EntityList 为 store.state.EntityList
             // 映射 this.LayoutForm 为 store.state.LayoutForm
             ...mapState([
-                'EntityList',
-                'LayoutForm'
+                'stateEntityList',
+                'stateLayoutForm'
             ]),
             // 映射 this.setInfo 为 this.$store.commit('setInfo')
             ...mapMutations([
-                'setEntityListInfo',
-                'setLayoutFormInfo'
+                'mutationsEntityList',
+                'mutationsLayoutForm'
             ]),
             // 映射 this.getInfo 为 this.$store.dispatch('getInfo')
             ...mapActions([
-                'getEntityListInfo',
-                'getLayoutFormInfo'
-            ])
+                'actionsEntityList',
+                'actionsLayoutForm'
+            ]),
+            EntityListData: {
+                get(){
+                    return JSON.parse(localStorage.vuex).stateEntityList.data;
+                }
+            },
+            LayoutFormData: {
+                get(){
+                    return JSON.parse(localStorage.vuex).stateLayoutForm.data;
+                }
+            }
         },
         components: {
             loading: loading,
@@ -93,46 +101,43 @@
             footerLink: footerLink
         },
         methods: {
-            setInervalRemovelocalStorage(key) {
-                // 检查时间 定时24小时清除缓存
+            // 本地缓存 定时24小时 清除缓存
+            localStorageetInervalRemove(key) {
                 let curTime = new Date().getTime();
                 let data = localStorage.getItem(key);
                 let dataObj = JSON.parse(data);
-                let exp = 12 * 60 * 60 * 1000;
+                let exp = 12 * 60 * 60 * 1000; //24小时
                 if (curTime - dataObj.time > exp) {
                     localStorage.removeItem(key)
                 }
+            },
+            //本地缓存 添加时间
+            localStorageItemAddTime(itemname, item, time){
+                localStorage.setItem(itemname, JSON.stringify({data: item, time: time}));
             }
         },
         watch: {
-            EntityList() {
-                console.log("API-EntityList 数据拿到");
-                this.axiosEntityList = JSON.stringify(this.EntityList.data.data);
-                localStorage.EntityList = JSON.stringify(this.EntityList.data.data);
-                // 添加时间
-                let curTime = new Date().getTime();
-                localStorage.setItem('EntityList', JSON.stringify({data: this.EntityList.data.data, time: curTime}));
+            EntityListData:{
+                get(){
+                    let curTime = new Date().getTime();
+                    this.localStorageItemAddTime("EntityListData",JSON.parse(localStorage.vuex).stateEntityList.data, curTime);
+                    this.localStorageetInervalRemove("EntityListData");
+                }
             },
-            LayoutForm() {
-                console.log("API-LayoutForm 数据拿到");
-                this.axiosLayoutForm = JSON.stringify(this.LayoutForm.data.data);
-                localStorage.LayoutForm = JSON.stringify(this.LayoutForm.data.data);
-                // 添加时间
-                let curTime = new Date().getTime();
-                localStorage.setItem('LayoutForm', JSON.stringify({data: this.LayoutForm.data.data, time: curTime}));
+            LayoutFormData:{
+                get(){
+                    let curTime = new Date().getTime();
+                    this.localStorageItemAddTime("LayoutFormData",JSON.parse(localStorage.vuex).stateLayoutForm.data, curTime);
+                    this.localStorageetInervalRemove("LayoutFormData");
+                }
             }
         },
         beforeMount() {
         },
         mounted() {
-            this.getEntityListInfo;
-            this.getLayoutFormInfo;
-            if(localStorage.EntityList){
-                this.setInervalRemovelocalStorage('EntityList');
-            }
-            if(localStorage.LayoutForm){
-                this.setInervalRemovelocalStorage('LayoutForm');
-            }
+            this.actionsEntityList;
+            this.actionsLayoutForm;
+
             this.loadingShow = false;
         }
     }

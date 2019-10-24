@@ -29,11 +29,12 @@
         },
         methods: {
             getLocalStorageListData() {
-                this.listData = JSON.parse(localStorage.EntityList).data;
+                if(localStorage.EntityListData){
+                    this.listData = JSON.parse(localStorage.EntityListData).data.data;
+                }
             }
         },
         mounted() {
-            this.getLocalStorageListData();
             this.loadingShow = false;
         }
     }
