@@ -85,12 +85,16 @@
             ]),
             EntityListData: {
                 get(){
-                    return JSON.parse(localStorage.vuex).stateEntityList.data;
+                    if(localStorage.vuex){
+                        return JSON.parse(localStorage.vuex).stateEntityList.data;
+                    }
                 }
             },
             LayoutFormData: {
                 get(){
-                    return JSON.parse(localStorage.vuex).stateLayoutForm.data;
+                    if(localStorage.vuex){
+                        return JSON.parse(localStorage.vuex).stateLayoutForm.data;
+                    }
                 }
             }
         },
