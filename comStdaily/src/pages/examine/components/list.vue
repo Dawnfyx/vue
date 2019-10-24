@@ -33,6 +33,7 @@
         computed:{
             viewListData:{
                 get(){
+                    console.log("list-localStorage-EntityListData", localStorage.EntityListData);
                     if(localStorage.EntityListData){
                         return JSON.parse(localStorage.EntityListData).data.data;
                     } else {
