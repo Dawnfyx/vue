@@ -54,13 +54,13 @@
             },
             //事件以后数据分两个记录mutationsExamineListData 和 mutationsExamineListHaveReadData
             handleLabelHaveReadData(item, key){
-                debugger
                 for(let i=0;i<=this.labelHaveReadData.length; i++){
-                    console.log(this.labelHaveReadData[i].id + "=======" + item.id);
-                    if(this.labelHaveReadData[i].id == item.id){
+                    if(this.labelHaveReadData[i] == undefined || this.labelHaveReadData[i].id == item.id){
+                        console.log("return");
                         return;
                     }
                 }
+
                 this.labelHaveReadObj = item;
                 this.labelHaveReadData.push(this.labelHaveReadObj);
                 localStorage.ExamineListData = JSON.stringify(this.labelHaveReadData);
@@ -74,7 +74,7 @@
         watch: {
             viewListData(){
                 console.log("这里是watch");
-                debugger
+
             }
         },
         mounted() {
