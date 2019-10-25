@@ -27,7 +27,7 @@ export default {
     state.stateExamineListData = res;
   },
   mutationsExamineListHaveReadData(state, res){
-    console.log("res.id", res[0].id);
+    console.log("sss true res.id", res[res.length-1].id);
     // debugger
     for(let i=0; i<= state.stateExamineListHaveReadData[0].length; i++){
       if(state.stateExamineListHaveReadData[0][i].id == res[i].id){

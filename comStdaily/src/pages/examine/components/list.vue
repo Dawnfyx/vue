@@ -55,24 +55,19 @@
             },
             //事件以后数据分两个记录mutationsExamineListData 和 mutationsExamineListHaveReadData
             handleLabelHaveReadData(item, key){
-                // debugger
-                // for(let i=0;i<=this.labelHaveReadData.length; i++){
-                //     console.log(this.labelHaveReadData[i].id + "=======" + item.id);
-                //     if(this.labelHaveReadData[i].id == item.id){
-                //         return;
-                //     }
-                // }
                 this.labelHaveReadObj = item;
                 if (this.labelHaveReadData.length > 0){
                     let sss = true;
                     for(let i=0; i<= this.labelHaveReadData.length; i++){
-                        if(this.labelHaveReadData[i].id == item.id){
-                            console.log(this.labelHaveReadData[i].id, item.id);
+                        // debugger
+                        if(this.labelHaveReadData[i] == item){
                             sss = false
+                            console.log("sss", sss, this.labelHaveReadData[i], item);
+                            return
                         }
                     }
                     if(sss){
-                        debugger
+                        // debugger
                         this.labelHaveReadData.push(this.labelHaveReadObj);
                     }
                     // console.log(this.labelHaveReadData);
