@@ -50,7 +50,7 @@ export default {
     //   }
     //   state.stateExamineListHaveReadData[0].push(res)
     // }
-    console.log("sss true res.id", res.id);
+    // console.log("sss true res.id", res.id);
     if(state.stateExamineListHaveReadData[0].length > 0){
       for(var i=0; i< state.stateExamineListHaveReadData[0].length; i++){
         console.log("============",state.stateExamineListHaveReadData[0][i].id, res.id);

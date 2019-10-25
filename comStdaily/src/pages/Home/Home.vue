@@ -1,9 +1,10 @@
 <template>
-  <div class="wrapper" id="wrapper">
+  <div class="wrapper" id="wrapper" @click="sidebarTaggle">
     <loading :loadingShow="loadingShow"></loading>
     <header-title :title="title"></header-title>
     <section-item :IconListData="IconListData"></section-item>
     <footer-link :IconListData="IconListData"></footer-link>
+    <operation-sidebar :sidebarShow="sidebarShow"></operation-sidebar>
   </div>
 </template>
 
@@ -12,8 +13,9 @@
     import {mapState, mapMutations, mapActions} from "vuex";
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
-    import sectionItem from '@/pages/Home/components/sectionItem'
-    import footerLink from '@/pages/Home/components/footerLink'
+    import sectionItem from '@/pages/Home/components/sectionItem';
+    import footerLink from '@/pages/Home/components/footerLink';
+    import operationSidebar from "@/components/operationSidebar";
 
     export default {
         name: "Home",
@@ -63,6 +65,7 @@
                         }
                     ]
                 },
+                sidebarShow: true,
                 loadingShow: true
             }
         },
@@ -104,7 +107,8 @@
             loading: loading,
             headerTitle: headerTitle,
             sectionItem: sectionItem,
-            footerLink: footerLink
+            footerLink: footerLink,
+            operationSidebar: operationSidebar
         },
         methods: {
             // 本地缓存 定时24小时 清除缓存
@@ -120,6 +124,9 @@
             //本地缓存 添加时间
             localStorageItemAddTime(itemname, item, time){
                 localStorage.setItem(itemname, JSON.stringify({data: item, time: time}));
+            },
+            sidebarTaggle(){
+                this.sidebarShow = !this.sidebarShow;
             }
         },
         watch: {
