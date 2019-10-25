@@ -22,12 +22,12 @@
         computed:{
             viewListData:{
                 get(){
-                    if(sessionStorage.listHaveReadData){
-                        return JSON.parse(sessionStorage.listHaveReadData);
+                    if(this.$store.state.stateExamineListHaveReadData[0].length > 0){
+                         return this.$store.state.stateExamineListHaveReadData[0]
                     }
                 },
                 set(val){
-                    return JSON.parse(val);
+                   console.log("computed", val);
                 }
             }
         },
@@ -44,6 +44,9 @@
             }
         },
         watch: {
+            viewListData(){
+                console.log("这里是 viewListData watch");
+            }
         },
         mounted(){
         }

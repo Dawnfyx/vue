@@ -13,8 +13,8 @@ try {
 }
 
 try {
-  if(localStorage.LayoutFormData){
-    stateLayoutForm = localStorage.LayoutFormData
+  if(localStorage.ExamineListData){
+    stateLayoutForm = localStorage.ExamineListData
   }
 } catch(err){
   console.log("state.error", err);
@@ -23,8 +23,8 @@ try {
 }
 
 try {
-  if(localStorage.stateExamineListData){
-    stateExamineListData = localStorage.stateExamineListData
+  if(localStorage.ExamineListData){
+    stateExamineListData = localStorage.ExamineListData
   }
 } catch(err){
   console.log("state.error", err);
@@ -33,8 +33,8 @@ try {
 }
 
 try {
-  if(localStorage.stateExamineListHaveReadData){
-    stateExamineListHaveReadData = localStorage.stateExamineListHaveReadData
+  if(localStorage.ExamineListHaveReadData){
+    stateExamineListHaveReadData = localStorage.ExamineListHaveReadData
   }
 } catch(err){
   console.log("state.error", err);

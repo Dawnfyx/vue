@@ -5,7 +5,7 @@
 <!--      :href="'./#/ExamineDetail/'+item.id"-->
       <b-list-group-item
         class="flex-column align-items-start"
-
+        :href="'./#/ExamineDetail/'+item.id"
         v-for="(item, key) of viewListData" :key="key"
         @click="handleLabelHaveReadData(item, key)"
       >
@@ -33,51 +33,60 @@
         computed:{
             viewListData:{
                 get(){
-                    if(localStorage.vuex){
-                        localStorage.EntityListData = JSON.stringify(JSON.parse(localStorage.vuex).stateEntityList.data);
-                        return JSON.parse(localStorage.vuex).stateEntityList.data;
-                    } else {
-                        return this.listData
+                    // if(localStorage.vuex){
+                    //     localStorage.EntityListData = JSON.stringify(JSON.parse(localStorage.vuex).stateEntityList.data);
+                    //     return JSON.parse(localStorage.vuex).stateEntityList.data;
+                    // } else {
+                    //     return this.listData
+                    // }
+                    // debugger
+                    if(this.$store.state.stateExamineListData.length > 0){
+                        return this.$store.state.stateExamineListData
                     }
+                },
+                set(){
+
                 }
             }
         },
         methods:{
             viewValue(name, dataArray){
-                let text = "";
-                for(let i=0; i<=dataArray.length; i++){
-                    if(dataArray[i].name == name ){
-                        let text = dataArray[i].value;
-                        return text;
-                    }
-                }
-                return  text;
+               if(dataArray != undefined){
+                   let text = "";
+                   for(let i=0; i<=dataArray.length; i++){
+                       if(dataArray[i].name == name ){
+                           let text = dataArray[i].value;
+                           return text;
+                       }
+                   }
+                   return  text;
+               } else {
+                   return  ""
+               }
             },
             //事件以后数据分两个记录mutationsExamineListData 和 mutationsExamineListHaveReadData
             handleLabelHaveReadData(item, key){
                 this.labelHaveReadObj = item;
-                if (this.labelHaveReadData.length > 0){
-                    let sss = true;
-                    for(let i=0; i<= this.labelHaveReadData.length; i++){
-                        // debugger
-                        if(this.labelHaveReadData[i] == item){
-                            sss = false
-                            console.log("sss", sss, this.labelHaveReadData[i], item);
-                            return
-                        }
-                    }
-                    if(sss){
-                        // debugger
-                        this.labelHaveReadData.push(this.labelHaveReadObj);
-                    }
-                    // console.log(this.labelHaveReadData);
-                } else {
-                    this.labelHaveReadData.push(this.labelHaveReadObj);
-                }
-
-
+                // if (this.labelHaveReadData.length > 0){
+                //     let taggle = true;
+                //     for(let i=0; i<= this.labelHaveReadData.length; i++){
+                //         // debugger
+                //         if(this.labelHaveReadData[i] == item){
+                //             taggle = false
+                //             console.log("taggle", taggle, this.labelHaveReadData[i], item);
+                //             return
+                //         }
+                //     }
+                //     if(taggle){
+                //         this.labelHaveReadData.push(this.labelHaveReadObj);
+                //     }
+                //     // console.log(this.labelHaveReadData);
+                // } else {
+                //     this.labelHaveReadData.push(this.labelHaveReadObj);
+                // }
                 localStorage.ExamineListData = JSON.stringify(this.labelHaveReadObj);
-                this.$store.commit("mutationsExamineListHaveReadData", this.labelHaveReadData);
+                this.$store.commit("mutationsExamineListHaveReadData", this.labelHaveReadObj);
+                // debugger
                 this.viewListData.splice(key, 1);
                 localStorage.ExamineListHaveReadData = JSON.stringify(this.viewListData);
                 this.$store.commit("mutationsExamineListData", this.viewListData);
