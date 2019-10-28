@@ -1,7 +1,7 @@
 <template>
-  <div id="SideMenu" data-status="opened" v-show="sidebarShow">
+  <div id="SideMenu" v-show="sidebartoggle">
     <div class="toggler">
-      <span class="glyphicon">侧边栏</span>
+      <span class="glyphicon" @click="toggleSidebar">侧边栏</span>
     </div>
     <div class="side-content">
 
@@ -14,6 +14,18 @@
         name: "operationSidebar",
         props:{
             sidebarShow: Boolean
+        },
+        computed:{
+          sidebartoggle:{
+              get(){
+                  return this.sidebarShow
+              }
+          }
+        },
+        methods:{
+            toggleSidebar(){
+                this.$emit("toggle")
+            }
         }
     }
 </script>
@@ -25,10 +37,11 @@
     position: fixed;
     right: 0px;
     top: 0px;
+    z-index: 2;
 
     .toggler {
       width: 25px;
-      height: 65px;
+      height: 80px;
       position: absolute;
       left: -26px;
       top: 50%;
@@ -52,7 +65,10 @@
       -webkit-box-shadow: -1px 0 8px rgba(0, 0, 0, .175);
       box-shadow: -1px 0 8px rgba(0, 0, 0, .175);
     }
-
+    .toggler{
+      font-size: 1rem;
+      background-color: red;
+    }
   }
 
 </style>

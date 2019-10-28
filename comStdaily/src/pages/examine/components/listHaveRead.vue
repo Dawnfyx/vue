@@ -24,6 +24,8 @@
                 get(){
                     if(this.$store.state.stateExamineListHaveReadData[0].length > 0){
                          return this.$store.state.stateExamineListHaveReadData[0]
+                    } else{
+                        return  JSON.parse(localStorage.vuex).stateEntityList.data;
                     }
                 },
                 set(val){

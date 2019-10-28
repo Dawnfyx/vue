@@ -33,15 +33,10 @@
         computed:{
             viewListData:{
                 get(){
-                    // if(localStorage.vuex){
-                    //     localStorage.EntityListData = JSON.stringify(JSON.parse(localStorage.vuex).stateEntityList.data);
-                    //     return JSON.parse(localStorage.vuex).stateEntityList.data;
-                    // } else {
-                    //     return this.listData
-                    // }
-                    // debugger
                     if(this.$store.state.stateExamineListData.length > 0){
                         return this.$store.state.stateExamineListData
+                    } else{
+                        return  JSON.parse(localStorage.vuex).stateEntityList.data;
                     }
                 },
                 set(){

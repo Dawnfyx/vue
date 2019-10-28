@@ -1,6 +1,9 @@
 <template>
   <div>
-    <header-title :title=title></header-title>
+    <header-title
+      :title="title.title"
+      :headerLeft="title.headerLeft"
+      :headerRight="title.headerRight"></header-title>
 <!--    <child-search></child-search>-->
     <child-contact-list :contacts="contacts" :letter="letter"></child-contact-list>
     <child-alphabet :contacts="contacts" @change="handleLetterChange"></child-alphabet>
@@ -17,7 +20,11 @@
         name: "contact",
         data(){
             return{
-                title: '联系人',
+                title: {
+                    title: "联系人",
+                    headerLeft: true,
+                    headerRight: true
+                },
                 letter: '',
                 contacts: {
                     "A": [

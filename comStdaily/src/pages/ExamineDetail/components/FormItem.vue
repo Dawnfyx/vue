@@ -116,7 +116,7 @@
     }
 </script>
 
-<style scoped>
+<style>
 
 
   .content{
@@ -136,5 +136,22 @@
   }
   .content ul li + li{
     border-top: 1px solid #ddd;
+  }
+
+  .form-group {
+    overflow: hidden;
+  }
+
+  .form-group .d-block {
+    width: 30% !important;
+    float: left !important;
+  }
+
+  .form-group > label + div {
+    width: 70%;
+    float: left;
+  }
+  input.form-control{
+
   }
 </style>

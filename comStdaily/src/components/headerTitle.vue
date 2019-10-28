@@ -1,32 +1,53 @@
 <template>
     <div class="header">
       <div class="left">
-        <header-left></header-left>
+        <header-left v-if="headerLeft"></header-left>
       </div>
       <div class="title">
           {{title}}
       </div>
       <div class="right">
-        <header-right @toggle="handleSidebar"></header-right>
+        <header-right @toggle="handleSidebar" v-if="headerRight"></header-right>
       </div>
+      <!--抽屉-->
+      <operation-sidebar :sidebarShow="sidebarShow" @toggle="handleSidebar"></operation-sidebar>
     </div>
 </template>
 
 <script>
   import headerLeft from "./headerLeft";
   import headerRight from "./headerRight";
+  import operationSidebar from "@/components/operationSidebar";
+
     export default {
         name: "headerTitle",
+        data(){
+            return{
+                sidebarShow: false
+            }
+        },
         props:{
-            title: String
+            title: {
+                type: String,
+                default: '标题'
+            },
+            headerLeft: {
+                type: Boolean,
+                default: false
+            },
+            headerRight: {
+                type: Boolean,
+                default: false
+            }
         },
         components:{
             headerLeft: headerLeft,
-            headerRight: headerRight
+            headerRight: headerRight,
+            operationSidebar: operationSidebar
         },
         methods:{
             handleSidebar(){
-                this.$emit("toggle")
+                this.sidebarShow = !this.sidebarShow
             }
         }
     }
@@ -38,12 +59,24 @@
 
   .header{
     background-color: @mColor;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
     text-align: center;
     color: @clfff;
-    font-size: 18px;
+    font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
+
+    .title{
+      margin: 0px auto;
+    }
+    .left{
+      width: 3rem;
+      line-height: 2rem;
+      font-size: 1rem;
+    }
+    .right{
+      width: 3rem;
+    }
   }
 </style>

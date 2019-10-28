@@ -1,5 +1,5 @@
 <template>
-    <b-button @click.prevent="handleSidebar">AAA</b-button>
+    <b-button @click.prevent="handleSidebar"> ··· &nbsp;</b-button>
 </template>
 
 <script>

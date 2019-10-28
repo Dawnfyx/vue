@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="sectionitem">
     <div v-for="item of testArray">
       <div class="title">
         {{IconListData.title}}
@@ -20,7 +20,7 @@
 
 <script>
     export default {
-        name: "section",
+        name: "sectionItem",
         data(){
            return{
                testArray: [
@@ -47,7 +47,7 @@
 <style scoped lang="less">
   @import '~style/mainColor';
 
-  .section {
+  .sectionitem {
     width: 100%;
     background-color: @clfff;
     padding-bottom: 4rem;

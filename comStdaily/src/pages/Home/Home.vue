@@ -4,18 +4,15 @@
     <header-title :title="title" @toggle="handleSidebar"></header-title>
     <section-item :IconListData="IconListData"></section-item>
     <footer-link :IconListData="IconListData"></footer-link>
-    <operation-sidebar :sidebarShow="sidebarShow"></operation-sidebar>
   </div>
 </template>
 
 <script>
-    import axios from 'axios'
     import {mapState, mapMutations, mapActions} from "vuex";
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
     import sectionItem from '@/pages/Home/components/sectionItem';
     import footerLink from '@/pages/Home/components/footerLink';
-    import operationSidebar from "@/components/operationSidebar";
 
     export default {
         name: "Home",
@@ -107,8 +104,7 @@
             loading: loading,
             headerTitle: headerTitle,
             sectionItem: sectionItem,
-            footerLink: footerLink,
-            operationSidebar: operationSidebar
+            footerLink: footerLink
         },
         methods: {
             // 本地缓存 定时24小时 清除缓存

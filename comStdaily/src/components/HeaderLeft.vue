@@ -1,10 +1,15 @@
 <template>
-  <div>< 返回</div>
+  <div @click="returnHome">< 返回</div>
 </template>
 
 <script>
     export default {
-        name: "HeaderLeft"
+        name: "HeaderLeft",
+        methods:{
+            returnHome(){
+                this.$router.push("/");
+            }
+        }
     }
 </script>
 

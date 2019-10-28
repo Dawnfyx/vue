@@ -1,7 +1,10 @@
 <template>
   <div class="wrapper" id="wrapper">
     <loading :loadingShow="loadingShow"></loading>
-    <header-title :title="title"></header-title>
+    <header-title
+      :title="title.title"
+      :headerLeft="title.headerLeft"
+      :headerRight="title.headerRight"></header-title>
     <child-tabs :listData="listData"></child-tabs>
   </div>
 </template>
@@ -17,7 +20,11 @@
         name: "examine",
         data() {
             return {
-                title: "审批",
+                title: {
+                    title: "审批",
+                    headerLeft: true,
+                    headerRight: true
+                },
                 loadingShow: true
             }
         },
@@ -46,7 +53,6 @@
   .header {
     background-color: @mColor;
     color: @clfff;
-    padding-top: 5px;
     text-align: center;
   }
 </style>

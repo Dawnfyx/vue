@@ -1,6 +1,9 @@
 <template>
   <div>
-    <header-title :title=title></header-title>
+    <header-title
+      :title="title.title"
+      :headerLeft="title.headerLeft"
+      :headerRight="title.headerRight"></header-title>
     <child-search></child-search>
     <child-list :listData="listData"></child-list>
   </div>
@@ -16,7 +19,11 @@
         name: "customer",
         data(){
             return {
-                title: "客户管理",
+                title: {
+                    title: "客户管理",
+                    headerLeft: true,
+                    headerRight: true
+                },
                 listData: {}
             }
         },

@@ -30,5 +30,10 @@ export default {
         .catch(error=>{
           console.log("Error", error.message);
         })
+    },
+    actionsClearState(state){
+      for(var key in state.state){
+        state.state[key] = null;
+      }
     }
 }
