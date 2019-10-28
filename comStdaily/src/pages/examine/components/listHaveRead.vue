@@ -22,8 +22,8 @@
         computed:{
             viewListData:{
                 get(){
-                    if(this.$store.state.stateExamineListHaveReadData[0].length > 0){
-                         return this.$store.state.stateExamineListHaveReadData[0]
+                    if(this.$store.state.stateExamineListHaveRead.length > 0){
+                         return this.$store.state.stateExamineListHaveRead
                     } else{
                         return  JSON.parse(localStorage.vuex).stateEntityList.data;
                     }

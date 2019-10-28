@@ -1,40 +1,14 @@
 let stateEntityList = {};
+let stateExamineList = [];
+let stateExamineListHaveRead = [];
 let stateLayoutForm = {};
-let stateExamineListData = [];
-let stateExamineListHaveReadData = [];
-try {
-  if(localStorage.EntityListData){
-    stateEntityList = localStorage.EntityListData
-  }
-} catch(err){
-  console.log("state.error", err);
-} finally {
-
-}
 
 try {
-  if(localStorage.ExamineListData){
-    stateLayoutForm = localStorage.ExamineListData
-  }
-} catch(err){
-  console.log("state.error", err);
-} finally {
-
-}
-
-try {
-  if(localStorage.ExamineListData){
-    stateExamineListData = localStorage.ExamineListData
-  }
-} catch(err){
-  console.log("state.error", err);
-} finally {
-
-}
-
-try {
-  if(localStorage.ExamineListHaveReadData){
-    stateExamineListHaveReadData = localStorage.ExamineListHaveReadData
+  if(localStorage.vuex){
+    stateEntityList = JSON.parse(localStorage.vuex).stateEntityList;
+    stateExamineList = JSON.parse(localStorage.vuex).stateExamineList;
+    stateExamineListHaveRead = JSON.parse(localStorage.vuex).stateExamineListHaveRead
+    stateLayoutForm = JSON.parse(localStorage.vuex).stateLayoutForm;
   }
 } catch(err){
   console.log("state.error", err);
@@ -46,6 +20,6 @@ try {
 export default {
   stateEntityList: stateEntityList,
   stateLayoutForm: stateLayoutForm,
-  stateExamineListData: stateExamineListData,
-  stateExamineListHaveReadData: stateExamineListHaveReadData
+  stateExamineListHaveRead: stateExamineListHaveRead,
+  stateExamineList: stateExamineList
 }

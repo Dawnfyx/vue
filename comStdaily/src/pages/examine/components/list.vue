@@ -33,10 +33,10 @@
         computed:{
             viewListData:{
                 get(){
-                    if(this.$store.state.stateExamineListData.length > 0){
-                        return this.$store.state.stateExamineListData
-                    } else{
-                        return  JSON.parse(localStorage.vuex).stateEntityList.data;
+                    if(this.$store.state.stateExamineList.length > 0){
+                        return this.$store.state.stateExamineList
+                    } else {
+                        return JSON.parse(localStorage.vuex).stateEntityList.data;
                     }
                 },
                 set(){
@@ -56,7 +56,7 @@
                    }
                    return  text;
                } else {
-                   return  ""
+                   return  "";
                }
             },
             //事件以后数据分两个记录mutationsExamineListData 和 mutationsExamineListHaveReadData
@@ -90,9 +90,14 @@
                 return idStr.substring(0, 8);
             }
         },
+        filters:{
+            filtersSearchValue(value){
+                debugger
+            }
+        },
         watch: {
-            viewListData(){
-                console.log("这里是watch");
+            searchValue(NewVal, OldVal){
+                debugger
             }
         },
         mounted() {

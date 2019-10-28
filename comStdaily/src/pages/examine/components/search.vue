@@ -3,7 +3,7 @@
     <div class="search">
       <b-form-input
         size="sm"
-        placeholder="search"
+        placeholder="搜索"
         v-model="keyword"
       ></b-form-input>
     </div>
@@ -32,11 +32,14 @@
                 keyword: ""
             }
         },
+        props:{
+            listData: Array
+        },
         computed:{
             viewListData:{
                 get(){
                     if(this.$store.state.stateExamineListData.length > 0){
-                        return this.$store.state.stateExamineListData
+                        return this.$store.state.stateExamineListData;
                     } else{
                         return  JSON.parse(localStorage.vuex).stateEntityList.data;
                     }

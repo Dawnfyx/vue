@@ -2,15 +2,18 @@
   <div>
     <b-tabs content-class="mt-3">
       <b-tab title="未审批" active>
-        <child-search @change="handleSearchChange"></child-search>
+        <input-search @searchValue="handleSearchChange"></input-search>
         <child-list
           :listData="listData"
           :searchValue="searchValue"
           v-if="!searchValue"></child-list>
       </b-tab>
       <b-tab title="已审批">
-        <child-search></child-search>
-        <child-list-have-read>
+        <input-search @searchValue="handleSearchChangeHaveRead"></input-search>
+        <child-list-have-read
+        :searchValueHaveRead="searchValueHaveRead"
+        v-if="!searchValueHaveRead"
+        >
         </child-list-have-read>
       </b-tab>
       <!--<b-tab title="代理"><p>I'm a disabled tab!</p></b-tab>-->
@@ -20,7 +23,7 @@
 
 <script>
 
-    import childSearch from './search';
+    import inputSearch from "@/components/inputSearch";
     import childList from '../components/list'; //这条路径有毒调了一个小时
     import childListHaveRead from '../components/listHaveRead'
 
@@ -28,20 +31,26 @@
         name: "tabs",
         data(){
             return{
-                searchValue: ""
+                searchValue: "",
+                searchValueHaveRead: ""
             }
         },
         props: {
             listData: Array
         },
         components:{
-            childSearch: childSearch,
+            inputSearch: inputSearch,
             childList: childList,
             childListHaveRead: childListHaveRead
         },
         methods:{
           handleSearchChange(searchValue) {
+              // console.log("handleSearchChange",searchValue);
               this.searchValue = searchValue;
+          },
+          handleSearchChangeHaveRead(searchValue){
+              // console.log("handleSearchChangeHaveRead",searchValue);
+              this.searchValueHaveRead = searchValue;
           }
         }
     }
