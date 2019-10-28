@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper" id="wrapper" @click="sidebarTaggle">
+  <div class="wrapper" id="wrapper">
     <loading :loadingShow="loadingShow"></loading>
-    <header-title :title="title"></header-title>
+    <header-title :title="title" @toggle="handleSidebar"></header-title>
     <section-item :IconListData="IconListData"></section-item>
     <footer-link :IconListData="IconListData"></footer-link>
     <operation-sidebar :sidebarShow="sidebarShow"></operation-sidebar>
@@ -65,7 +65,7 @@
                         }
                     ]
                 },
-                sidebarShow: true,
+                sidebarShow: false,
                 loadingShow: true
             }
         },
@@ -126,6 +126,10 @@
                 localStorage.setItem(itemname, JSON.stringify({data: item, time: time}));
             },
             sidebarTaggle(){
+                this.sidebarShow = !this.sidebarShow;
+            },
+            handleSidebar(){
+                // console.log("sss");
                 this.sidebarShow = !this.sidebarShow;
             }
         },

@@ -7,7 +7,7 @@
           {{title}}
       </div>
       <div class="right">
-        <header-right></header-right>
+        <header-right @toggle="handleSidebar"></header-right>
       </div>
     </div>
 </template>
@@ -23,6 +23,11 @@
         components:{
             headerLeft: headerLeft,
             headerRight: headerRight
+        },
+        methods:{
+            handleSidebar(){
+                this.$emit("toggle")
+            }
         }
     }
 </script>
