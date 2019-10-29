@@ -17,48 +17,18 @@ export default {
     let json = require('@/pages/Home/api/apidata2.json');
     state.stateLayoutForm = json.data;
   },
-  mutationsExamineListData(state, res){
-    // for(let i=0;state.stateExamineListData.length; i++){
-    //   if(state.stateExamineListData[i].id == res[0].id){
-    //     return;
-    //   }
-    // }
-    state.stateExamineListData = res;
+  mutationsExamineList(state, res){
+    state.stateExamineList = res;
   },
-  mutationsExamineListHaveReadData(state, res){
-    //debugger
-    // if(res[0]){
-    //   console.log("sss true res.id", res[0].id);
-    //   if(state.stateExamineListHaveReadData.length > 0){
-    //     for(var i=0; i<= state.stateExamineListHaveReadData[0].length; i++){
-    //       if(state.stateExamineListHaveReadData[0][i].id == res[0].id){
-    //         return;
-    //       }
-    //     }
-    //   }
-    //   state.stateExamineListHaveReadData[0].push(res)
-    // } else{
-    //   // debugger
-    //   console.log("sss true res.id", res.id);
-    //   if(state.stateExamineListHaveReadData[0].length > 0){
-    //     for(var i=0; i< state.stateExamineListHaveReadData[0].length; i++){
-    //       console.log("============",state.stateExamineListHaveReadData[0][i].id, res.id);
-    //       if(state.stateExamineListHaveReadData[0][i].id == res.id){
-    //         return;
-    //       }
-    //     }
-    //   }
-    //   state.stateExamineListHaveReadData[0].push(res)
-    // }
-    // console.log("sss true res.id", res.id);
-    if(state.stateExamineListHaveReadData[0].length > 0){
-      for(var i=0; i< state.stateExamineListHaveReadData[0].length; i++){
-        console.log("============",state.stateExamineListHaveReadData[0][i].id, res.id);
-        if(state.stateExamineListHaveReadData[0][i].id == res.id){
+  mutationsExamineListHaveRead(state, res){
+    if(state.stateExamineListHaveRead.length > 0){
+      for(var i=0; i< state.stateExamineListHaveRead.length; i++){
+        // console.log("============",state.stateExamineListHaveRead[i].id, res.id);
+        if(state.stateExamineListHaveRead[i].id == res.id){
           return;
         }
       }
     }
-    state.stateExamineListHaveReadData[0].push(res)
+    state.stateExamineListHaveRead.push(res)
   }
 }

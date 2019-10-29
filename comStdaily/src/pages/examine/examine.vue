@@ -36,7 +36,7 @@
         computed:{
             listData(){
                 if(localStorage.vuex){
-                    localStorage.EntityListData = JSON.parse(localStorage.vuex).stateEntityList.data;
+                    localStorage.EntityList = JSON.stringify(JSON.parse(localStorage.vuex).stateEntityList.data);
                     return JSON.parse(localStorage.vuex).stateEntityList.data;
                 }
             }

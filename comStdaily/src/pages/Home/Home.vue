@@ -71,19 +71,24 @@
             // 映射 this.LayoutForm 为 store.state.LayoutForm
             ...mapState([
                 'stateEntityList',
-                'stateLayoutForm'
+                'stateLayoutForm',
+                'stateExamineList',
+                'stateExamineListHaveRead'
             ]),
             // 映射 this.setInfo 为 this.$store.commit('setInfo')
             ...mapMutations([
                 'mutationsEntityList',
                 'mutationsEntityList2',
                 'mutationsLayoutForm',
-                'mutationsLayoutForm2'
+                'mutationsLayoutForm2',
+                'mutationsExamineList',
+                'mutationsExamineListHaveRead'
             ]),
             // 映射 this.getInfo 为 this.$store.dispatch('getInfo')
             ...mapActions([
                 'actionsEntityList',
-                'actionsLayoutForm'
+                'actionsLayoutForm',
+                'actionsClearState'
             ]),
             EntityListData: {
                 get(){

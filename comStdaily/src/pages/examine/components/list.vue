@@ -50,10 +50,11 @@
                             return item.id.indexOf(this.searchValue) > -1
                         })
                     } else {
-                        return JSON.parse(localStorage.vuex).stateEntityList.data.filter((item)=>{
-                            // console.log(item.id, this.searchValue);
-                            return item.id.indexOf(this.searchValue) > -1
-                        });
+                        // return JSON.parse(localStorage.vuex).stateEntityList.data.filter((item)=>{
+                        //     // console.log(item.id, this.searchValue);
+                        //     return item.id.indexOf(this.searchValue) > -1
+                        // });
+                        return  this.listData;
                     }
                 },
                 set(){
@@ -79,29 +80,14 @@
             //事件以后数据分两个记录mutationsExamineListData 和 mutationsExamineListHaveReadData
             handleLabelHaveReadData(item, key){
                 this.labelHaveReadObj = item;
-                // if (this.labelHaveReadData.length > 0){
-                //     let taggle = true;
-                //     for(let i=0; i<= this.labelHaveReadData.length; i++){
-                //         // debugger
-                //         if(this.labelHaveReadData[i] == item){
-                //             taggle = false
-                //             console.log("taggle", taggle, this.labelHaveReadData[i], item);
-                //             return
-                //         }
-                //     }
-                //     if(taggle){
-                //         this.labelHaveReadData.push(this.labelHaveReadObj);
-                //     }
-                //     // console.log(this.labelHaveReadData);
-                // } else {
-                //     this.labelHaveReadData.push(this.labelHaveReadObj);
-                // }
-                localStorage.ExamineListData = JSON.stringify(this.labelHaveReadObj);
-                this.$store.commit("mutationsExamineListHaveReadData", this.labelHaveReadObj);
+                localStorage.ExamineList = JSON.stringify(this.labelHaveReadObj);
+                this.$store.commit("mutationsExamineListHaveRead", this.labelHaveReadObj);
                 // debugger
+                console.log("before", this.viewListData)
                 this.viewListData.splice(key, 1);
-                localStorage.ExamineListHaveReadData = JSON.stringify(this.viewListData);
-                this.$store.commit("mutationsExamineListData", this.viewListData);
+                console.log("aftre", this.viewListData)
+                localStorage.ExamineListHaveRead = JSON.stringify(this.viewListData);
+                this.$store.commit("mutationsExamineList", this.viewListData);
             },
             handleSearchChange(value){
                 this.searchValue = value;
