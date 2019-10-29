@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    <input-search @searchValue="handleSearchChangeHaveRead"></input-search>
 <!--    {{viewListData}}-->
     <b-list-group class="list">
       <b-list-group-item
@@ -17,15 +19,30 @@
 
 <script>
 
+    import inputSearch from "@/components/inputSearch";
+
     export default {
         name: "listRead",
+        data(){
+            return{
+                searchValue: ""
+            }
+        },
+        components:{
+            inputSearch: inputSearch
+        },
         computed:{
             viewListData:{
                 get(){
                     if(this.$store.state.stateExamineListHaveRead.length > 0){
-                         return this.$store.state.stateExamineListHaveRead
+                        return this.$store.state.stateExamineListHaveRead.filter((item)=>{
+                            return item.id.indexOf(this.searchValue) > -1
+                        })
                     } else{
-                        return  JSON.parse(localStorage.vuex).stateEntityList.data;
+                        return JSON.parse(localStorage.vuex).stateExamineListHaveRead.filter((item)=>{
+                            // console.log(item.id, this.searchValue);
+                            return item.id.indexOf(this.searchValue) > -1
+                        });
                     }
                 },
                 set(val){
@@ -43,11 +60,17 @@
                     }
                 }
                 return  text;
+            },
+            handleSearchChangeHaveRead(value){
+                this.searchValue = value;
             }
         },
         watch: {
             viewListData(){
                 console.log("这里是 viewListData watch");
+            },
+            searchValue(){
+                // debugger
             }
         },
         mounted(){

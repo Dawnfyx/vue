@@ -1,5 +1,6 @@
 <template>
   <div>
+    <input-search @searchValue="handleSearchChange"></input-search>
 <!--    <p>ssss</p>-->
     <b-list-group class="list">
 <!--      :href="'./#/ExamineDetail/'+item.id"-->
@@ -18,25 +19,41 @@
 </template>
 
 <script>
+
+    import inputSearch from "@/components/inputSearch";
     export default {
         name: "list",
         data(){
             return{
+                searchValue: "",
                 labelHaveReadObj: {},
                 labelHaveReadData: []
             }
         },
         props:{
-            listData: Array,
-            searchValue: String
+            listData: Array
+        },
+        components:{
+            inputSearch: inputSearch
         },
         computed:{
+            parentsearchValue: {
+                get(){
+                    return this.searchValue;
+                }
+            },
             viewListData:{
                 get(){
+                    var searchVal = this.searchValue;
                     if(this.$store.state.stateExamineList.length > 0){
-                        return this.$store.state.stateExamineList
+                        return this.$store.state.stateExamineList.filter((item)=>{
+                            return item.id.indexOf(this.searchValue) > -1
+                        })
                     } else {
-                        return JSON.parse(localStorage.vuex).stateEntityList.data;
+                        return JSON.parse(localStorage.vuex).stateEntityList.data.filter((item)=>{
+                            // console.log(item.id, this.searchValue);
+                            return item.id.indexOf(this.searchValue) > -1
+                        });
                     }
                 },
                 set(){
@@ -86,19 +103,14 @@
                 localStorage.ExamineListHaveReadData = JSON.stringify(this.viewListData);
                 this.$store.commit("mutationsExamineListData", this.viewListData);
             },
+            handleSearchChange(value){
+                this.searchValue = value;
+            },
             initUrlDetail(idStr){//截取8位字段
                 return idStr.substring(0, 8);
             }
         },
-        filters:{
-            filtersSearchValue(value){
-                debugger
-            }
-        },
         watch: {
-            searchValue(NewVal, OldVal){
-                debugger
-            }
         },
         mounted() {
 

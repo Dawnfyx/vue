@@ -2,18 +2,10 @@
   <div>
     <b-tabs content-class="mt-3">
       <b-tab title="未审批" active>
-        <input-search @searchValue="handleSearchChange"></input-search>
-        <child-list
-          :listData="listData"
-          :searchValue="searchValue"
-          v-if="!searchValue"></child-list>
+        <child-list :listData="listData"></child-list>
       </b-tab>
       <b-tab title="已审批">
-        <input-search @searchValue="handleSearchChangeHaveRead"></input-search>
-        <child-list-have-read
-        :searchValueHaveRead="searchValueHaveRead"
-        v-if="!searchValueHaveRead"
-        >
+        <child-list-have-read :searchValueHaveRead="searchValueHaveRead">
         </child-list-have-read>
       </b-tab>
       <!--<b-tab title="代理"><p>I'm a disabled tab!</p></b-tab>-->
@@ -23,7 +15,6 @@
 
 <script>
 
-    import inputSearch from "@/components/inputSearch";
     import childList from '../components/list'; //这条路径有毒调了一个小时
     import childListHaveRead from '../components/listHaveRead'
 
@@ -39,7 +30,6 @@
             listData: Array
         },
         components:{
-            inputSearch: inputSearch,
             childList: childList,
             childListHaveRead: childListHaveRead
         },
