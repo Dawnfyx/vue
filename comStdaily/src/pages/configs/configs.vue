@@ -4,13 +4,10 @@
       :title="title.title"
       :headerLeft="title.headerLeft"
       :headerRight="title.headerRight"></header-title>
-    <div class="title">
-      基本设置
-    </div>
     <div class="content">
       <ul>
         <li class="item" @click="removelocalStorage()">
-          清除缓存 <span class="pull-right">当前缓存 {{localStorageSpace}}</span>
+          清除缓存 <span class="pull-right">当前缓存 {{localStorageSpace}} <i class="fa fa-angle-right"></i></span>
         </li>
 <!--        <li class="item">-->
 <!--          <div>-->
@@ -91,16 +88,22 @@
     }
 </script>
 
-<style scoped>
-  .title {
-    line-height: 20px;
-    background: #eee;
-    text-indent: 10px;
-    padding: 6px;
-  }
+<style scoped lang="less">
+
+  @import '~style/mainColor';
+
+  /*.title {*/
+  /*  line-height: 20px;*/
+  /*  background: #eee;*/
+  /*  text-indent: 10px;*/
+  /*  padding: 6px;*/
+  /*}*/
 
   .content {
     background: #fff;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    padding-top: 2rem;
   }
 
   .content ul {
@@ -111,7 +114,14 @@
   }
 
   .content ul li.item {
+    border: 1px solid @cleee;
+    border-radius: 0.5rem;
     padding: 10px;
+
+    .pull-right{
+      color: @cl999;
+      float: right;
+    }
   }
 
   .content ul li.item .form-group {
