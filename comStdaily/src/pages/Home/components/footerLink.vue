@@ -1,33 +1,35 @@
 <template>
-    <div class="footer">
-      <div class="item"
-           :class="{active: item.active == active}"
-           v-for="(item, key) of IconListData.footer" :key="key"
-      >
-        <router-link :to="item.url">
-          <div class="item-icon">
-            <i class="fa" :class="item.icon"></i>
-          </div>
-        </router-link>
-      </div>
-      <!--<router-link to>-->
-      <!--</router-link>-->
+  <div class="footer">
+    <div class="item"
+         :class="{active: item.active == active}"
+         v-for="(item, key) of IconListData.footer" :key="key"
+    >
+      <router-link :to="item.url">
+        <div class="item-icon">
+          <i class="fa" :class="item.icon"></i>
+        </div>
+        <div class="item-text">
+          {{item.desc}}
+        </div>
+      </router-link>
     </div>
+    <!--<router-link to>-->
+    <!--</router-link>-->
+  </div>
 </template>
 
 <script>
     export default {
         name: "FooterLink",
-        data(){
-          return{
-            active: "home"
-          }
+        data() {
+            return {
+                active: "home"
+            }
         },
         props: {
             IconListData: {}
         },
-        methods:{
-        }
+        methods: {}
     }
 </script>
 
@@ -35,28 +37,42 @@
 
   @import '~style/mainColor';
 
-  .footer{
+  .footer {
     width: 100%;
-    height: 3rem;
+    height: 3.5rem;
+    box-shadow: 0px 1px 3px @cl333;
+    padding-top: 0.5rem;
     position: fixed;
     left: 0;
     bottom: 0;
-    background-color: @mColor;
+
+    .item {
+      width: 33.33%;
+      height: 100%;
+      text-align: center;
+      float: left;
+
+      &.active {
+        .item-icon i{
+          color: @mColor;
+        }
+        .item-text{
+          color: @mColor;
+        }
+      }
+
+      .item-icon i {
+          width: 1.6rem;
+          height: 1.6rem;
+          line-height: 1.6rem;
+          color: @mColorL;
+        }
+
+      .item-text{
+        font-size: 8px;
+        color: @mColorL;
+      }
+    }
   }
-  .footer .item{
-    width: 33.33%;
-    height: 100%;
-    float: left;
-  }
-  .footer  .item.active{
-    background-color: @mColorS;
-  }
-  .footer .item .item-icon{
-    font-size: 20px;
-    text-align: center;
-    padding-top: 8px;
-  }
-  .footer .item .item-icon i{
-    color: #fff;
-  }
+
 </style>

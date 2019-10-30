@@ -4,64 +4,52 @@
       :title="title.title"
       :headerLeft="title.headerLeft"
       :headerRight="title.headerRight"></header-title>
-    <b-list-group>
-      <b-list-group-item class="d-flex justify-content-between align-items-center">
-        Cras justo odio
-        <b-badge variant="primary" pill>14</b-badge>
-      </b-list-group-item>
-
-      <b-list-group-item class="d-flex justify-content-between align-items-center">
-        Dapibus ac facilisis in
-        <b-badge variant="primary" pill>2</b-badge>
-      </b-list-group-item>
-
-      <b-list-group-item class="d-flex justify-content-between align-items-center">
-        Morbi leo risus
-        <b-badge variant="primary" pill>1</b-badge>
-      </b-list-group-item>
-      <b-list-group-item class="d-flex justify-content-between align-items-center">
-        Morbi leo risus
-        <b-badge variant="primary" pill>11</b-badge>
-      </b-list-group-item>
-      <b-list-group-item class="d-flex justify-content-between align-items-center">
-        Quis magna Lorem anim amet
-        <b-badge variant="primary" pill>1</b-badge>
-      </b-list-group-item>
-      <b-list-group-item class="d-flex justify-content-between align-items-center">
-        Vestibulum at eros
-        <b-badge variant="primary" pill>3</b-badge>
-      </b-list-group-item>
-      <b-list-group-item class="d-flex justify-content-between align-items-center">
-        Dapibus ac facilisis in
-        <b-badge variant="primary" pill>4</b-badge>
-      </b-list-group-item>
-      <b-list-group-item class="d-flex justify-content-between align-items-center">
-        Cras justo odio
-        <b-badge variant="primary" pill>5</b-badge>
-      </b-list-group-item>
-    </b-list-group>
+    <div class="decorateLine">
+      <hr>
+    </div>
+    <child-tabs></child-tabs>
   </div>
 </template>
 
 <script>
 
     import headerTitle from "../../components/headerTitle";
+    import childTabs from "./components/tabs"
+
     export default {
         name: "info",
-        data(){
-            return{
+        data() {
+            return {
                 title: {
                     title: "消息",
-                    headerLeft: true
+                    headerLeft: true,
+                    headerRight: true
                 }
             }
         },
-        components:{
-            headerTitle: headerTitle
+        components: {
+            headerTitle: headerTitle,
+            childTabs: childTabs
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+
+  @import '~style/mainColor';
+
+  .decorateLine {
+    background-color: @mColor;
+    overflow: hidden;
+
+    hr {
+      background-color: @clfff;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 8rem;
+    }
+  }
+
 
 </style>

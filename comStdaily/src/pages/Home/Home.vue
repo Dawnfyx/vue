@@ -18,9 +18,9 @@
         name: "Home",
         data() {
             return {
-                title: "CRM-APP",
+                title: "主页",
                 IconListData: {
-                    title: "应用链接",
+                    title: "常用办公",
                     content: [
                         {
                             "name": "审批",
@@ -39,6 +39,12 @@
                             "desc": "contacts",
                             "imgUrl": "http://fangyaxi.cn/api/img/icon-04-lxr.jpg",
                             "url": "/contact"
+                        },
+                        {
+                            "name": "更多",
+                            "desc": "more",
+                            "imgUrl": "http://fangyaxi.cn/api/img/icon-04-lxr.jpg",
+                            "url": "/asgsd"
                         }
                     ],
                     footer: [

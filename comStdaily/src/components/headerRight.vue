@@ -1,5 +1,5 @@
 <template>
-    <b-button @click.prevent="handleSidebar"> ··· &nbsp;</b-button>
+  <div @click="handleSidebar"> <i class="fa fa-ellipsis-h"></i></div>
 </template>
 
 <script>
@@ -14,11 +14,5 @@
 </script>
 
 <style scoped>
-  * { touch-action: none; }
-  .btn {
-    background: transparent;
-    border-color: transparent;
-    padding: 3px;
-    float: right;
-  }
+
 </style>

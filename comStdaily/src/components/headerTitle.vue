@@ -59,11 +59,10 @@
 
   .header{
     background-color: @mColor;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    padding: 0.6rem 1.2rem;
     text-align: center;
     color: @clfff;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: flex;
     justify-content: space-between;
 
@@ -71,12 +70,12 @@
       margin: 0px auto;
     }
     .left{
-      width: 3rem;
-      line-height: 2rem;
+      width: 2rem;
       font-size: 1rem;
     }
     .right{
-      width: 3rem;
+      width: 2rem;
+      font-size: 1rem;
     }
   }
 </style>

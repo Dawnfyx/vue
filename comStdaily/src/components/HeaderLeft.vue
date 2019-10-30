@@ -1,5 +1,5 @@
 <template>
-  <div @click="returnHome">< 返回</div>
+  <div @click="returnHome"> <i class="fa fa-angle-left"></i></div>
 </template>
 
 <script>
@@ -7,7 +7,7 @@
         name: "HeaderLeft",
         methods:{
             returnHome(){
-                this.$router.push("/");
+                this.$router.go(-1)
             }
         }
     }

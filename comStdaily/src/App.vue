@@ -11,6 +11,7 @@ export default {
 </script>
 
 <style>
+  * { touch-action: none; }
   #app{
     font-size: 14px;
   }

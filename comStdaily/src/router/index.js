@@ -8,11 +8,6 @@ import Examine from '@/pages/examine/examine'
 import ExamineDetail from '@/pages/examineDetail/detail'
 import Contact from '@/pages/contact/contact'
 import Customer from '@/pages/customer/customer'
-import test from "../pages/TestDir/test"
-import testStore from "../pages/TestDir/testStore";
-import testPersist from "../pages/TestDir/testPersist"
-import testFilters from "../pages/TestDir/testFilters"
-import testApp from "../pages/TestDir/testApp";
 import loading from '@/components/loading'
 
 Vue.use(Router)
@@ -55,22 +50,6 @@ export default new Router({
       path: '/loading',
       name: 'loading',
       component: loading
-    },{
-      path: '/testStore',
-      name: 'testStore',
-      component: testStore
-    },{
-      path: '/testPersist',
-      name: 'testPersist',
-      component: testPersist
-    },{
-      path: '/testFilters',
-      name: 'testFilters',
-      component: testFilters
-    },{
-      path: '/testApp',
-      name: 'testApp',
-      component: testApp
     }
   ]
 })

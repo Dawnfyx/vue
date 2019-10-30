@@ -1,18 +1,16 @@
 <template>
   <div class="sectionitem">
-    <div v-for="item of testArray">
-      <div class="title">
-        {{IconListData.title}}
-      </div>
-      <div class="content">
-        <div class="item" v-for="(item, key) of IconListData.content" :key="key">
-          <router-link :to="item.url">
-            <div class="icon-img">
-              <img :src="item.imgUrl" alt="" width="50%" height="auto">
-            </div>
-            <p class="icon-desc">{{item.name}}</p>
-          </router-link>
-        </div>
+    <div class="title">
+      {{IconListData.title}}
+    </div>
+    <div class="content">
+      <div class="item" v-for="(item, key) of IconListData.content" :key="key">
+        <router-link :to="item.url">
+          <div class="icon-img">
+            <img :src="item.imgUrl" alt="" width="45%" height="auto">
+          </div>
+          <p class="icon-desc">{{item.name}}</p>
+        </router-link>
       </div>
     </div>
   </div>
@@ -21,23 +19,6 @@
 <script>
     export default {
         name: "sectionItem",
-        data(){
-           return{
-               testArray: [
-                   {
-
-                   },{
-
-                   },{
-
-                   },{
-
-                   },{
-
-                   }
-               ]
-           }
-        },
         props: {
             IconListData: Object
         },
@@ -49,27 +30,28 @@
 
   .sectionitem {
     width: 100%;
+    box-sizing: border-box;
     background-color: @clfff;
-    padding-bottom: 4rem;
+    padding: 2.5rem 1rem;
 
     .title {
-      line-height: 20px;
-      background: @cleee;
-      text-indent: 10px;
-      padding: 6px;
+      padding: 0 1.8rem;
+      font-size: 1.3rem;
     }
 
     .content {
       background-color: @clfff;
-      padding-top: 20px;
+      padding-top: 1rem;
       overflow: hidden;
 
       .item {
-        width: 25%;
+        width: 33.3333%;
+        margin-bottom: 1.4rem;
         float: left;
       }
 
       .icon-img {
+        margin-bottom: 0.5rem;
         text-align: center;
 
         img {
@@ -78,9 +60,10 @@
       }
 
       .icon-desc {
+        margin-bottom: 0;
         text-align: center;
-        color: @cl333;
         font-size: 14px;
+        color: @cl333;
       }
     }
 
