@@ -1,5 +1,3 @@
-
-
 export default {
   mutationsEntityList (state, res) {
     state.stateEntityList = res.data;
@@ -16,6 +14,10 @@ export default {
   mutationsLayoutForm2(state){
     let json = require('@/pages/Home/api/apidata2.json');
     state.stateLayoutForm = json.data;
+  },
+  mutationsInfoList(state){
+    let json = require('@/pages/Home/api/apiinfo.json');
+    state.stateInfoList = json.data;
   },
   mutationsExamineList(state, res){
     state.stateExamineList = res;

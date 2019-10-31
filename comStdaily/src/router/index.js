@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/pages/Home/Home'
 import Info from '@/pages/Info/info'
+import InfoDetail from '@/pages/Info/detail'
 import Configs from '@/pages/configs/configs'
 import Examine from '@/pages/examine/examine'
 import ExamineDetail from '@/pages/examineDetail/detail'
@@ -26,6 +27,10 @@ export default new Router({
       path: '/info',
       name: 'info',
       component: Info
+    },{
+      path: '/info/detail/:id',
+      name: 'InfoDetail',
+      component: InfoDetail
     },{
       path: '/configs',
       name: 'configs',

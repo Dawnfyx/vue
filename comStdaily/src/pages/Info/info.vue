@@ -13,8 +13,9 @@
 
 <script>
 
+    import {mapState, mapMutations, mapActions} from "vuex";
     import headerTitle from "../../components/headerTitle";
-    import childTabs from "./components/tabs"
+    import childTabs from "./components/tabs";
 
     export default {
         name: "info",
@@ -27,9 +28,44 @@
                 }
             }
         },
+        computed: {
+            ...mapMutations([
+                'mutationsInfoList'
+            ]),
+            listData:{
+                get(){
+                    if(localStorage.vuex){
+                        let newListData =  [];
+                        JSON.parse(localStorage.vuex).stateInfoList.list.forEach((item, index)=>{
+                            item.readLabel = false;
+                            newListData.push(item);
+                        })
+                        return newListData;
+                    }
+                }
+            }
+        },
         components: {
             headerTitle: headerTitle,
             childTabs: childTabs
+        },
+        methods:{
+            addReadLabel(){
+                if(localStorage.vuex){
+                    let newListData =  [];
+                    JSON.parse(localStorage.vuex).stateInfoList.list.forEach((item, index)=>{
+                        item.readLabel = false;
+                        newListData.push(item);
+                    })
+                    this.$store.state.stateInfoList.list = newListData
+                }
+            }
+        },
+        beforeMount() {
+            this.mutationsInfoList;
+        },
+        mounted() {
+            this.addReadLabel();
         }
     }
 </script>

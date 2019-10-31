@@ -1,67 +1,25 @@
 <template>
   <b-tabs content-class="mt-3" class="info-tabs">
     <b-tab title="未读" active>
-      <b-list-group>
-        <b-list-group-item>
-          <div class="title">
-            客户分派通知
-          </div>
-          <div class="content">
-           有一个新通知
-          </div>
-        </b-list-group-item>
-        <b-list-group-item>
-          <div class="title">
-            客户分派通知
-          </div>
-          <div class="content">
-            有一个新通知
-          </div>
-        </b-list-group-item>
-        <b-list-group-item>
-          <div class="title">
-            客户分派通知
-          </div>
-          <div class="content">
-            有一个新通知
-          </div>
-        </b-list-group-item>
-        <b-list-group-item>
-          <div class="title">
-            客户分派通知
-          </div>
-          <div class="content">
-            有一个新通知
-          </div>
-        </b-list-group-item>
-        <b-list-group-item>
-          <div class="title">
-            客户分派通知
-          </div>
-          <div class="content">
-            有一个新通知
-          </div>
-        </b-list-group-item>
-        <b-list-group-item>
-          <div class="title">
-            客户分派通知
-          </div>
-          <div class="content">
-            有一个新通知
-          </div>
-        </b-list-group-item>
-      </b-list-group>
+      <list-unread></list-unread>
     </b-tab>
     <b-tab title="全部">
+      <list-all></list-all>
     </b-tab>
     <!--<b-tab title="代理"><p>I'm a disabled tab!</p></b-tab>-->
   </b-tabs>
 </template>
 
 <script>
-    export default {
-        name: "tabs"
-    }
+  import listUnread from "./listUnread";
+  import listAll from "./listAll";
+  export default {
+      name: "tabs",
+      components:{
+          listUnread: listUnread,
+          listAll: listAll
+      }
+  }
 </script>
 
 <style lang="less">
@@ -104,12 +62,20 @@
 
         .title {
           border-bottom: 1px solid @cleee;
-          padding-bottom: 0.8rem;
+          padding-bottom: 0.5rem;
           font-weight: 600;
+          font-size: 1rem;
+
+          .time{
+            font-size: 0.8rem;
+            float: right;
+            color: @cl666;
+          }
         }
 
         .content {
           padding-top: 0.6rem;
+          color: @cl666;
         }
       }
     }
