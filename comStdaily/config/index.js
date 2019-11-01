@@ -16,7 +16,7 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           "^/api": "",
-          "^/img": "/src/assets/img"
+          "^/localapi": "/static/mock"
         }
       }
     },
