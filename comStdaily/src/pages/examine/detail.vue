@@ -1,7 +1,10 @@
 <template>
   <div class="wrapper">
     <loading :loadingShow="loadingShow"></loading>
-    <header-title :title="title.title" :headerLeft="title.headerLeft"></header-title>
+    <header-title
+      :title="title.title"
+      :headerLeft="title.headerLeft"
+      :headerRight="title.headerRight"></header-title>
     <b-form @submit="onSubmit" @reset="onReset">
       <div v-for="(item, key) of formData">
         <detail-form-title :formData="formData[key]"></detail-form-title>
@@ -20,12 +23,13 @@
     import detailFormItem from './components/DetailFromItem'
 
     export default {
-        name: "TestForm",
+        name: "detail",
         data() {
             return {
                 title: {
                     title: "审批详情",
-                    headerLeft: true
+                    headerLeft: true,
+                    headerRight: true
                 },
                 loadingShow: true,
                 apiData: "new_salestest",
