@@ -6,7 +6,7 @@ import Info from '@/pages/Info/info'
 import InfoDetail from '@/pages/Info/detail'
 import Configs from '@/pages/configs/configs'
 import Examine from '@/pages/examine/examine'
-import ExamineDetail from '@/pages/examineDetail/detail'
+import ExamineDetail from '@/pages/examine/detail'
 import Contact from '@/pages/contact/contact'
 import Customer from '@/pages/customer/customer'
 import loading from '@/components/loading'
@@ -18,8 +18,7 @@ export default new Router({
     {
       path: '*',
       redirect: '/'
-    },
-    {
+    },{
       path: '/',
       name: 'home',
       component: Home
@@ -40,7 +39,7 @@ export default new Router({
       name: 'examine',
       component: Examine
     },{
-      path: '/examineDetail/:id',
+      path: '/examine/detail/:id',
       name: 'examineDetail',
       component: ExamineDetail
     },{

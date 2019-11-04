@@ -1,15 +1,14 @@
 <template>
-  <div>
-    <input-search @searchValue="handleSearchChange"></input-search>
-<!--    <p>ssss</p>-->
+  <div class="list-box">
     <b-list-group class="list">
-<!--      :href="'./#/ExamineDetail/'+item.id"-->
+      <!--:href="'./#/ExamineDetail/'+item.id"-->
       <b-list-group-item
         class="flex-column align-items-start"
-        :href="'./#/ExamineDetail/'+item.id"
+        :href="'./#/examine/detail/'+item.id"
         v-for="(item, key) of viewListData" :key="key"
         @click="handleLabelHaveReadData(item, key)"
       >
+        <span class="dot"> </span>
         <h5 class="mb-1">姓名：{{viewValue('new_name', item.attributes)}}</h5>
         <small>时间：{{viewValue('new_testtime', item.attributes)}}</small>
         <small>Id: <span ref="itemId">{{item.id}}</span></small>
@@ -19,26 +18,22 @@
 </template>
 
 <script>
-
-    import inputSearch from "@/components/inputSearch";
     export default {
         name: "list",
         data(){
             return{
-                searchValue: "",
                 labelHaveReadObj: {},
                 labelHaveReadData: []
             }
         },
         props:{
+            searchValue: "",
             listData: Array
-        },
-        components:{
-            inputSearch: inputSearch
         },
         computed:{
             parentsearchValue: {
                 get(){
+                    console.log(this.searchValue)
                     return this.searchValue;
                 }
             },
@@ -88,9 +83,6 @@
                 console.log("aftre", this.viewListData)
                 localStorage.ExamineListHaveRead = JSON.stringify(this.viewListData);
                 this.$store.commit("mutationsExamineList", this.viewListData);
-            },
-            handleSearchChange(value){
-                this.searchValue = value;
             },
             initUrlDetail(idStr){//截取8位字段
                 return idStr.substring(0, 8);

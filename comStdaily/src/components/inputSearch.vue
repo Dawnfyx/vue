@@ -34,10 +34,4 @@
 
 <style scoped lang="less">
 
-  @import '~style/mainColor';
-
-  .search{
-    background-color: @mColorL;
-    padding: 10px;
-  }
 </style>

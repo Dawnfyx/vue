@@ -1,14 +1,12 @@
 <template>
-  <div>
-
-    <input-search @searchValue="handleSearchChangeHaveRead"></input-search>
-<!--    {{viewListData}}-->
+  <div class="list-box">
     <b-list-group class="list">
       <b-list-group-item
         class="flex-column align-items-start"
-        :href="'./#/ExamineDetail/'+item.id"
+        :href="'./#/examine/detail/'+item.id"
         v-for="(item, key) of viewListData" :key="key"
       >
+        <span class="dot"> </span>
         <h5 class="mb-1">姓名：{{viewDataValue('new_name', item.attributes)}}</h5>
         <small>时间：{{viewDataValue('new_testtime', item.attributes)}}</small>
         <small>Id: <span ref="itemId">{{item.id}}</span></small>

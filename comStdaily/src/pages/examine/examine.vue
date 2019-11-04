@@ -5,13 +5,14 @@
       :title="title.title"
       :headerLeft="title.headerLeft"
       :headerRight="title.headerRight"></header-title>
+    <div class="decorateBg">
+    </div>
     <child-tabs :listData="listData"></child-tabs>
   </div>
 </template>
 
 <script>
 
-    import axios from "axios";
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
     import childTabs from './components/tabs';
@@ -35,7 +36,7 @@
         },
         computed:{
             listData(){
-                if(localStorage.vuex){
+                if(!!localStorage.vuex){
                     localStorage.EntityList = JSON.stringify(JSON.parse(localStorage.vuex).stateEntityList.data);
                     return JSON.parse(localStorage.vuex).stateEntityList.data;
                 }
@@ -55,4 +56,12 @@
     color: @clfff;
     text-align: center;
   }
+
+  .decorateBg {
+    width: 100%;
+    height: 8rem;
+    background-color: @mColor;
+    overflow: hidden;
+  }
+
 </style>

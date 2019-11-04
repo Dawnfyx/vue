@@ -157,12 +157,12 @@
             }
         },
         beforeMount() {
-        },
-        mounted() {
             // this.actionsEntityList;
             // this.actionsLayoutForm;
             this.mutationsEntityList2;
             this.mutationsLayoutForm2;
+        },
+        mounted() {
             this.loadingShow = false;
         }
     }

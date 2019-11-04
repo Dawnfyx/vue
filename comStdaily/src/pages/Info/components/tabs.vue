@@ -1,5 +1,5 @@
 <template>
-  <b-tabs content-class="mt-3" class="info-tabs">
+  <b-tabs content-class="mt-3" id="infoTabs">
     <b-tab title="未读" active>
       <list-unread></list-unread>
     </b-tab>
@@ -26,7 +26,7 @@
 
   @import '~style/mainColor';
 
-  .info-tabs {
+  #infoTabs {
     margin-top: -7rem;
     margin-left: 1.2rem;
     margin-right: 1.2rem;
