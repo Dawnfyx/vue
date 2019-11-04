@@ -1,15 +1,10 @@
 <template>
-  <div @click="handleSidebar"> <i class="fa fa-ellipsis-h"></i></div>
+  <div> <i class="fa fa-ellipsis-h"></i></div>
 </template>
 
 <script>
     export default {
-        name: "operationButton",
-        methods:{
-            handleSidebar(){
-                this.$emit("toggle")
-            }
-        }
+        name: "operationButton"
     }
 </script>
 

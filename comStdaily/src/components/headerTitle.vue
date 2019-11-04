@@ -7,23 +7,27 @@
           {{title}}
       </div>
       <div class="right">
-        <header-right @toggle="handleSidebar" v-if="headerRight"></header-right>
+        <header-right v-b-modal="'tooltipBox'" v-if="headerRight"></header-right>
       </div>
-      <!--抽屉-->
-      <operation-sidebar :sidebarShow="sidebarShow" @toggle="handleSidebar"></operation-sidebar>
+      <!--提示框-->
+      <tooltip-box :tooltipData="tooltipData"></tooltip-box>
     </div>
 </template>
 
 <script>
+
   import headerLeft from "./headerLeft";
   import headerRight from "./headerRight";
-  import operationSidebar from "@/components/operationSidebar";
+  import tooltipBox from "./tooltipBox";
 
     export default {
         name: "headerTitle",
         data(){
             return{
-                sidebarShow: false
+                tooltipData:{
+                    title: "提示",
+                    content: "请填写审批意见"
+                }
             }
         },
         props:{
@@ -43,12 +47,9 @@
         components:{
             headerLeft: headerLeft,
             headerRight: headerRight,
-            operationSidebar: operationSidebar
+            tooltipBox: tooltipBox,
         },
         methods:{
-            handleSidebar(){
-                this.sidebarShow = !this.sidebarShow
-            }
         }
     }
 </script>

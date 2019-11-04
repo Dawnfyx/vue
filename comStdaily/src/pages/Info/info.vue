@@ -23,8 +23,7 @@
             return {
                 title: {
                     title: "消息",
-                    headerLeft: true,
-                    headerRight: true
+                    headerLeft: true
                 }
             }
         },

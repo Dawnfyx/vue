@@ -23,8 +23,7 @@
             return {
                 title: {
                     title: "审批",
-                    headerLeft: true,
-                    headerRight: true
+                    headerLeft: true
                 },
                 loadingShow: true
             }
