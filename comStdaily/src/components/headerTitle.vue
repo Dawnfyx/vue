@@ -7,7 +7,7 @@
           {{title}}
       </div>
       <div class="right">
-        <header-right v-b-modal="'tooltipBox'" v-if="headerRight"></header-right>
+        <header-right @toggle="taggolModal" v-if="headerRight"></header-right>
       </div>
       <!--提示框-->
       <tooltip-box :tooltipData="tooltipData"></tooltip-box>
@@ -50,6 +50,11 @@
             tooltipBox: tooltipBox,
         },
         methods:{
+          taggolModal(){
+              this.$bvModal.show("tooltipBox")
+          }
+        },
+        mounted() {
         }
     }
 </script>

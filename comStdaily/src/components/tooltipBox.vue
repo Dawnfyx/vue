@@ -1,6 +1,11 @@
 <template>
-  <b-modal id="tooltipBox" :title="tooltipData.title">
+  <b-modal
+    id="tooltipBox"
+    hide-footer
+    :title="tooltipData.title">
     <p class="my-4">{{tooltipData.content}}</p>
+    <b-button class="mt-3" variant="outline-danger" block>Close</b-button>
+    <b-button class="mt-2" variant="outline-warning" block>Toggle</b-button>
   </b-modal>
 </template>
 
@@ -9,6 +14,13 @@
         name: "tooltip",
         props:{
             tooltipData: Object
+        },
+        components:{
+        },
+        methods:{
+            toggleSidebar(){
+                this.$emit("toggle")
+            }
         }
     }
 </script>
