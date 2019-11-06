@@ -42,7 +42,7 @@
         },
         methods: {
             getDetailData() {
-                this.formData = this.$store.state.stateExamineDetail;
+                this.formData = this.$store.state.stateExamineDetail.data;
             },
             onSubmit(evt) {
                 evt.preventDefault()

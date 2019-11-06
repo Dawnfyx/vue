@@ -1,26 +1,25 @@
 <template>
   <div id="detailContent">
-<!--    <p>{{formData}}</p>-->
     <b-form @submit="onSubmit" @reset="onReset">
       <b-form-group
       label="提交人"
       label-for="examineFrom">
-        <span id="examineFrom">sss</span>
+        <span id="examineFrom">{{formData.form[0].from}}</span>
       </b-form-group>
       <b-form-group
         label="审批流程"
         label-for="examineFlow">
-        <span id="examineFlow">sss</span>
+        <span id="examineFlow">{{formData.form[0].node}}</span>
       </b-form-group>
       <b-form-group
         label="节点名称"
         label-for="examineFlowName">
-        <span id="examineFlowName">sss</span>
+        <span id="examineFlowName">{{formData.form[0].nodename}}</span>
       </b-form-group>
       <b-form-group
       label="审批时间"
       label-for="examineTime">
-        <span id="examineTime">ssss</span>
+        <span id="examineTime">{{formData.form[0].time}}</span>
       </b-form-group>
       <b-form-textarea
         id="textarea"
