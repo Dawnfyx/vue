@@ -1,6 +1,8 @@
 let stateEntityList = {};
 let stateExamineList = [];
 let stateExamineListHaveRead = [];
+let stateExamineDetail = {};
+
 let stateLayoutForm = {};
 let stateInfoList = {};
 
@@ -8,7 +10,7 @@ try {
   if(localStorage.vuex){
     stateEntityList = JSON.parse(localStorage.vuex).stateEntityList;
     stateExamineList = JSON.parse(localStorage.vuex).stateExamineList;
-    stateExamineListHaveRead = JSON.parse(localStorage.vuex).stateExamineListHaveRead
+    stateExamineListHaveRead = JSON.parse(localStorage.vuex).stateExamineListHaveRead;
     stateLayoutForm = JSON.parse(localStorage.vuex).stateLayoutForm;
     stateInfoList = JSON.parse(localStorage.vuex).stateInfoList;
   }
@@ -24,5 +26,6 @@ export default {
   stateLayoutForm: stateLayoutForm,
   stateExamineListHaveRead: stateExamineListHaveRead,
   stateExamineList: stateExamineList,
+  stateExamineDetail: stateExamineDetail,
   stateInfoList: stateInfoList
 }

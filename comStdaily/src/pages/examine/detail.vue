@@ -5,22 +5,19 @@
       :title="title.title"
       :headerLeft="title.headerLeft"
       :headerRight="title.headerRight"></header-title>
+    <div class="decorateBg">
+    </div>
     <b-form @submit="onSubmit" @reset="onReset">
-      <div v-for="(item, key) of formData">
-        <detail-form-title :formData="formData[key]"></detail-form-title>
-        <detail-form-item :formData="formData[key]"></detail-form-item>
-      </div>
-      <b-button type="submit" variant="primary">审批</b-button>
-      <b-button type="reset" variant="danger">重置</b-button>
+      <detail-content :formData="formData"></detail-content>
     </b-form>
   </div>
 </template>
 
 <script>
+
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
-    import detailFormTitle from './components/DetailFormTitle'
-    import detailFormItem from './components/DetailFromItem'
+    import detailContent from "./components/detailContent";
 
     export default {
         name: "detail",
@@ -36,38 +33,47 @@
                 formData: {}
             }
         },
+        computed:{
+        },
         components: {
             loading: loading,
             headerTitle: headerTitle,
-            detailFormTitle: detailFormTitle,
-            detailFormItem: detailFormItem
+            detailContent: detailContent
         },
         methods: {
-            getFormlocalStorageData() {
-                this.formData = JSON.parse(localStorage.vuex).stateLayoutForm.tabs;
+            getDetailData() {
+                this.formData = this.$store.state.stateExamineDetail;
             },
             onSubmit(evt) {
                 evt.preventDefault()
                 alert("提交数据")
                 this.$router.back(-1)
-
             },
             onReset(evt) {
                 evt.preventDefault()
             }
         },
+        beforeMount(){
+            this.$store.dispatch('actionsExamineDetail', "111")
+        },
         mounted() {
+            this.getDetailData();
             this.loadingShow = false;
-            this.getFormlocalStorageData();
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+
+  @import '~style/mainColor';
+
   .wrapper {
-    /*border: 1px solid red;*/
+    .decorateBg {
+      width: 100%;
+      height: 8rem;
+      background-color: @mColor;
+      overflow: hidden;
+    }
   }
-
-
 
 </style>

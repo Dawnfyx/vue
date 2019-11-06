@@ -12,11 +12,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       "/api": {
-        target: "http://10.20.100.158",
-        changeOrigin: true,
+        target: "https://www.fastmock.site/mock/394a8e36c8d6220da8a4de7376665c7a",
+        changeOrigin: true, //是否跨域
         pathRewrite: {
-          "^/api": "",
-          "^/localapi": "/static/mock"
+          "^/api": ""
         }
       }
     },

@@ -32,5 +32,8 @@ export default {
       }
     }
     state.stateExamineListHaveRead.push(res)
+  },
+  mutationsExamineDetail(state, res) {
+     state.stateExamineDetail = res.data;
   }
 }
