@@ -35,5 +35,8 @@ export default {
   },
   mutationsExamineDetail(state, res) {
      state.stateExamineDetail = res.data;
+  },
+  mutationsContactList(state, res){
+     state.stateContactList = res.data;
   }
 }

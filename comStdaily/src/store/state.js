@@ -4,7 +4,9 @@ let stateExamineListHaveRead = [];
 let stateExamineDetail = {};
 
 let stateLayoutForm = {};
+
 let stateInfoList = {};
+let stateContactList = {};
 
 try {
   if(localStorage.vuex){
@@ -27,5 +29,6 @@ export default {
   stateExamineListHaveRead: stateExamineListHaveRead,
   stateExamineList: stateExamineList,
   stateExamineDetail: stateExamineDetail,
-  stateInfoList: stateInfoList
+  stateInfoList: stateInfoList,
+  stateContactList: stateContactList
 }

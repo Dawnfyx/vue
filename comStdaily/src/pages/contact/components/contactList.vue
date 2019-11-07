@@ -1,11 +1,15 @@
 <template>
   <div class="contacts" ref="wrapper">
-      <div>
-          <div class="item" v-for="(item, key) in contacts" :key="key" :ref="key">
-            <h3>联系人姓名：{{key}}</h3>
-            <p>sss</p>
-          </div>
-      </div>
+    <!--Bscroll插件结构目录必须包一个DIV-->
+     <div>
+       <div v-for="(item, key) in contactList" :key="key">
+          <div class="area">{{item}}</div>
+         <!--          <div class="item" v-for="(item, key) in contactList" :key="key" :ref="key">-->
+         <!--            <h3>联系人姓名：{{item}}</h3>-->
+         <!--            <p v-show="false">{{item.spell}}</p>-->
+         <!--          </div>-->
+       </div>
+     </div>
   </div>
 </template>
 
@@ -14,12 +18,22 @@
 
     export default {
         name: "contactList",
+        data(){
+            return{
+                contactList: {}
+            }
+        },
         props: {
             contacts: Object,
             letter: String
         },
-        mounted: function () {
-            this.scroll = new Bscroll(this.$refs.wrapper)
+        computed:{
+
+        },
+        methods:{
+            getContactListData(){
+                this.contactList = this.$store.state.stateContactList.data;
+            }
         },
         watch: {
           letter(){
@@ -29,6 +43,13 @@
               this.scroll.scrollToElement(element);
             }
           }
+        },
+        beforeMount(){
+            this.$store.dispatch('actionsContact')
+        },
+        mounted() {
+            this.scroll = new Bscroll(this.$refs.wrapper)
+            this.getContactListData();
         }
     }
 </script>
