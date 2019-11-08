@@ -26,7 +26,6 @@ npm run build --report
     
     ├── build                                           // webpack 配置文件
     ├── config                                          // vue-cli 配置文件
-    ├── screenshots                                     // 项目截图
     ├── dist                                            // 项目打包版本，可直接使用
     ├── src                                             // 项目源码目录
     │   ├── assets                                      // 资源目录
@@ -59,7 +58,7 @@ npm run build --report
     │   │   └── state.js                                // 配置 state小、字体颜色、背景颜色）
     │   ├── App.vue                                     // 根组件
     │   └── main.js                                     // 入口主文件
-    └── vue.config.js                                   // vue-cli 配置文件
+    └── index.html                                      // 入口 html 文件
 
     </code>
 </pre>
