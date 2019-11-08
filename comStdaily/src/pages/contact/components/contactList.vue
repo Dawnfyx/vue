@@ -2,12 +2,16 @@
   <div class="contacts" ref="wrapper">
     <!--Bscroll插件结构目录必须包一个DIV-->
      <div>
-       <div v-for="(item, key) in contactList" :key="key">
-          <div class="area">{{item}}</div>
-         <!--          <div class="item" v-for="(item, key) in contactList" :key="key" :ref="key">-->
-         <!--            <h3>联系人姓名：{{item}}</h3>-->
-         <!--            <p v-show="false">{{item.spell}}</p>-->
-         <!--          </div>-->
+       <div class="contact-list">
+         <div v-for="(items, key) in contactList.contact" :key="key">
+           <div class="area">{{key}}</div>
+           <div class="item-list">
+             <div class="item" v-for="(item, key) in items">
+               <h3>{{item.name}}</h3>
+               <p v-show="false">{{item.spell}}</p>
+             </div>
+           </div>
+         </div>
        </div>
      </div>
   </div>
@@ -59,28 +63,39 @@
   @import '~style/mainColor';
 
   .contacts{
-    padding: 0px 10px;
+    background-color: @cleee;
+    padding: 0 1.2rem;
     overflow: hidden;
-    position: absolute;
-    top: 2.7rem;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    /*position: relative;*/
+    /*top: 2.7rem;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
 
-    .item{
-      color: @cl333;
 
-      h3{
-        font-size: 16px;
-        margin-top: 10px;
-        margin-bottom: 0px;
-      }
-      p{
-        margin-bottom: 0px;
-      }
+    .area{
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
 
-      &.item{
-        border-top: 1px solid @cleee;
+    .item-list{
+      background-color: @clfff;
+
+      .item{
+        color: @cl333;
+        padding: 0.8rem;
+
+        h3{
+          font-size: 16px;
+          margin-bottom: 0px;
+        }
+        p{
+          margin-bottom: 0px;
+        }
+
+        &.item{
+          border-top: 1px solid @cleee;
+        }
       }
     }
   }

@@ -75,16 +75,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     top: 2.7rem;
-    right: 0;
+    right: 1rem;
     bottom: 0;
     padding-left: 0px;
   }
   .item{
     list-style-type: none;
     text-align: center;
-    font-size: 12px;
+    font-size: 0.8rem;
     width: 20px;
     color: @cl333;
   }
