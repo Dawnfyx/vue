@@ -4,7 +4,6 @@
       :title="title.title"
       :headerLeft="title.headerLeft"
       :headerRight="title.headerRight"></header-title>
-<!--    <child-search></child-search>-->
     <child-contact-list :contacts="contacts" :letter="letter"></child-contact-list>
     <child-alphabet :contacts="contacts" @change="handleLetterChange"></child-alphabet>
   </div>
@@ -12,10 +11,11 @@
 
 <script>
     import axios from 'axios'
-    import headerTitle from "../../components/headerTitle";
+    import headerTitle from "@/components/headerTitle";
     import childSearch from './components/search'
     import childAlphabet from './components/alphabet'
     import childContactList from './components/contactList'
+
     export default {
         name: "contact",
         data(){

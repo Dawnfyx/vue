@@ -8,7 +8,7 @@
    <div class="decorateBg">
    </div>
    <b-form @submit="onSubmit" @reset="onReset">
-     <detail-content :formData="formData"></detail-content>
+     <detail-content></detail-content>
    </b-form>
  </div>
 </template>
@@ -17,7 +17,7 @@
 
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
-    // import
+    import detailContent from "./components/detailContent";
 
     export default {
         name: "detail",
@@ -33,7 +33,16 @@
         },
         components:{
             loading: loading,
-            headerTitle: headerTitle
+            headerTitle: headerTitle,
+            detailContent: detailContent
+        },
+        methods:{
+            onSubmit(){
+                console.log("onSubmit")
+            },
+            onReset(){
+                console.log("onReset")
+            }
         },
         mounted() {
             this.loadingShow = false;

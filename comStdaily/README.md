@@ -55,7 +55,7 @@ npm run build --report
     │   │   ├── getters.js                              // 配置 getters
     │   │   ├── index.js                                // 引用 vuex，创建 store
     │   │   ├── mutations.js                            // 配置 mutations
-    │   │   └── state.js                                // 配置 state小、字体颜色、背景颜色）
+    │   │   └── state.js                                // 配置 state
     │   ├── App.vue                                     // 根组件
     │   └── main.js                                     // 入口主文件
     └── index.html                                      // 入口 html 文件
