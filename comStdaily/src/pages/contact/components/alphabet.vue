@@ -56,8 +56,8 @@
                 }
             },
             handleLetterClick(e){
-                console.log("alp", e);
-              this.$emit("change", e.target.innerText);
+                // console.log("alphabet Page Click", e);
+                this.$emit("change", e.target.innerText);
             }
         },
         updated: function () {
@@ -75,8 +75,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     position: fixed;
-    top: 2.7rem;
+    top: 3rem;
     right: 1rem;
     bottom: 0;
     padding-left: 0px;

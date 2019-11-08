@@ -8,6 +8,7 @@ import Configs from '@/pages/configs/configs'
 import Examine from '@/pages/examine/examine'
 import ExamineDetail from '@/pages/examine/detail'
 import Contact from '@/pages/contact/contact'
+import ContactDetail from '@/pages/contact/detail'
 import Customer from '@/pages/customer/customer'
 import loading from '@/components/loading'
 
@@ -46,6 +47,10 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: Contact
+    },{
+      path: '/contact/detail/:id',
+      name: 'ContactDetail',
+      component: ContactDetail
     },{
       path: '/customer',
       name:'customer',
