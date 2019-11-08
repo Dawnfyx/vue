@@ -7,7 +7,9 @@
      :headerRight="title.headerRight"></header-title>
    <div class="decorateBg">
    </div>
-   <p>联系人</p>
+   <b-form @submit="onSubmit" @reset="onReset">
+     <detail-content :formData="formData"></detail-content>
+   </b-form>
  </div>
 </template>
 
@@ -15,6 +17,7 @@
 
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
+    // import
 
     export default {
         name: "detail",
