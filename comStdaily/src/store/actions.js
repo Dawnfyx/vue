@@ -37,7 +37,7 @@ export default {
       }
     },
     actionsExamineDetail(state, id){
-      const api = "/394a8e36c8d6220da8a4de7376665c7a/detailex/detail/" + id
+      const api = "/examine/detail/" + id
       axios({
         method: "get",
         baseURL:"/api",
@@ -50,7 +50,7 @@ export default {
         })
     },
     actionsContact(state){
-        const api = "/50b56d85248cf31a728deff1390e8d06/contact/contact"
+        const api = "/contact"
         axios({
           method: "get",
           baseURL: "/api",

@@ -24,7 +24,7 @@ module.exports = {
 
     proxyTable: {
       "/api": {
-        target: "https://www.fastmock.site/mock",
+        target: "https://www.fastmock.site/mock/23e384508b895af9ae8d1cc7333f5d8c/stdaily",
         changeOrigin: true, //是否跨域
         pathRewrite: {
           "^/api": ""
