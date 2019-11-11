@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    import axios from "axios"
+
     import headerTitle from "../../components/headerTitle";
     import childSearch from './components/search';
     import childList from './components/list'
@@ -24,7 +24,7 @@
                     headerLeft: true,
                     headerRight: true
                 },
-                listData: {}
+                listData: []
             }
         },
         components:{
@@ -33,27 +33,13 @@
             childList: childList
         },
         methods: {
-            getListData() {
-                // axios.get('/api/auditData.json').then(this.getAuditDataInfoSucc)
-                const api = 'Crmapp/EntityList?ent=new_salestest'
-                axios({
-                    method: "get",
-                    baseURL:"/api",
-                    url: api
-                }).then(this.getListDataSucc)
-                    .catch(error=>{
-                        console.log("Error", error.message);
-                    })
-            },
-            getListDataSucc(res) {
-                const data = res.data;
-                if (data.data) {
-                    this.listData = data.data;
-                }
-            },
+
+        },
+        beforeMount(){
+            this.$store.dispatch('actionsCustomer');
         },
         mounted() {
-            this.getListData();
+            this.listData = this.$store.state.stateCustomerList.customer;
         }
     }
 </script>

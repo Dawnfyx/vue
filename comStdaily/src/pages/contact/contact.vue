@@ -41,7 +41,7 @@
             }
         },
         beforeMount(){
-            this.$store.dispatch('actionsContact')
+            this.$store.dispatch('actionsContact');
         },
         mounted() {
             this.contacts = this.$store.state.stateContactList.data.contact;

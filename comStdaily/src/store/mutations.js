@@ -38,5 +38,8 @@ export default {
   },
   mutationsContactList(state, res){
      state.stateContactList = res.data;
+  },
+  mutationscustomerList(state, res){
+     state.stateCustomerList = res.data.data;
   }
 }

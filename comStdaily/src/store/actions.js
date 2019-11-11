@@ -61,5 +61,18 @@ export default {
           .catch( error=>{
             console.log("Error", error.messages);
           })
+    },
+    actionsCustomer(state){
+      const api = "/customer"
+      axios({
+        method: "get",
+        baseURL: "/api",
+        url: api
+      }).then((res) => {
+        state.commit('mutationscustomerList', res);
+      })
+        .catch( error=>{
+          console.log("Error", error.messages);
+        })
     }
 }

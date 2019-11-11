@@ -7,14 +7,17 @@
      :headerRight="title.headerRight"></header-title>
    <div class="decorateBg">
    </div>
-   <b-form @submit="onSubmit" @reset="onReset">
-     <detail-content></detail-content>
-   </b-form>
+   <div id="detailContent" class="detailContent">
+     <b-form @submit="onSubmit" @reset="onReset">
+        <detail-content :contact="contact"></detail-content>
+     </b-form>
+   </div>
  </div>
 </template>
 
 <script>
 
+    import axios from "axios";
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
     import detailContent from "./components/detailContent";
@@ -28,6 +31,7 @@
                     headerLeft: true,
                     headerRight: true
                 },
+                contact: {},
                 loadingShow: true,
             }
         },
@@ -37,6 +41,20 @@
             detailContent: detailContent
         },
         methods:{
+            getDetailInfo(){
+                const id = this.$route.params.id;
+                const  api = "contact/detail/" + id;
+                axios({
+                    method: "get",
+                    baseURL: "/api",
+                    url: api
+                }).then((res)=>{
+                    this.contact = res.data.data.contact[0];
+                    // console.log(res.data.data.contact[0])
+                }).catch((error)=>{
+                    console.log("Error", error.messages);
+                })
+            },
             onSubmit(){
                 console.log("onSubmit")
             },
@@ -44,12 +62,27 @@
                 console.log("onReset")
             }
         },
+        beforeMount(){
+            this.getDetailInfo();
+        },
         mounted() {
             this.loadingShow = false;
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 
+  @import '~style/mainColor';
+
+  .detailContent{
+    background-color: @cleee;
+    padding: 1.2rem;
+
+    form {
+      border: @borderVal;
+      border-radius: 0.5rem;
+      background-color: @clfff;
+    }
+  }
 </style>

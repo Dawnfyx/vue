@@ -7,6 +7,7 @@ let stateLayoutForm = {};
 
 let stateInfoList = {};
 let stateContactList = {};
+let stateCustomerList = {};
 
 try {
   if(localStorage.vuex){
@@ -30,5 +31,6 @@ export default {
   stateExamineList: stateExamineList,
   stateExamineDetail: stateExamineDetail,
   stateInfoList: stateInfoList,
-  stateContactList: stateContactList
+  stateContactList: stateContactList,
+  stateCustomerList: stateCustomerList
 }
