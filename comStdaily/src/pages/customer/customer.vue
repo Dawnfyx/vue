@@ -4,16 +4,16 @@
       :title="title.title"
       :headerLeft="title.headerLeft"
       :headerRight="title.headerRight"></header-title>
-    <child-search></child-search>
+    <child-search @searchValue="handleSearchValue"></child-search>
     <child-list :listData="listData"></child-list>
   </div>
 </template>
 
 <script>
 
-    import headerTitle from "../../components/headerTitle";
-    import childSearch from './components/search';
-    import childList from './components/list'
+    import headerTitle from "@/components/headerTitle";
+    import childSearch from '@/components/inputSearch';
+    import childList from './components/list';
 
     export default {
         name: "customer",
@@ -24,7 +24,8 @@
                     headerLeft: true,
                     headerRight: true
                 },
-                listData: []
+                listData: [],
+                searchValue: ""
             }
         },
         components:{
@@ -33,7 +34,9 @@
             childList: childList
         },
         methods: {
-
+            handleSearchValue(searchValue){
+              this.searchValue = searchValue;
+            }
         },
         beforeMount(){
             this.$store.dispatch('actionsCustomer');
@@ -44,6 +47,13 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+
+  @import '~style/mainColor';
+
+  .search{
+    background-color: @mColorL;
+    padding: 10px;
+  }
 
 </style>

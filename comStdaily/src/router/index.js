@@ -10,6 +10,7 @@ import ExamineDetail from '@/pages/examine/detail'
 import Contact from '@/pages/contact/contact'
 import ContactDetail from '@/pages/contact/detail'
 import Customer from '@/pages/customer/customer'
+import CustomerDetail from '@/pages/customer/detail'
 import loading from '@/components/loading'
 
 Vue.use(Router)
@@ -56,9 +57,14 @@ export default new Router({
       name:'customer',
       component: Customer
     },{
+      path: '/customer/detail/:id',
+      name:'CustomerDetail',
+      component: CustomerDetail
+    },{
       path: '/loading',
       name: 'loading',
       component: loading
     }
   ]
 })
+
