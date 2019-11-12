@@ -8,7 +8,6 @@
       <div v-for="(item, key) of customer.tabs" :key="key">
         <form-title :customer="item.name"></form-title>
         <form-item :customer="item.fields"></form-item>
-        <!--{{item.fields}}-->
       </div>
     </div>
 </template>
