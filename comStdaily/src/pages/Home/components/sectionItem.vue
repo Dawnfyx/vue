@@ -1,16 +1,18 @@
 <template>
-  <div class="sectionitem">
-    <div class="title">
-      {{IconListData.title}}
-    </div>
-    <div class="content">
-      <div class="item" v-for="(item, key) of IconListData.content" :key="key">
-        <router-link :to="item.url">
-          <div class="icon-img">
-            <img :src="item.imgUrl" alt="" width="45%" height="auto">
-          </div>
-          <p class="icon-desc">{{item.name}}</p>
-        </router-link>
+  <div>
+    <div class="sectionitem" v-for="(items, key) of HomeDataList" :key="key">
+      <div class="title">
+        {{items.name}}
+      </div>
+      <div class="content">
+      <div class="item" v-for="(item, key) of items.items" :key="key">
+      <router-link :to="linkto[key]">
+      <div class="icon-img">
+      <img :src="item.icon" alt="" width="45%" height="auto">
+      </div>
+      <p class="icon-desc">{{item.name}}</p>
+      </router-link>
+      </div>
       </div>
     </div>
   </div>
@@ -19,9 +21,26 @@
 <script>
     export default {
         name: "sectionItem",
-        props: {
-            IconListData: Object
+        data(){
+            return{
+              linkto: ["/examine", "/contact", "/customer"],
+              linkto2: {
+                "1": "/examine",
+                "2": "/customer",
+                "3": "/contact"
+              }
+            }
         },
+        props: {
+          HomeData: Array
+        },
+        computed:{
+          HomeDataList: {
+            get(){
+              return this.HomeData;
+            }
+          }
+        }
     }
 </script>
 
@@ -32,7 +51,7 @@
     width: 100%;
     box-sizing: border-box;
     background-color: @clfff;
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 1rem 0rem 1rem;
 
     .title {
       padding: 0 1.8rem;

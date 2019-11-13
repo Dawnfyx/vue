@@ -2,7 +2,7 @@
   <div class="wrapper" id="wrapper">
     <loading :loadingShow="loadingShow"></loading>
     <header-title :title="title" @toggle="handleSidebar"></header-title>
-    <section-item :IconListData="IconListData"></section-item>
+    <section-item :HomeData="HomeData"></section-item>
     <footer-link :IconListData="IconListData"></footer-link>
   </div>
 </template>
@@ -79,7 +79,8 @@
                 'stateEntityList',
                 'stateLayoutForm',
                 'stateExamineList',
-                'stateExamineListHaveRead'
+                'stateExamineListHaveRead',
+                'stateHomePageData'
             ]),
             // 映射 this.setInfo 为 this.$store.commit('setInfo')
             ...mapMutations([
@@ -94,7 +95,8 @@
             ...mapActions([
                 'actionsEntityList',
                 'actionsLayoutForm',
-                'actionsClearState'
+                'actionsClearState',
+                'actionsHomePageData'
             ]),
             EntityListData: {
                 get(){
@@ -108,6 +110,11 @@
                     if(localStorage.vuex){
                         return JSON.parse(localStorage.vuex).stateLayoutForm.data;
                     }
+                }
+            },
+            HomeData:{
+                get(){
+                    return JSON.parse(this.stateHomePageData)
                 }
             }
         },
@@ -140,7 +147,7 @@
                 this.sidebarShow = !this.sidebarShow;
             },
             getHomeData(){
-              this.$store.dispatch("actionsHomePageData");
+                this.actionsHomePageData;
             }
         },
         watch: {
@@ -165,8 +172,8 @@
         beforeMount() {
             // this.actionsEntityList;
             // this.actionsLayoutForm;
-            this.mutationsEntityList2;
-            this.mutationsLayoutForm2;
+            // this.mutationsEntityList2;
+            // this.mutationsLayoutForm2;
         },
         mounted() {
             this.loadingShow = false;

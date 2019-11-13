@@ -28,19 +28,19 @@ export function axiosget(url) {
 }
 
 export function axiosconfig(config) {
-    return axios({
-      method: config.method,
-      baseUrl: "/api",
-      url: config.url
-    }).then((res)=>{
-      debugger
-      const {errno, data} = res.data
-      if (errno === ERR_OK) {
-        debugger
-        return data
-      }
-    }).catch((err)=>{
-      console.error("Axios Config Error", err.messages);
-    })
+    return function (config) {
+      return axios({
+        method: config.method,
+        baseUrl: baseUrl,
+        url: config.url
+      }).then((res)=>{
+        const {errno, data} = res.data
+        if (errno === ERR_OK) {
+          return data
+        }
+      }).catch((err)=>{
+        console.error("Axios Config Error", err.messages);
+      })
+    }
 }
 

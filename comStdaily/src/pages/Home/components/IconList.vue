@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <div class="item" v-for="(item, key) of IconListData.content" :key="key">
+        <div class="item" v-for="(item, key) of HemoData" :key="key">
           <router-link :to="item.url">
             <div class="icon-img">
               <img :src="item.imgUrl" alt="" width="50%" height="auto">
@@ -15,7 +15,7 @@
     export default {
         name: "IconList",
         props: {
-            IconListData: Object
+          HemoData: Object
         },
         methods: {
 

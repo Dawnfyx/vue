@@ -78,24 +78,17 @@ export default {
         })
     },
     actionsHomePageData(state){
-        // getHome({
-        //   id: 0
-        // }).then((res) => {
-        //   state.commit('mutationsHomePageData', res);
-        // })
-      // debugger
-      ConfigHome;
 
-      // const api = "/menu"
-      // axios({
-      //   method: "get",
-      //   baseURL: "/api",
-      //   url: api
-      // }).then((res) => {
-      //   debugger
-      // })
-      //   .catch( error=>{
-      //     console.log("Error", error.messages);
-      //   })
+      const api = "/menu"
+      axios({
+        method: "get",
+        baseURL: "/api",
+        url: api
+      }).then((res) => {
+        console.log(res);
+        state.commit('mutationsHomePageData', res);
+      }).catch((err)=>{
+        console.log("axios catch Error", err.messages);
+      })
     }
 }
