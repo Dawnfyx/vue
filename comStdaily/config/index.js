@@ -24,7 +24,7 @@ module.exports = {
 
     proxyTable: {
       "/api": {
-        target: "https://www.fastmock.site/mock/23e384508b895af9ae8d1cc7333f5d8c/stdaily",
+        target: "http://10.20.100.165:9000/crmapp",
         changeOrigin: true, //是否跨域
         pathRewrite: {
           "^/api": ""

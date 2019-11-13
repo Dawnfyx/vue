@@ -12,6 +12,7 @@ import ContactDetail from '@/pages/contact/detail'
 import Customer from '@/pages/customer/customer'
 import CustomerDetail from '@/pages/customer/detail'
 import loading from '@/components/loading'
+import testApi from '@/pages/TestDir/testApi'
 
 Vue.use(Router)
 
@@ -64,6 +65,10 @@ export default new Router({
       path: '/loading',
       name: 'loading',
       component: loading
+    },{
+      path: '/testApi',
+      name: 'testApi',
+      component: testApi
     }
   ]
 })

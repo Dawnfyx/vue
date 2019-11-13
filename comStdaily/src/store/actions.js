@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { getHome, ConfigHome } from '@/api' //封装的axois接口
+
 export default {
     actionsEntityList(state){
       const api = 'Crmapp/EntityList?ent=new_salestest'
@@ -74,5 +76,26 @@ export default {
         .catch( error=>{
           console.log("Error", error.messages);
         })
+    },
+    actionsHomePageData(state){
+        // getHome({
+        //   id: 0
+        // }).then((res) => {
+        //   state.commit('mutationsHomePageData', res);
+        // })
+      // debugger
+      ConfigHome;
+
+      // const api = "/menu"
+      // axios({
+      //   method: "get",
+      //   baseURL: "/api",
+      //   url: api
+      // }).then((res) => {
+      //   debugger
+      // })
+      //   .catch( error=>{
+      //     console.log("Error", error.messages);
+      //   })
     }
 }

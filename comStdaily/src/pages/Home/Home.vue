@@ -138,6 +138,9 @@
             handleSidebar(){
                 // console.log("sss");
                 this.sidebarShow = !this.sidebarShow;
+            },
+            getHomeData(){
+              this.$store.dispatch("actionsHomePageData");
             }
         },
         watch: {
@@ -155,6 +158,9 @@
                     this.localStorageetInervalRemove("LayoutFormData");
                 }
             }
+        },
+        created(){
+            this.getHomeData();
         },
         beforeMount() {
             // this.actionsEntityList;

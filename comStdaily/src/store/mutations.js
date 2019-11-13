@@ -41,5 +41,9 @@ export default {
   },
   mutationscustomerList(state, res){
      state.stateCustomerList = res.data.data;
+  },
+  mutationsHomePageData(stat, res){
+    debugger
+    state.stateHomePageData = res;
   }
 }

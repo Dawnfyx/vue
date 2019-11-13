@@ -9,6 +9,8 @@ let stateInfoList = {};
 let stateContactList = {};
 let stateCustomerList = {};
 
+let stateHomePageData = {};
+
 try {
   if(localStorage.vuex){
     stateEntityList = JSON.parse(localStorage.vuex).stateEntityList;
