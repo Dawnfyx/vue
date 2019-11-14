@@ -38,10 +38,18 @@
         methods:{
             handleLetterChange (letter) {
                 this.letter = letter
+            },
+            getEntityListData(){
+                const viewId = "00000000-0000-0000-00AA-000010001003";
+                const page = 1;
+                const count = 50;
+                const total = false
+                let args = {viewId, page, count,total};
+                this.$store.dispatch("actionsContactEntityList", args)
             }
         },
         beforeMount(){
-            this.$store.dispatch('actionsContact');
+            // this.$store.dispatch('actionsContact');
         },
         mounted() {
             this.contacts = this.$store.state.stateContactList.data.contact;

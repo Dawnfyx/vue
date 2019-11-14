@@ -44,7 +44,7 @@
                 const count = 50;
                 const total = false
                 let args = {viewId, page, count,total};
-                this.$store.dispatch("actionsEntityListData", args)
+                this.$store.dispatch("actionsCustomerEntityList", args)
             }
         },
         created(){
