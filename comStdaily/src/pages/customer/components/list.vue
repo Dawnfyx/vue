@@ -2,10 +2,10 @@
 <!--  <div>{{listData}}</div>-->
   <b-list-group>
     <b-list-group-item
-      v-for="(item, key) of listData":key="key"
+      v-for="(item, key) of userName":key="key"
       @click="handleRouteGo(item, key)">
-      {{item.customer}}
-      <page></page>
+      {{getfindKey(item.Attributes)}}
+      <!--<page></page>-->
     </b-list-group-item>
   </b-list-group>
 </template>
@@ -17,9 +17,23 @@
             listData: Array,
             searchValue: String
         },
+        computed:{
+            userName:{
+              get(){
+                return this.listData;
+              }
+            }
+        },
         methods: {
             handleRouteGo(item, key){
-              this.$router.push("/customer/detail/" + item.id);
+              // this.$router.push("/customer/detail/" + item.id);
+            },
+            getfindKey(item) {
+              for(var i=0; i<item.length; i++){
+                if(item[i].Key == "name"){
+                    return item[i].Value
+                }
+              }
             }
         }
     }

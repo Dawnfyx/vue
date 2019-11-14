@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="item"
          :class="{active: item.active == active}"
-         v-for="(item, key) of IconListData.footer" :key="key"
+         v-for="(item, key) of footerData" :key="key"
     >
       <router-link :to="item.url">
         <div class="item-icon">
@@ -13,8 +13,6 @@
         </div>
       </router-link>
     </div>
-    <!--<router-link to>-->
-    <!--</router-link>-->
   </div>
 </template>
 
@@ -27,9 +25,12 @@
             }
         },
         props: {
-            IconListData: {}
+          footerData: Array
         },
-        methods: {}
+        methods: {},
+        mounted(){
+          // debugger
+        }
     }
 </script>
 

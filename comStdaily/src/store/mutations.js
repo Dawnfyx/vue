@@ -1,48 +1,56 @@
 export default {
-  mutationsEntityList (state, res) {
-    state.stateEntityList = res.data;
-    // console.log("mutations",  state.EntityList);
-  },
-  mutationsLayoutForm (state, res) {
-    state.stateLayoutForm = res.data;
-    // console.log("mutations",  state.LayoutForm);
-  },
-  mutationsEntityList2(state){
-    let json = require('@/pages/Home/api/apidata1.json');
-    state.stateEntityList = json.data;
-  },
-  mutationsLayoutForm2(state){
-    let json = require('@/pages/Home/api/apidata2.json');
-    state.stateLayoutForm = json.data;
-  },
-  mutationsInfoList(state){
-    let json = require('@/pages/Home/api/apiinfo.json');
-    state.stateInfoList = json.data;
-  },
-  mutationsExamineList(state, res){
-    state.stateExamineList = res;
-  },
-  mutationsExamineListHaveRead(state, res){
-    if(state.stateExamineListHaveRead.length > 0){
-      for(var i=0; i< state.stateExamineListHaveRead.length; i++){
-        // console.log("============",state.stateExamineListHaveRead[i].id, res.id);
-        if(state.stateExamineListHaveRead[i].id == res.id){
-          return;
-        }
-      }
-    }
-    state.stateExamineListHaveRead.push(res)
-  },
-  mutationsExamineDetail(state, res) {
-     state.stateExamineDetail = res.data;
-  },
-  mutationsContactList(state, res){
-     state.stateContactList = res.data;
-  },
-  mutationscustomerList(state, res){
-     state.stateCustomerList = res.data.data;
-  },
   mutationsHomePageData(state, res){
-    state.stateHomePageData = res.data.data;
+    if(res.data.code == 1){
+      console.log("mutationsHomePageData", JSON.parse(res.data.data));
+      state.stateHomePageData = res.data.data;
+    }
+  },
+  mutationsLayoutFormData(state, res){
+    if(res.data.code == 1){
+      console.log("mutationsLayoutFormData", res.data.data);
+      state.stateLayoutFormData = res.data.data;
+    }
+  },
+  mutationsLayoutViewData(state, res){
+    if(res.data.code == 1){
+      console.log("mutationsLayoutViewData", res.data.data);
+      state.stateLayoutViewData = res.data.data;
+    }
+  },
+  mutationsLayoutFormAndDetailData(state, res){
+    if(res.data.code == 1){
+      console.log("mutationsLayoutFormAndDetailData", res.data.data);
+      state.stateLayoutFormAndDetailData = res.data.data;
+    }
+  },
+  mutationsEntityListData(state, res){
+    if(res.data.code == 1){
+      console.log("mutationsEntityListData", res.data.data);
+      state.stateEntityListData = res.data.data;
+    }
+  },
+  mutationsEntityDetailData(state, res){
+    if(res.data.code == 1){
+      console.log("mutationsEntityDetailData", res.data.data);
+      state.stateEntityDetailData = res.data.data;
+    }
+  },
+  mutationsEntityViewAndListData(state, res){
+    if(res.data.code == 1){
+      console.log("mutationsEntityViewAndListData", res.data.data);
+      state.stateEntityViewAndListData = res.data.data;
+    }
+  },
+  mutationsCustomerEntityList(state, res){
+    if(res.data.code == 1){
+      console.log("mutationsCustomerEntityList", res.data.data);
+      state.stateCustomerEntityList = res.data.data;
+    }
+  },
+  mutationsContactEntityList(state, res){
+    if(res.data.code == 1){
+      console.log("mutationsContactEntityList", res.data.data);
+      state.stateContactEntityList = res.data.data;
+    }
   }
 }

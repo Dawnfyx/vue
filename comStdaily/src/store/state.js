@@ -1,23 +1,44 @@
-let stateEntityList = {};
-let stateExamineList = [];
-let stateExamineListHaveRead = [];
-let stateExamineDetail = {};
-
-let stateLayoutForm = {};
-
-let stateInfoList = {};
-let stateContactList = {};
-let stateCustomerList = {};
-
 let stateHomePageData = {};
+
+let stateLayoutFormData = {};
+let stateLayoutViewData = {};
+let stateLayoutFormAndDetailData = {};
+
+let stateEntityListData = {};
+let stateEntityDetailData = {};
+let stateEntityViewAndListData = {};
+
+let stateCustomerEntityList = {};
+let stateContactEntityList = {};
 
 try {
   if(localStorage.vuex){
-    stateEntityList = JSON.parse(localStorage.vuex).stateEntityList;
-    stateExamineList = JSON.parse(localStorage.vuex).stateExamineList;
-    stateExamineListHaveRead = JSON.parse(localStorage.vuex).stateExamineListHaveRead;
-    stateLayoutForm = JSON.parse(localStorage.vuex).stateLayoutForm;
-    stateInfoList = JSON.parse(localStorage.vuex).stateInfoList;
+
+    if(JSON.parse(localStorage.vuex).stateHomePageData){
+      stateHomePageData = JSON.parse(localStorage.vuex).stateHomePageData;
+    }
+
+    if(JSON.parse(localStorage.vuex).stateLayoutFormData){
+      stateLayoutFormData = JSON.parse(localStorage.vuex).stateLayoutFormData;
+    }
+
+    if(JSON.parse(localStorage.vuex).stateLayoutViewData){
+      stateLayoutViewData = JSON.parse(localStorage.vuex).stateLayoutViewData;
+    }
+
+    // if(JSON.parse(localStorage.vuex).stateLayoutFormAndDetailData){
+    //   stateLayoutFormAndDetailData = JSON.parse(localStorage.vuex).stateLayoutFormAndDetailData;
+    // }
+    // if(JSON.parse(localStorage.vuex).stateEntityListData){
+    //   stateEntityListData = JSON.parse(localStorage.vuex).stateEntityListData;
+    // }
+    // if(JSON.parse(localStorage.vuex).stateEntityDetailData){
+    //   stateEntityDetailData = JSON.parse(localStorage.vuex).stateEntityDetailData;
+    // }
+    // if(JSON.parse(localStorage.vuex).stateEntityViewAndListData){
+    //   stateEntityViewAndListData = JSON.parse(localStorage.vuex).stateEntityViewAndListData;
+    // }
+
   }
 } catch(err){
   console.log("state.error", err);
@@ -27,12 +48,17 @@ try {
 
 
 export default {
-  stateEntityList: stateEntityList,
-  stateLayoutForm: stateLayoutForm,
-  stateExamineListHaveRead: stateExamineListHaveRead,
-  stateExamineList: stateExamineList,
-  stateExamineDetail: stateExamineDetail,
-  stateInfoList: stateInfoList,
-  stateContactList: stateContactList,
-  stateCustomerList: stateCustomerList
+  stateHomePageData : stateHomePageData,
+
+  stateLayoutFormData : stateLayoutFormData,
+  stateLayoutViewData : stateLayoutViewData,
+  stateLayoutFormAndDetailData : stateLayoutFormAndDetailData,
+
+  stateEntityListData : stateEntityListData,
+  stateEntityDetailData : stateEntityDetailData,
+  stateEntityViewAndListData : stateEntityViewAndListData,
+
+  stateCustomerEntityList: stateCustomerEntityList,
+  stateContactEntityList: stateContactEntityList
+
 }

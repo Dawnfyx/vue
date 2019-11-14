@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import state from './state'
 import actions from './actions'
 import mutations from './mutations'
+import state from './state'
 //VUEX 数据持久化 引入
 import VuexPersistence from "vuex-persist";
 
@@ -14,9 +14,9 @@ const vuexLocal = new VuexPersistence({
 Vue.use(Vuex);
 
 const store = new Vuex.Store( {
-  state: state,
   actions: actions,
   mutations: mutations,
+  state: state,
   plugins: [vuexLocal.plugin]
 });
 

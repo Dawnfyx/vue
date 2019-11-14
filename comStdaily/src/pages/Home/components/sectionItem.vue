@@ -5,43 +5,44 @@
         {{items.name}}
       </div>
       <div class="content">
-      <div class="item" v-for="(item, key) of items.items" :key="key">
-      <router-link :to="linkto[key]">
-      <div class="icon-img">
-      <img :src="item.icon" alt="" width="45%" height="auto">
-      </div>
-      <p class="icon-desc">{{item.name}}</p>
-      </router-link>
-      </div>
+        <div class="item" v-for="(item, key) of items.items" :key="key">
+          <router-link :to="HomeLinkToList(item)">
+            <div class="icon-img">
+              <img :src="item.icon" alt="" width="45%" height="auto">
+            </div>
+            <p class="icon-desc">{{item.name}}</p>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-    export default {
-        name: "sectionItem",
-        data(){
-            return{
-              linkto: ["/examine", "/contact", "/customer"],
-              linkto2: {
-                "1": "/examine",
-                "2": "/customer",
-                "3": "/contact"
+  export default {
+    name: "sectionItem",
+    props: {
+      HomeData: Array,
+      HomeLinkTo: Object
+    },
+    computed:{
+      HomeDataList: {
+        get(){
+          return this.HomeData;
+        }
+      },
+      HomeLinkToList: {
+        get(){
+            return function (item) {
+              if(this.HomeLinkTo[item.name] !== undefined){
+                // console.log(this.HomeLinkTo[item.name]);
+                return this.HomeLinkTo[item.name];
               }
             }
-        },
-        props: {
-          HomeData: Array
-        },
-        computed:{
-          HomeDataList: {
-            get(){
-              return this.HomeData;
-            }
-          }
         }
+      }
     }
+  }
 </script>
 
 <style scoped lang="less">
