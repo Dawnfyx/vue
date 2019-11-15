@@ -8,9 +8,10 @@
    <div class="decorateBg">
    </div>
    <div id="detailContent" class="detailContent">
-     <b-form @submit="onSubmit" @reset="onReset">
-        <detail-content :contact="contact"></detail-content>
-     </b-form>
+     {{contact.tabs}}
+     <!--<b-form @submit="onSubmit" @reset="onReset">-->
+        <!--<detail-content :contact="contact"></detail-content>-->
+     <!--</b-form>-->
    </div>
  </div>
 </template>
@@ -60,10 +61,14 @@
             },
             onReset(){
                 console.log("onReset")
+            },
+            getLayoutFormDetail(){
+              this.contact = this.$store.state.stateContactLayoutForm;
+              console.log(this.contact.tabs);
             }
         },
         beforeMount(){
-            this.getDetailInfo();
+            this.getLayoutFormDetail();
         },
         mounted() {
             this.loadingShow = false;

@@ -6,7 +6,7 @@
       :headerRight="title.headerRight">
     </header-title>
     <child-search @searchValue="handleSearchValue"></child-search>
-    <child-list :listData="listData"></child-list>
+    <child-list :listLayout="listLayout" :listData="listData"></child-list>
   </div>
 </template>
 
@@ -25,9 +25,27 @@
                     headerLeft: true,
                     headerRight: true
                 },
-                listData: [],
+                EntityViewAndList: {},
                 searchValue: ""
             }
+        },
+        computed:{
+          listLayout:{
+            get(){
+                return this.EntityViewAndList.layout;
+            },
+            set(){
+
+            }
+          },
+          listData:{
+            get(){
+              return this.EntityViewAndList.data;
+            },
+            set(){
+
+            }
+          }
         },
         components:{
             headerTitle: headerTitle,
@@ -38,25 +56,14 @@
             handleSearchValue(searchValue){
                 this.searchValue = searchValue;
             },
-            getEntityListData(){
-                const viewId = "00000000-0000-0000-00AA-000010001001";
-                const page = 1;
-                const count = 50;
-                const total = false
-                let args = {viewId, page, count,total};
-                this.$store.dispatch("actionsCustomerEntityList", args)
-            }
         },
         created(){
-
+          this.EntityViewAndList = this.$store.state.sCustomerEntityViewAndList;
         },
         beforeMount(){
             // this.$store.dispatch('actionsCustomerEntityList');
         },
         mounted() {
-            this.listData = this.$store.state.stateCustomerEntityList.Entities;
-          // this.listData[0].Attributes[10].Value
-          //   debugger
         }
     }
 </script>

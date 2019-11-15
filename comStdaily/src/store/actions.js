@@ -10,134 +10,39 @@ export default {
     }
   },
   //首页数据
-  actionsHomePageData(state) {
+  aHomePageData(state) {
     const api = "/menu"
     axios({
       method: "get",
       baseURL: "/api",
       url: api
     }).then((response) => {
-      state.commit('mutationsHomePageData', response);
+      state.commit('mHomePageData', response);
     }).catch((error) => {
       console.log("axios catch Error", error.messages);
     })
   },
-  //LayoutForm
-  actionsLayoutFormData(state, arg) {
-    const api = "/LayoutForm";
-    axios({
-      method: "get",
-      baseURL: "/api",
-      url: api,
-      params: {
-        entName: arg.entName,
-        formId: arg.formId
-      }
-    }).then(function (response) {
-        state.commit('mutationsLayoutFormData', response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  },
-  //LayoutView
-  actionsLayoutViewData(state, args) {
-    const api = "/LayoutView"
+  aCustomerEntityViewAndList(state, pageData){
+    const api = "/EntityViewAndList";
+    const args = state.state.apiStrConfig.customer;
     axios({
       method: "get",
       baseURL: "/api",
       url: api,
       params: {
         entName: args.entName,
-        viewId: args.viewId
-      }
-    })
-      .then(function (response) {
-        state.commit('mutationsLayoutViewData', response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  },
-  //LayoutFormAndDetail
-  actionsLayoutFormAndDetailData(state, args) {
-    const api = "/LayoutFormAndDetail"
-    axios({
-      method: "get",
-      baseURL: "/api",
-      url: api,
-      params: {
-        entName: args.entName,
-        formId: args.formId,
-        id: args.id
-      }
-    })
-      .then(function (response) {
-        state.commit('mutationsLayoutFormAndDetailData', response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  },
-  //EntityList
-  actionsEntityListData(state, args) {
-    const api = "/EntityList"
-    axios({
-      method: "get",
-      baseURL: "/api",
-      url: api,
-      params: {
         viewId: args.viewId,
-        page: args.page,
-        count: args.count,
-        total: args.total
+        page: pageData.page,
+        count: pageData.count,
+        total: pageData.total
       }
+    }).then((response) => {
+      state.commit('mCustomerEntityViewAndList', response);
+    }).catch((error) => {
+      console.log("axios catch Error", error.messages);
     })
-      .then(function (response) {
-        state.commit('mutationsEntityListData', response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
   },
-  //EntityDetail
-  actionsEntityDetailData(state, args) {
-    const api = "/EntityDetail"
-    axios({
-      method: "get",
-      baseURL: "/api",
-      url: api,
-      params: {
-        entName: args.entName,
-        id: args.id
-      }
-    })
-      .then(function (response) {
-        state.commit('mutationsEntityDetailData', response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  },
-  //EntityViewAndList
-  actionsEntityViewAndListData(state, args) {
-    const api = "/EntityViewAndList"
-    axios({
-      method: "get",
-      baseURL: "/api",
-      url: api,
-      params: {
-        entName: args.entName,
-        viewId: args.viewId
-      }
-    })
-      .then(function (response) {
-        state.commit('mutationsEntityViewAndListData', response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  },
+  //顾客列表数据
   actionsCustomerEntityList(state, args){
     const api = "/EntityList"
     axios({
@@ -156,6 +61,26 @@ export default {
         console.log(error);
       });
   },
+  //顾客form框架
+  actionsCustomerLayoutForm(state, args){
+      const api = "/LayoutForm";
+      axios({
+        method: "get",
+        baseURL: "/api",
+        url: api,
+        params: {
+          entName: args.entName,
+          formId: args.formId
+        }
+      })
+        .then(function (response) {
+          state.commit('mutationsCustomerLayoutForm', response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+  },
+  //客户列表数据
   actionsContactEntityList(state, args){
     const api = "/EntityList"
     axios({
@@ -169,6 +94,25 @@ export default {
     })
       .then(function (response) {
         state.commit('mutationsContactEntityList', response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+  //客户form框架
+  actionsContactLayoutForm(state, args){
+    const api = "/LayoutForm"
+    axios({
+      method: "get",
+      baseURL: "/api",
+      url: api,
+      params: {
+        entName: args.entName,
+        formId: args.formId
+      }
+    })
+      .then(function (response) {
+        state.commit('mutationsContactLayoutForm', response);
       })
       .catch(function (error) {
         console.log(error);

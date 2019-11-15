@@ -42,18 +42,23 @@
         methods:{
           getDetailInfo(){
             const id = this.$route.params.id;
-            const  api = "customer/detail/" + id;
+            const api = "LayoutFormAndDetail";
+            const args = this.$store.state.apiData.customer;
             axios({
               method: "get",
               baseURL: "/api",
-              url: api
-            }).then((res)=>{
-              this.customer = res.data.data;
-              // debugger
-            }).catch((error)=>{
-              console.log("Error", error.messages);
+              url: api,
+              params: {
+                entName: args.entName,
+                formId: args.formId,
+                id: id,
+              }
+            }).then((response) => {
+              debugger
+            }).catch((error) => {
+              console.log("axios catch Error", error.messages);
             })
-          }
+          },
         },
         beforeMount(){
           this.getDetailInfo();

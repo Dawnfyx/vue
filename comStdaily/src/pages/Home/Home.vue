@@ -49,43 +49,21 @@
       }
     },
     computed: {
-      // 映射 this.stateHomePageData 为 store.state.stateHomePageData
+      // 映射 this.sHomePageData 为 store.state.sHomePageData
       ...mapState([
-        'stateHomePageData',
-        'stateLayoutFormData',
-        'stateLayoutViewData',
-        'stateLayoutFormAndDetailData',
-        'stateEntityListData',
-        'stateEntityDetailData',
-        'stateEntityViewAndListData'
+        'apiStrConfig',
+        'sHomePageData'
       ]),
-      // 映射 this.mutationsHomePageData 为 this.$store.commit('mutationsHomePageData')
-      ...mapMutations([
-        'mutationsHomePageData',
-        'mutationsLayoutFormData',
-        'mutationsLayoutViewData',
-        'mutationsLayoutFormAndDetailData',
-        'mutationsEntityListData',
-        'mutationsEntityDetailData',
-        'mutationsEntityViewAndListData'
-      ]),
-      // 映射 this.actionsHomePageData 为 this.$store.dispatch('actionsHomePageData')
       ...mapActions([
-        'actionsHomePageData',
-        'actionsLayoutFormData',
-        'actionsLayoutViewData',
-        'actionsLayoutFormAndDetailData',
-        'actionsEntityListData',
-        'actionsEntityDetailData',
-        'actionsEntityViewAndListData'
+        'aHomePageData'
       ]),
       HomeData: {
-        get() {
-          return JSON.parse(this.stateHomePageData)
+        get(){
+          return JSON.parse(this.sHomePageData);
+        },
+        set(){
+
         }
-      },
-      watchLayoutFormData() {
-        return this.$store.state.stateLayoutViewData
       }
     },
     components: {
@@ -123,56 +101,17 @@
         // console.log("sss");
         this.sidebarShow = !this.sidebarShow;
       },
+
       getHomeData() {
-        this.actionsHomePageData;
+        this.aHomePageData;
       },
-      getLayoutFormData(){
-        const entName = "account";
-        const formId = "8448B78F-8F42-454E-8E2A-F8196B0419AF";
-        let args = {entName, formId};
-        this.$store.dispatch("actionsLayoutFormData", args)
-      },
-      getLayoutViewData(){
-        const entName = "account";
-        const viewId = "00000000-0000-0000-00AA-000010001001";
-        let args = {entName, viewId};
-        this.$store.dispatch("actionsLayoutViewData", args)
-      },
-      getLayoutFormAndDetailData(){
-        const entName = "account";
-        const formId = "8448B78F-8F42-454E-8E2A-F8196B0419AF";
-        const id = "d074552e-c8fe-e911-8ace-cdf603c00096";
-        let args = {entName, formId, id};
-        this.$store.dispatch("actionsLayoutFormAndDetailData", args)
-      },
-      getEntityListData(){
-        const viewId = "00000000-0000-0000-00AA-000010001001";
-        const page = 1;
-        const count = 50;
-        const total = false
-        let args = {viewId, page, count,total};
-        this.$store.dispatch("actionsEntityListData", args)
-      },
-      getEntityDetailData(){
-        const entName = "account";
-        const id = "d074552e-c8fe-e911-8ace-cdf603c00096";
-        let args = {entName, id};
-        this.$store.dispatch("actionsEntityDetailData", args)
-      },
-      getEntityViewAndListData(){
-        const entName = "account";
-        const viewId = "00000000-0000-0000-00AA-000010001001";
-        let args = {entName, viewId};
-        this.$store.dispatch("actionsEntityViewAndListData", args)
-      },
-      getAllData(){
-        // this.actionsHomePageData;
-        // this.actionsLayoutFormData;
-        // this.actionsLayoutViewData;
-        // this.actionsLayoutFormAndDetailData;
-        // this.actionsEntityListData;
-        // this.actionsEntityDetailData;
-        // this.actionsEntityViewAndListData;
+      getCustomerEntityViewAndList(){
+        const pageData = {
+          page: 1,
+          count: 50,
+          total: false
+        }
+        this.$store.dispatch("aCustomerEntityViewAndList", pageData);
       },
       getCustomerEntityList(){
         const viewId = "00000000-0000-0000-00AA-000010001001";
@@ -182,6 +121,12 @@
         let args = {viewId, page, count,total};
         this.$store.dispatch("actionsCustomerEntityList", args)
       },
+      getCustomerLayoutForm(){
+        const entName = "account";
+        const formId = "8448B78F-8F42-454E-8E2A-F8196B0419AF";
+        let args = {entName, formId};
+        this.$store.dispatch("actionsCustomerLayoutForm", args);
+      },
       getContactEntityList(){
         const viewId = "00000000-0000-0000-00AA-000010001003";
         const page = 1;
@@ -189,6 +134,12 @@
         const total = false
         let args = {viewId, page, count,total};
         this.$store.dispatch("actionsContactEntityList", args)
+      },
+      getContactLayoutForm(){
+        const entName = "contact";
+        const formId = "1FED44D1-AE68-4A41-BD2B-F13ACAC4ACFA";
+        let args = {entName, formId};
+        this.$store.dispatch("actionsContactLayoutForm", args)
       }
     },
     watch: {
@@ -201,15 +152,12 @@
     },
     created() {
       this.getHomeData();
-      this.getLayoutFormData();
-      this.getLayoutViewData();
-      this.getLayoutFormAndDetailData();
-      this.getEntityListData();
-      this.getEntityDetailData();
-      this.getEntityViewAndListData();
+      this.getCustomerEntityViewAndList();
 
-      this.getCustomerEntityList();
-      this.getContactEntityList();
+      // this.getCustomerEntityList();
+      // this.getCustomerLayoutForm();
+      // this.getContactEntityList();
+      // this.getContactLayoutForm();
     },
     beforeMount() {
     },
