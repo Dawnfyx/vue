@@ -15,28 +15,45 @@ export default {
       console.error("VUEX Error", res.data);
     }
   },
-  mutationsCustomerEntityList(state, res){
+  mCustomerLayoutFormAndDetail(state, res){
     if(res.data.code == 1){
-      console.log("mutationsCustomerEntityList", res.data);
-      state.stateCustomerEntityList = res.data.data;
+      console.log("mCustomerLayoutFormAndDetail", res.data.data);
+      state.sCustomerLayoutFormAndDetail = res.data.data;
+    } else {
+      console.error("VUEX Error", res.data);
     }
   },
-  mutationsCustomerLayoutForm(state, res){
+  mCustomerLayoutView(state, res){
     if(res.data.code == 1){
-      console.log("mutationsCustomerLayoutForm", res.data.data);
-      state.stateCustomerLayoutForm = res.data.data;
+      console.log("mCustomerLayoutView", res.data.data);
+      state.sCustomerLayoutView = res.data.data;
+    } else {
+      console.error("VUEX Error", res.data);
     }
   },
-  mutationsContactEntityList(state, res){
+
+  mContactEntityViewAndList(state, res){
     if(res.data.code == 1){
-      console.log("mutationsContactEntityList", res.data.data);
-      state.stateContactEntityList = res.data.data;
+      console.log("mContactEntityViewAndList", res.data.data);
+      state.sCustomerEntityViewAndList = res.data.data;
+    }else{
+      console.error("VUEX Error", res.data);
     }
   },
-  mutationsContactLayoutForm(state, res){
+  mContactLayoutFormAndDetail(state, res){
     if(res.data.code == 1){
-      console.log("mutationsContactLayoutForm", res.data.data);
-      state.stateContactLayoutForm = res.data.data;
+      console.log("mContactLayoutFormAndDetail", res.data.data);
+      state.sCustomerLayoutFormAndDetail = res.data.data;
+    } else {
+      console.error("VUEX Error", res.data);
+    }
+  },
+  mContactLayoutView(state, res){
+    if(res.data.code == 1){
+      console.log("mContactLayoutView", res.data.data);
+      state.sContactLayoutView = res.data.data;
+    } else {
+      console.error("VUEX Error", res.data);
     }
   }
 }

@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import actions from './actions'
 import mutations from './mutations'
 import state from './state'
+import getters from './getters'
 //VUEX 数据持久化 引入
 import VuexPersistence from "vuex-persist";
 
@@ -17,6 +18,7 @@ const store = new Vuex.Store( {
   actions: actions,
   mutations: mutations,
   state: state,
+  getters: getters,
   plugins: [vuexLocal.plugin]
 });
 

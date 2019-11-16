@@ -12,7 +12,7 @@
     <div class="item"
          v-for="(itemData, key) of listData.Entities" :key="key">
 
-        <router-link :to="itemData.Id">About
+        <router-link :to="'/customer/detail/'+ itemData.Id">About
         <div v-for="item of listLayout.Fields">
           {{item.label}} === {{getItemValue(itemData.Attributes,item.id)}}
         </div>
@@ -56,7 +56,7 @@
     created() {
     },
     beforeMount() {
-      console.log("listData", this.listData);
+      // console.log("listData", this.listData);
     },
     mounted(){
       // debugger

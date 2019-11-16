@@ -28,6 +28,7 @@
           headerRight: true
         },
         letter: "",
+        EntityViewAndList: {},
         contacts: []
       }
     },
@@ -50,12 +51,13 @@
         this.letter = letter
       }
     },
-    beforeMount() {
-      // this.$store.dispatch('actionsContact');
-    },
-    mounted() {
-      this.contacts = this.$store.state.stateContactEntityList.Entities;
-    }
+      created(){
+          this.EntityViewAndList = this.$store.state.sContactEntityViewAndList;
+      },
+      beforeMount(){
+      },
+      mounted() {
+      }
   }
 </script>
 

@@ -5,16 +5,16 @@
         :title="title.title"
         :headerLeft="title.headerLeft"
         :headerRight="title.headerRight"></header-title>
-      <div v-for="(item, key) of customer.tabs" :key="key">
-        <form-title :customer="item.name"></form-title>
-        <form-item :customer="item.fields"></form-item>
+      <div v-for="(item, key) of detailLayout.tabs" :key="key">
+        <form-title :detailData="item.name"></form-title>
+        <form-item :detailLayout="item.fields" :detailData="detailData"></form-item>
       </div>
     </div>
 </template>
 
 <script>
 
-    import axios from "axios";
+    import {mapActions, mapMutations, mapState, mapGetters} from "vuex";
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
     import FormTitle from "./components/FormTitle";
@@ -30,6 +30,7 @@
                 headerRight: true
               },
               loadingShow: true,
+              detailAllData: {},
               customer: {}
             }
         },
@@ -39,36 +40,57 @@
           FormTitle: FormTitle,
           FormItem: FormItem
         },
+        computed:{
+            ...mapGetters([
+                "gCustomerLayoutFormAndDetail"
+            ]),
+            detailLayout: {
+                get(){
+                    return this.detailAllData.layout;
+                },
+                set(){
+
+                }
+            },
+            detailData: {
+                get(){
+                    return this.detailAllData.data;
+                },
+                set(){
+
+                }
+            }
+        },
         methods:{
-          getDetailInfo(){
-            const id = this.$route.params.id;
-            const api = "LayoutFormAndDetail";
-            const args = this.$store.state.apiData.customer;
-            axios({
-              method: "get",
-              baseURL: "/api",
-              url: api,
-              params: {
-                entName: args.entName,
-                formId: args.formId,
-                id: id,
-              }
-            }).then((response) => {
-              debugger
-            }).catch((error) => {
-              console.log("axios catch Error", error.messages);
-            })
+          //拿到客户详情数据
+            getDetailInfo() {
+              const id = this.$route.params.id;
+              this.$store.dispatch("aCustomerLayoutFormAndDetail", id);
+              this.detailAllData = this.$store.state.sCustomerLayoutFormAndDetail;
           },
         },
+        watch: {
+            gCustomerLayoutFormAndDetail: function(newVal) {
+                this.detailAllData = this.$store.state.sCustomerLayoutFormAndDetail;
+                this.loadingShow = false;
+            }
+        },
+        created(){
+            this.getDetailInfo();
+        },
         beforeMount(){
-          this.getDetailInfo();
+
         },
         mounted() {
-          this.loadingShow = false;
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+  .title{
 
+  }
+  .content{
+    margin: 1.2rem;
+  }
 </style>

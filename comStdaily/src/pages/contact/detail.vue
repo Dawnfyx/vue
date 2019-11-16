@@ -51,7 +51,6 @@
                     url: api
                 }).then((res)=>{
                     this.contact = res.data.data.contact[0];
-                    // console.log(res.data.data.contact[0])
                 }).catch((error)=>{
                     console.log("Error", error.messages);
                 })

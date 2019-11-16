@@ -18,11 +18,12 @@ let apiStrConfig = {
 
 let sHomePageData = {};
 let sCustomerEntityViewAndList = {};
+let sCustomerLayoutFormAndDetail = {};
+let sCustomerLayoutView = {};
+let sContactEntityViewAndList = {};
+let sContactLayoutFormAndDetail = {};
+let sContactLayoutView = {};
 
-let stateCustomerEntityList = {};
-let stateCustomerLayoutForm = {};
-let stateContactEntityList = {};
-let stateContactLayoutForm = {};
 
 try {
   if (localStorage.vuex) {
@@ -43,10 +44,9 @@ export default {
   apiStrConfig: apiStrConfig,
   sHomePageData: sHomePageData,
   sCustomerEntityViewAndList: sCustomerEntityViewAndList,
-
-  stateCustomerEntityList: stateCustomerEntityList,
-  stateCustomerLayoutForm: stateCustomerLayoutForm,
-  stateContactEntityList: stateContactEntityList,
-  stateContactLayoutForm: stateContactLayoutForm
-
+  sCustomerLayoutFormAndDetail: sCustomerLayoutFormAndDetail,
+  sCustomerLayoutView: sCustomerLayoutView,
+  sContactEntityViewAndList: sContactEntityViewAndList,
+  sContactLayoutFormAndDetail: sContactLayoutFormAndDetail,
+  sContactLayoutView: sContactLayoutView,
 }

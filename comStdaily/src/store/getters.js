@@ -1,8 +1,9 @@
-const getters={
-  getstateLayoutFormData: state => {
-    return state.stateLayoutFormData;
-  }
-};
 export default {
-  getters: getters
+  gCustomerLayoutFormAndDetail: state => {
+    return state.sCustomerLayoutFormAndDetail;
+  },
+  gcontactLayoutFormAndDetail: state => {
+    return state.sContactLayoutFormAndDetail;
+  }
+
 }

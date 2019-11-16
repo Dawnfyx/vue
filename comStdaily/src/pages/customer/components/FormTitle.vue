@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    {{customer}}
+    {{detailData}}
   </div>
 </template>
 
@@ -8,7 +8,7 @@
     export default {
         name: "FormTitle",
         props:{
-          customer: Object
+            detailData: String
         }
     }
 </script>
