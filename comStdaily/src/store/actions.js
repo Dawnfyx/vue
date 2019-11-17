@@ -88,7 +88,7 @@ export default {
         total: pageData.total
       }
     }).then((response) => {
-      state.commit('mCustomerEntityViewAndList', response);
+      state.commit('mContactEntityViewAndList', response);
     }).catch((error) => {
       console.log("axios catch Error", error.messages);
     })

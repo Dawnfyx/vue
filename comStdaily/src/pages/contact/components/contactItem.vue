@@ -2,20 +2,14 @@
   <div class="contacts" ref="wrapper">
     <!--Bscroll插件结构目录必须包一个DIV-->
     <div>
-      <div class="contact-list">
-        <!--<div-->
-        <!--style="border-bottom: 1px solid red;"-->
-        <!--v-for="item of contactName">-->
-          <!--<p>{{getfindKey(item.Attributes)}}</p>-->
-        <!--</div>-->
-        <!--<div v-for="(items, key) in contactList" :key="key">-->
-        <!--<div class="area" :ref="key">{{key}}</div>-->
-        <div class="item-list" v-for="(item, key) in contactName" :key="key">
-          <router-link to="/contact/detail/111">
-          <div class="item">
-            <h3>{{getfindKey(item.Attributes)}}</h3>
-            <p v-show="false">{{item.spell}}</p>
-          </div>
+      <div class="itemList">
+        <div class="item"
+             v-for="(itemData, key) of listData.Entities" :key="key">
+
+          <router-link :to="'/contact/detail/'+ itemData.Id">About
+            <div v-for="item of listLayout.Fields">
+              {{item.label}} === {{getItemValue(itemData.Attributes,item.id)}}
+            </div>
           </router-link>
         </div>
         <!--</div>-->
@@ -34,12 +28,14 @@
       return {}
     },
     props: {
-      contacts: Array,
+        listLayout: Object,
+        listData: Object,
+        searchValue: String
     },
     computed: {
       contactName: {
         get() {
-          return this.contacts;
+          return this.listData;
         }
       }
     },
@@ -50,6 +46,13 @@
             return item[i].Value
           }
         }
+      },
+      getItemValue(item, id){
+          for (let i = 0; i <item.length ; i++) {
+              if(item[i].Key == id){
+                  return item[i].Value
+              }
+          }
       }
     },
     watch: {
@@ -65,43 +68,17 @@
 
   @import '~style/mainColor';
 
-  .contacts{
+  .itemList{
     background-color: @cleee;
-    padding: 0 1.2rem;
-    overflow: hidden;
-    position: absolute;
-    top: 3rem;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    padding: 1.2rem;
+  }
+  .item {
+    border-radius: 0.5rem;
+    background-color: @clfff;
+    padding: 0.5rem;
 
-
-    .area{
-      padding-top: 0.5rem;
-      padding-left: 0.5rem;
-      padding-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .item-list{
-      background-color: @clfff;
-
-      .item{
-        color: @cl333;
-        padding: 0.8rem;
-
-        h3{
-          font-size: 16px;
-          margin-bottom: 0px;
-        }
-        p{
-          margin-bottom: 0px;
-        }
-
-        &.item{
-          border-top: 1px solid @cleee;
-        }
-      }
+    & + .item{
+      margin-top: 1rem;
     }
   }
 </style>

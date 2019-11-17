@@ -2,7 +2,7 @@ export default {
   gCustomerLayoutFormAndDetail: state => {
     return state.sCustomerLayoutFormAndDetail;
   },
-  gcontactLayoutFormAndDetail: state => {
+  gContactLayoutFormAndDetail: state => {
     return state.sContactLayoutFormAndDetail;
   }
 

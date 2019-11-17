@@ -4,7 +4,7 @@
       :title="title.title"
       :headerLeft="title.headerLeft"
       :headerRight="title.headerRight"></header-title>
-    <childContactLtem :contacts="contactName"></childContactLtem>
+    <childContactLtem :listLayout="listLayout" :listData="listData"></childContactLtem>
     <!--<child-contact-list :contacts="contactName" :letter="letter"></child-contact-list>-->
     <!--<child-alphabet :contacts="contacts" @change="handleLetterChange"></child-alphabet>-->
 
@@ -44,6 +44,22 @@
         get() {
           return this.contacts;
         }
+      },
+      listLayout:{
+          get(){
+              return this.EntityViewAndList.layout;
+          },
+          set(){
+
+          }
+      },
+      listData:{
+          get(){
+              return this.EntityViewAndList.data;
+          },
+          set(){
+
+          }
       }
     },
     methods: {

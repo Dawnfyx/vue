@@ -1,27 +1,25 @@
 <template>
- <div>
-   <loading :loadingShow="loadingShow"></loading>
-   <header-title
-     :title="title.title"
-     :headerLeft="title.headerLeft"
-     :headerRight="title.headerRight"></header-title>
-   <div class="decorateBg">
+   <div>
+     <loading :loadingShow="loadingShow"></loading>
+     <header-title
+       :title="title.title"
+       :headerLeft="title.headerLeft"
+       :headerRight="title.headerRight"></header-title>
+     <div class="decorateBg">
+     </div>
+     <div v-for="(item, key) of detailLayout.Fields" :key="key">
+       <form-item :detailLayout="item" :detailData="detailData"></form-item>
+     </div>
    </div>
-   <div id="detailContent" class="detailContent">
-     {{contact.tabs}}
-     <!--<b-form @submit="onSubmit" @reset="onReset">-->
-        <!--<detail-content :contact="contact"></detail-content>-->
-     <!--</b-form>-->
-   </div>
- </div>
 </template>
 
 <script>
 
-    import axios from "axios";
+    import {mapActions, mapMutations, mapState, mapGetters} from "vuex";
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
-    import detailContent from "./components/detailContent";
+    import detailContact from "./components/detailContent";
+    import formItem from "./components/FormItem"
 
     export default {
         name: "detail",
@@ -32,45 +30,64 @@
                     headerLeft: true,
                     headerRight: true
                 },
-                contact: {},
                 loadingShow: true,
+                detailAllData: {},
+                contact: {},
             }
         },
         components:{
             loading: loading,
             headerTitle: headerTitle,
-            detailContent: detailContent
+            detailContact: detailContact
+        },
+        computed:{
+            ...mapGetters([
+                "gContactLayoutFormAndDetail"
+            ]),
+            detailLayout: {
+                get(){
+                    return this.detailAllData.layout;
+                },
+                set(){
+
+                }
+            },
+            detailData: {
+                get(){
+                    return this.detailAllData.data;
+                },
+                set(){
+
+                }
+            }
         },
         methods:{
-            getDetailInfo(){
+            //拿到联系人详情数据
+            getDetailInfo() {
                 const id = this.$route.params.id;
-                const  api = "contact/detail/" + id;
-                axios({
-                    method: "get",
-                    baseURL: "/api",
-                    url: api
-                }).then((res)=>{
-                    this.contact = res.data.data.contact[0];
-                }).catch((error)=>{
-                    console.log("Error", error.messages);
-                })
+                this.$store.dispatch("aContactLayoutFormAndDetail", id);
+                this.detailAllData = this.$store.state.sContactLayoutFormAndDetail;
+                debugger
             },
             onSubmit(){
                 console.log("onSubmit")
             },
             onReset(){
                 console.log("onReset")
-            },
-            getLayoutFormDetail(){
-              this.contact = this.$store.state.stateContactLayoutForm;
-              console.log(this.contact.tabs);
             }
         },
+        watch:{
+            gContactLayoutFormAndDetail: function(newVal) {
+                this.detailAllData = this.$store.state.sContactLayoutFormAndDetail;
+                this.loadingShow = false;
+            }
+        },
+        created(){
+            this.getDetailInfo();
+        },
         beforeMount(){
-            this.getLayoutFormDetail();
         },
         mounted() {
-            this.loadingShow = false;
         }
     }
 </script>

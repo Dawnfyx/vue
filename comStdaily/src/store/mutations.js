@@ -35,7 +35,7 @@ export default {
   mContactEntityViewAndList(state, res){
     if(res.data.code == 1){
       console.log("mContactEntityViewAndList", res.data.data);
-      state.sCustomerEntityViewAndList = res.data.data;
+      state.sContactEntityViewAndList = res.data.data;
     }else{
       console.error("VUEX Error", res.data);
     }
@@ -43,7 +43,7 @@ export default {
   mContactLayoutFormAndDetail(state, res){
     if(res.data.code == 1){
       console.log("mContactLayoutFormAndDetail", res.data.data);
-      state.sCustomerLayoutFormAndDetail = res.data.data;
+      state.sContactLayoutFormAndDetail = res.data.data;
     } else {
       console.error("VUEX Error", res.data);
     }
