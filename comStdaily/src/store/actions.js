@@ -128,6 +128,62 @@ export default {
       console.log("axios catch Error", error.messages);
     })
   },
+
+  aExamineEntityViewAndList(state, pageData){
+    const api = "/EntityViewAndList";
+    const args = state.state.apiStrConfig.contact;
+    axios({
+      method: "get",
+      baseURL: "/api",
+      url: api,
+      params: {
+        entName: args.entName,
+        viewId: args.viewId,
+        page: pageData.page,
+        count: pageData.count,
+        total: pageData.total
+      }
+    }).then((response) => {
+      state.commit('mExamineEntityViewAndList', response);
+    }).catch((error) => {
+      console.log("axios catch Error", error.messages);
+    })
+  },
+  aExamineLayoutView(state){
+    const api = "/LayoutView";
+    const args = state.state.apiStrConfig.contact;
+    axios({
+      method: "get",
+      baseURL: "/api",
+      url: api,
+      params: {
+        entName: args.entName,
+        viewId: args.viewId
+      }
+    }).then((response) => {
+      state.commit('mExamineLayoutView', response);
+    }).catch((error) => {
+      console.log("axios catch Error", error.messages);
+    })
+  },
+  aExamineLayoutFormAndDetail(state, data){
+    const api = "/LayoutFormAndDetail";
+    const args = state.state.apiStrConfig.contact;
+    axios({
+      method: "get",
+      baseURL: "/api",
+      url: api,
+      params: {
+        entName: args.entName,
+        formId: args.formId,
+        id: data
+      }
+    }).then((response) => {
+      state.commit('mExamineLayoutFormAndDetail', response);
+    }).catch((error) => {
+      console.log("axios catch Error", error.messages);
+    })
+  },
   //清除数据
   actionsClearState(state) {
     for (var key in state.state) {

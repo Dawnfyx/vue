@@ -7,7 +7,7 @@
       :headerRight="title.headerRight"></header-title>
     <div class="decorateBg">
     </div>
-    <list :listLayout="listLayout" :listData="listData"></list>
+    <child-tabs :listData="listData"></child-tabs>
   </div>
 </template>
 
@@ -16,25 +16,22 @@
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
     import childTabs from './components/tabs';
-    import list from "./components/list";
 
     export default {
         name: "examine",
         data() {
             return {
                 title: {
-                    title: "合同",
+                    title: "审批",
                     headerLeft: true
                 },
-                loadingShow: true,
-                EntityViewAndList: {}
+                loadingShow: true
             }
         },
         components: {
             loading: loading,
             headerTitle: headerTitle,
-            childTabs: childTabs,
-            list: list
+            childTabs: childTabs
         },
         computed:{
             listData(){
@@ -42,28 +39,7 @@
                     localStorage.EntityList = JSON.stringify(JSON.parse(localStorage.vuex).stateEntityList.data);
                     return JSON.parse(localStorage.vuex).stateEntityList.data;
                 }
-            },
-            listLayout:{
-                get(){
-                    return this.EntityViewAndList.layout;
-                },
-                set(){
-
-                }
-            },
-            listData:{
-                get(){
-                    return this.EntityViewAndList.data;
-                },
-                set(){
-
-                }
             }
-        },
-        created(){
-            this.EntityViewAndList = this.$store.state.sExamineEntityViewAndList;
-        },
-        beforeMount(){
         },
         mounted() {
             this.loadingShow = false;

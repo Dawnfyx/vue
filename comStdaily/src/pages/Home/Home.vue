@@ -134,6 +134,20 @@
                 this.$store.dispatch("aContactLayoutView");
             },
 
+            //拿到合同列表数据
+            getExamineEntityViewAndList() {
+                const pageData = {
+                    page: 1,
+                    count: 50,
+                    total: false
+                }
+                this.$store.dispatch("aExamineEntityViewAndList", pageData);
+            },
+            //拿到合同视图布局
+            getExamineLayoutView() {
+                this.$store.dispatch("aExamineLayoutView");
+            },
+
         },
         watch: {
             watchLayoutFormData(newval, oldval) {
@@ -149,6 +163,8 @@
             this.getCustomerLayoutView();
             this.getContactEntityViewAndList();
             this.getContactLayoutView();
+            this.getExamineEntityViewAndList();
+            this.getExamineLayoutView();
         },
         beforeMount() {
         },

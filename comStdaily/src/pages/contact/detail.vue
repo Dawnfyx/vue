@@ -8,6 +8,7 @@
      <div class="decorateBg">
      </div>
      <div v-for="(item, key) of detailLayout.Fields" :key="key">
+       {{item}}
        <form-item :detailLayout="item" :detailData="detailData"></form-item>
      </div>
    </div>
@@ -19,7 +20,7 @@
     import loading from "@/components/loading";
     import headerTitle from "@/components/headerTitle";
     import detailContact from "./components/detailContent";
-    import formItem from "./components/FormItem"
+    import formItem from "./components/FormItem";
 
     export default {
         name: "detail",
@@ -38,7 +39,8 @@
         components:{
             loading: loading,
             headerTitle: headerTitle,
-            detailContact: detailContact
+            detailContact: detailContact,
+            formItem: formItem
         },
         computed:{
             ...mapGetters([
@@ -67,7 +69,6 @@
                 const id = this.$route.params.id;
                 this.$store.dispatch("aContactLayoutFormAndDetail", id);
                 this.detailAllData = this.$store.state.sContactLayoutFormAndDetail;
-                debugger
             },
             onSubmit(){
                 console.log("onSubmit")

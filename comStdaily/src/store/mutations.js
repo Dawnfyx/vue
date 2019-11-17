@@ -55,5 +55,30 @@ export default {
     } else {
       console.error("VUEX Error", res.data);
     }
+  },
+
+  mExamineEntityViewAndList(state, res){
+    if(res.data.code == 1){
+      console.log("mExamineEntityViewAndList", res.data.data);
+      state.sExamineEntityViewAndList = res.data.data;
+    }else{
+      console.error("VUEX Error", res.data);
+    }
+  },
+  mExamineLayoutFormAndDetail(state, res){
+    if(res.data.code == 1){
+      console.log("mExamineLayoutFormAndDetail", res.data.data);
+      state.sExamineLayoutFormAndDetail = res.data.data;
+    } else {
+      console.error("VUEX Error", res.data);
+    }
+  },
+  mExamineLayoutView(state, res){
+    if(res.data.code == 1){
+      console.log("mExamineLayoutView", res.data.data);
+      state.sExamineLayoutView = res.data.data;
+    } else {
+      console.error("VUEX Error", res.data);
+    }
   }
 }

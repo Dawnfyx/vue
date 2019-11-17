@@ -23,6 +23,9 @@ let sCustomerLayoutView = {};
 let sContactEntityViewAndList = {};
 let sContactLayoutFormAndDetail = {};
 let sContactLayoutView = {};
+let sExamineEntityViewAndList = {};
+let sExamineLayoutFormAndDetail = {};
+let sExamineLayoutView = {};
 
 
 try {
@@ -49,4 +52,7 @@ export default {
   sContactEntityViewAndList: sContactEntityViewAndList,
   sContactLayoutFormAndDetail: sContactLayoutFormAndDetail,
   sContactLayoutView: sContactLayoutView,
+  sExamineEntityViewAndList: sExamineEntityViewAndList,
+  sExamineLayoutFormAndDetail: sExamineLayoutFormAndDetail,
+  sExamineLayoutView: sExamineLayoutView,
 }
