@@ -1,73 +1,74 @@
 <template>
-  <div id="detailContent">
-    <b-form @submit="onSubmit" @reset="onReset">
-      <b-form-group
-      label="提交人"
-      label-for="examineFrom">
-        <span id="examineFrom">{{formData.form[0].from}}</span>
-      </b-form-group>
-      <b-form-group
-        label="审批流程"
-        label-for="examineFlow">
-        <span id="examineFlow">{{formData.form[0].node}}</span>
-      </b-form-group>
-      <b-form-group
-        label="节点名称"
-        label-for="examineFlowName">
-        <span id="examineFlowName">{{formData.form[0].nodename}}</span>
-      </b-form-group>
-      <b-form-group
-      label="审批时间"
-      label-for="examineTime">
-        <span id="examineTime">{{formData.form[0].time}}</span>
-      </b-form-group>
-      <b-form-textarea
-        id="textarea"
-        v-model="text"
-        placeholder="Enter something..."
-        rows="3"
-        max-rows="6"
-      ></b-form-textarea>
-<!--      <b-button type="submit" variant="primary">Submit</b-button>-->
-<!--      <b-button type="reset" variant="danger">Reset</b-button>-->
-    </b-form>
+  <div>
+    <div v-for="items of detailLayout.tabs">
+      <div class="title">
+        {{items.name}}
+      </div>
+      <div class="content">
+        <div v-for="(item, key) of items.fields">
+          <span>{{item.label}}</span>==<span>{{getItemValue(detailData.Attributes, item.id)}}</span>
+          <hr>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-    export default {
-        name: "detailContent",
-        props:{
-            formData: Object
-        },
-        methods:{
-            onSubmit(){
-
-            },
-            onReset(){
-                debugger
-            }
+  export default {
+    name: "detailContent",
+    props: {
+      detailLayout: Object,
+      detailData: Object
+    },
+    methods: {
+      getItemValue(item, id) {
+        for (let i = 0; i < item.length; i++) {
+          if (item[i].Key == id) {
+            return item[i].Value
+          }
         }
+      },
+      onSubmit() {
+
+      },
+      onReset() {
+        debugger
+      }
+    },
+    beforeMount() {
+
+    },
+    Mount() {
+
     }
+  }
 </script>
 
 <style scoped lang="less">
 
   @import '~style/mainColor';
 
-    #detailContent{
-      margin-top: -7rem;
-      margin-left: 1.2rem;
-      margin-right: 1.2rem;
-      border: @borderVal;
-      border-radius: 0.5rem;
-      background-color: @clfff;
-      padding: 1rem;
-      overflow: hidden;
+  #detailContent {
+    margin-top: -7rem;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    border: @borderVal;
+    border-radius: 0.5rem;
+    background-color: @clfff;
+    padding: 1rem;
+    overflow: hidden;
 
-      .form-group{
-        width: 50%;
-        float: left;
-      }
+    .form-group {
+      width: 50%;
+      float: left;
     }
+  }
+
+  .title{
+    line-height: 20px;
+    background: #eee;
+    text-indent: 10px;
+    padding: 6px;
+  }
 </style>

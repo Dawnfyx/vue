@@ -1,6 +1,16 @@
 <template>
-  <div class="">
-
+  <div>
+    <div v-for="items of detailLayout">
+      <div class="title">
+        {{items.name}}
+      </div>
+      <div class="content">
+          <div v-for="(item, key) of items.fields">
+            <span>{{item.label}}</span>==<span>{{getItemValue(detailData.Attributes, item.id)}}</span>
+            <hr>
+          </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -10,30 +20,23 @@
         name: "detailContent",
         data() {
             return {
-                detailData: ""
             }
         },
         props: {
-            contact: Object
+          detailLayout: Array,
+          detailData: Object
         },
         computed:{
-            phoneData: {
-                get(){
-                    return this.contact.phone;
-                }
-            },
-            telephoneData: {
-                get(){
-                    return this.contact.telephone;
-                }
-            },
-            emailData: {
-                get(){
-                    return this.contact.email;
-                }
-            }
         },
-        methods: {},
+        methods: {
+          getItemValue(item, id) {
+            for (let i = 0; i < item.length; i++) {
+              if (item[i].Key == id) {
+                return item[i].Value
+              }
+            }
+          }
+        },
         beforeMount() {
 
         },
@@ -43,48 +46,15 @@
     }
 </script>
 
-<style lang="less">
+<style scoped lang="less">
 
   @import '~style/mainColor';
 
-  .form-group {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 0;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-
-    & + .form-group{
-      border-top: @borderVal;
-    }
-
-    label {
-      width: 6rem;
-      margin-bottom: 0;
-      padding-right: 0.5rem;
-      text-align: right;
-      float: left;
-    }
-
-    & > div {
-      width: calc(~"100% - 6rem");
-      float: left;
-    }
-    .item{
-      width: 100%;
-      padding: 0.5rem 0;
-
-      & > div {
-        width: calc(~"100% - 6rem");
-        float: left;
-      }
-      &:first-child{
-        margin-top: -0.5rem;
-      }
-      &:last-child{
-        margin-bottom: -0.5rem;
-      }
-    }
+  .title{
+    line-height: 20px;
+    background: #eee;
+    text-indent: 10px;
+    padding: 6px;
   }
 
 </style>

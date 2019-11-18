@@ -4,6 +4,9 @@ export default {
   },
   gContactLayoutFormAndDetail: state => {
     return state.sContactLayoutFormAndDetail;
+  },
+  gExamineLayoutFormAndDetail: state => {
+    return state.sExamineLayoutFormAndDetail;
   }
 
 }

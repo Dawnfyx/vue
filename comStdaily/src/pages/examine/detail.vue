@@ -5,62 +5,92 @@
       :title="title.title"
       :headerLeft="title.headerLeft"
       :headerRight="title.headerRight"></header-title>
-    <div class="decorateBg">
+    <div class="decorateBg" v-show="false">
     </div>
-    <b-form @submit="onSubmit" @reset="onReset">
-      <detail-content :formData="formData"></detail-content>
-    </b-form>
+    <!--<p>{{detailData.Attributes}}</p>-->
+    <!--<div v-for="(items, key) of detailData.Attributes">-->
+      <!---->
+    <!--</div>-->
+    <detail-content :detailLayout="detailLayout" :detailData="detailData"></detail-content>
   </div>
 </template>
 
 <script>
 
-    import loading from "@/components/loading";
-    import headerTitle from "@/components/headerTitle";
-    import detailContent from "./components/detailContent";
+  import {mapActions, mapMutations, mapState, mapGetters} from "vuex";
+  import loading from "@/components/loading";
+  import headerTitle from "@/components/headerTitle";
+  import detailContent from "./components/detailContent";
 
-    export default {
-        name: "detail",
-        data() {
-            return {
-                title: {
-                    title: "审批详情",
-                    headerLeft: true,
-                    headerRight: true
-                },
-                loadingShow: true,
-                apiData: "new_salestest",
-                formData: {}
-            }
+  export default {
+    name: "detail",
+    data() {
+      return {
+        title: {
+          title: "审批详情",
+          headerLeft: true,
+          headerRight: true
         },
-        computed:{
+        loadingShow: true,
+        detailAllData: {}
+      }
+    },
+    computed: {
+      ...mapGetters([
+        "gExamineLayoutFormAndDetail"
+      ]),
+      detailLayout: {
+        get() {
+          return this.detailAllData.layout;
         },
-        components: {
-            loading: loading,
-            headerTitle: headerTitle,
-            detailContent: detailContent
-        },
-        methods: {
-            getDetailData() {
-                this.formData = this.$store.state.stateExamineDetail.data;
-            },
-            onSubmit(evt) {
-                evt.preventDefault()
-                alert("提交数据")
-                this.$router.back(-1)
-            },
-            onReset(evt) {
-                evt.preventDefault()
-            }
-        },
-        beforeMount(){
-            this.$store.dispatch('actionsExamineDetail', "111")
-        },
-        mounted() {
-            this.getDetailData();
-            this.loadingShow = false;
+        set() {
+
         }
+      },
+      detailData: {
+        get() {
+          return this.detailAllData.data;
+        },
+        set() {
+
+        }
+      }
+    },
+    components: {
+      loading: loading,
+      headerTitle: headerTitle,
+      detailContent: detailContent
+    },
+    methods: {
+      getDetailData() {
+        const id = this.$route.params.id;
+        this.$store.dispatch("aExamineLayoutFormAndDetail", id);
+        this.detailAllData = this.$store.state.sExamineLayoutFormAndDetail;
+        console.log("this.detailAllData", this.detailAllData);
+      },
+      onSubmit(evt) {
+        evt.preventDefault()
+        alert("提交数据")
+        this.$router.back(-1)
+      },
+      onReset(evt) {
+        evt.preventDefault()
+      }
+    },
+    watch: {
+      gExamineLayoutFormAndDetail: function (newVal) {
+        this.detailAllData = this.$store.state.sExamineLayoutFormAndDetail;
+        this.loadingShow = false;
+      }
+    },
+    created() {
+      this.getDetailData();
+    },
+    beforeMount() {
+    },
+    mounted() {
     }
+  }
 </script>
 
 <style scoped lang="less">

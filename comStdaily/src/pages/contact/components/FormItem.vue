@@ -1,10 +1,13 @@
 <template>
   <div class="content">
     <div class="itemList">
-      {{detailLayout}}
-<!--      <div v-for="item of detailLayout">-->
-<!--        {{item.label}} === {{getItemValue(detailData.Attributes,item.id)}}-->
-<!--      </div>-->
+      <!--<p> {{detailLayout}} </p>-->
+      <p> {{detailLayout}} </p>
+
+      <div v-for="item of detailLayout">
+        {{item.label}} === {{getItemValue(detailData.Attributes,item.id)}}
+      </div>
+
       <div>
       </div>
     </div>
@@ -30,7 +33,7 @@
             }
         },
         props: {
-            detailLayout: Array,
+            detailLayout: Object,
             detailData: Object
         },
         methods: {

@@ -4,8 +4,6 @@
       <div v-for="item of detailLayout">
         {{item.label}} === {{getItemValue(detailData.Attributes,item.id)}}
       </div>
-      <div>
-      </div>
     </div>
   </div>
 </template>

@@ -16,6 +16,7 @@ export default {
       console.log("axios catch Error", error.messages);
     })
   },
+
   //客户
   aCustomerEntityViewAndList(state, pageData){
     const api = "/EntityViewAndList";
@@ -73,6 +74,7 @@ export default {
     })
   },
 
+  //联系人
   aContactEntityViewAndList(state, pageData){
     const api = "/EntityViewAndList";
     const args = state.state.apiStrConfig.contact;
@@ -129,9 +131,10 @@ export default {
     })
   },
 
+  //合同
   aExamineEntityViewAndList(state, pageData){
     const api = "/EntityViewAndList";
-    const args = state.state.apiStrConfig.contact;
+    const args = state.state.apiStrConfig.contract;
     axios({
       method: "get",
       baseURL: "/api",
@@ -151,7 +154,7 @@ export default {
   },
   aExamineLayoutView(state){
     const api = "/LayoutView";
-    const args = state.state.apiStrConfig.contact;
+    const args = state.state.apiStrConfig.contract;
     axios({
       method: "get",
       baseURL: "/api",
@@ -168,7 +171,7 @@ export default {
   },
   aExamineLayoutFormAndDetail(state, data){
     const api = "/LayoutFormAndDetail";
-    const args = state.state.apiStrConfig.contact;
+    const args = state.state.apiStrConfig.contract;
     axios({
       method: "get",
       baseURL: "/api",
@@ -184,6 +187,7 @@ export default {
       console.log("axios catch Error", error.messages);
     })
   },
+
   //清除数据
   actionsClearState(state) {
     for (var key in state.state) {

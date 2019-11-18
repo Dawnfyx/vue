@@ -5,6 +5,8 @@
         :title="title.title"
         :headerLeft="title.headerLeft"
         :headerRight="title.headerRight"></header-title>
+      <div class="decorateBg">
+      </div>
       <div v-for="(item, key) of detailLayout.tabs" :key="key">
         <form-title :detailData="item.name"></form-title>
         <form-item :detailLayout="item.fields" :detailData="detailData"></form-item>

@@ -80,5 +80,8 @@
     & + .item{
       margin-top: 1rem;
     }
+    a{
+      color: @cl333;
+    }
   }
 </style>

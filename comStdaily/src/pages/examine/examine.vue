@@ -5,7 +5,7 @@
       :title="title.title"
       :headerLeft="title.headerLeft"
       :headerRight="title.headerRight"></header-title>
-    <div class="decorateBg">
+    <div class="decorateBg" v-show="false">
     </div>
     <list :listLayout="listLayout" :listData="listData"></list>
   </div>
@@ -37,12 +37,6 @@
             list: list
         },
         computed:{
-            listData(){
-                if(!!localStorage.vuex){
-                    localStorage.EntityList = JSON.stringify(JSON.parse(localStorage.vuex).stateEntityList.data);
-                    return JSON.parse(localStorage.vuex).stateEntityList.data;
-                }
-            },
             listLayout:{
                 get(){
                     return this.EntityViewAndList.layout;
@@ -62,6 +56,7 @@
         },
         created(){
             this.EntityViewAndList = this.$store.state.sExamineEntityViewAndList;
+            console.log(this.EntityViewAndList);
         },
         beforeMount(){
         },
@@ -86,6 +81,9 @@
     height: 8rem;
     background-color: @mColor;
     overflow: hidden;
+  }
+  .itemList{
+
   }
 
 </style>

@@ -1,14 +1,14 @@
 <template>
   <div class="title">
-    {{detailData}}
+    {{detailLayout[0].name}}
   </div>
 </template>
 
 <script>
     export default {
         name: "FormTitle",
-        props:{
-            detailData: String
+        props: {
+          detailLayout: String
         }
     }
 </script>

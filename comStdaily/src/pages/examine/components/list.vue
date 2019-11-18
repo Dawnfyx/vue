@@ -3,15 +3,11 @@
     <div class="item"
          v-for="(itemData, key) of listData.Entities" :key="key">
 
-      <router-link :to="'/customer/detail/'+ itemData.Id">About
+      <router-link :to="'/examine/detail/'+ itemData.Id">About
         <div v-for="item of listLayout.Fields">
           {{item.label}} === {{getItemValue(itemData.Attributes,item.id)}}
         </div>
       </router-link>
-    </div>
-    <div>
-      <!--<p>Data==={{Data}}</p>-->
-      <!--<p>listLayout==={{listLayout}}</p>-->
     </div>
   </div>
 </template>
@@ -26,7 +22,7 @@
         methods: {
             handleRouteGo(item) {
                 console.log(item);
-                this.$router.push("/customer/detail/" + item.id);
+                this.$router.push("/examine/detail/" + item.id);
             },
             getItemValue(item, id){
                 for (let i = 0; i <item.length ; i++) {
@@ -54,6 +50,10 @@
 
     & + .item{
       margin-top: 1rem;
+    }
+
+    a{
+      color: @cl333;
     }
   }
 </style>
