@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a7e39810-1c40-4c9b-a963-d7255bf319c2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.postcssrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/20191118-1.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/build.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/check-versions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vue-loader.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.base.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.dev.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.prod.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dev.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/prod.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.url.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-01-sp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-02-kq.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-03-khgl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-04-lxr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-05-xsdj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-06-sjgj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-07-bfxd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-08-rycx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-09-ddcx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-10-bbzx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-11-wd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/icon-12-shfwd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/mainColor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/mainColor.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/mainColor.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FadeAnimation.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeaderLeft.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/global/DateTime.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/global/Picklist.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/headerRight.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/headerTitle.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inputSearch.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inputSearch2.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loading.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/operationSidebar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tooltipBox.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/api/apidata1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/api/apidata2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/api/apiinfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/components/IconList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/components/footerLink.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/components/sectionItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Info/components/listAll.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Info/components/listUnread.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Info/components/tabs.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Info/detail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Info/info.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TestDir/test.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TestDir/testApi.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TestDir/testApp.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TestDir/testFilters.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TestDir/testPersist.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TestDir/testStore.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TestDir/testssss.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/configs/configs.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/components/FormItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/components/FormTitle.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/components/alphabet.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/components/contactItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/components/contactList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/components/detailContent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/components/detailContent.vue.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/components/search.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/contact.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/detail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/customer/components/FormItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/customer/components/FormItem.vue.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/customer/components/FormTitle.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/customer/components/list.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/customer/customer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/customer/detail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/components/detailContent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/components/detailContent.vue.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/components/list.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/components/listAll.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/components/listHaveRead.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/components/tabs.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/detail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/detail.vue.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/examine.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/examine/examine.vue.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/getters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/mutations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mock/Contacts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mock/api/apidata1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mock/api/apidata2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mock/api/apiinfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mock/auditData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mock/formData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mock/index.json" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="comStdaily" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1SPtRLDyqg4TUOpiEozNprUkjJI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../work/2019/comStdaily" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="F:\Coding\work\2019\10Month\comStdaily\node_modules\prettier" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="D:\CodingTool\JetBrains\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Coding\github\vue\comStdaily\src\pages\examine" />
+      <recent name="F:\Coding\github\vue\comStdaily\src\pages\Home\api" />
+      <recent name="F:\Coding\github\vue\comStdaily\src\pages\Home\components" />
+      <recent name="F:\Coding\github\vue\comStdaily\static\mock" />
+      <recent name="F:\Coding\work\2019\10Month\comStdaily\src\pages\Detail\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Coding\github\vue\comStdaily\src\pages\examine" />
+      <recent name="F:\Coding\github\vue\comStdaily\src\pages\contact\components" />
+      <recent name="F:\Coding\github\vue\comStdaily\src\pages\customer\components" />
+      <recent name="F:\Coding\github\vue\comStdaily\src\pages\examine\components" />
+      <recent name="F:\Coding\work\2019\10Month\comStdaily\src\assets\style" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="aaa" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7e39810-1c40-4c9b-a963-d7255bf319c2" name="Default Changelist" comment="" />
+      <created>1570872240626</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570872240626</updated>
+      <workItem from="1570872242009" duration="7453000" />
+      <workItem from="1570880970981" duration="2955000" />
+      <workItem from="1570910530054" duration="21315000" />
+      <workItem from="1571314954277" duration="1945000" />
+      <workItem from="1571458053530" duration="899000" />
+      <workItem from="1571477054929" duration="232000" />
+      <workItem from="1571478685067" duration="1197000" />
+      <workItem from="1571614789797" duration="1043000" />
+      <workItem from="1571922198822" duration="11065000" />
+      <workItem from="1571961874634" duration="1135000" />
+      <workItem from="1572060980481" duration="1351000" />
+      <workItem from="1572209390423" duration="3000" />
+      <workItem from="1572209885460" duration="2962000" />
+      <workItem from="1572261448478" duration="5123000" />
+      <workItem from="1572303259239" duration="360000" />
+      <workItem from="1572303654946" duration="59000" />
+      <workItem from="1572303724116" duration="3496000" />
+      <workItem from="1572364696684" duration="25000" />
+      <workItem from="1573213941666" duration="607000" />
+      <workItem from="1573398914736" duration="642000" />
+      <workItem from="1573429126484" duration="2649000" />
+      <workItem from="1573483026645" duration="599000" />
+      <workItem from="1573559840047" duration="1625000" />
+      <workItem from="1573597159428" duration="43000" />
+      <workItem from="1573748852630" duration="714000" />
+      <workItem from="1573749873835" duration="205000" />
+      <workItem from="1573827525382" duration="1986000" />
+      <workItem from="1573863408160" duration="28880000" />
+      <workItem from="1573964924293" duration="16813000" />
+      <workItem from="1574035834885" duration="358000" />
+      <workItem from="1574084391132" duration="30000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
