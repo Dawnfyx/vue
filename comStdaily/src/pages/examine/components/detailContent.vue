@@ -6,8 +6,7 @@
       </div>
       <div class="content">
         <div v-for="(item, key) of items.fields">
-          <span>{{item.label}}</span>==<span>{{getItemValue(detailData.Attributes, item.id)}}</span>
-          <hr>
+          <span>{{item.label}}</span>: <span>{{getItemValue(detailData.Attributes, item.id)}}</span>
         </div>
       </div>
     </div>

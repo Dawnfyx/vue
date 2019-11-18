@@ -28,13 +28,21 @@
         let regTime = /^\/Date\((.*)\)\/$/;
         for (let i = 0; i < item.length; i++) {
           if (item[i].Key == data.id) {
-            if (data.type == "DateTime") {
+            if(data.type == "DateTime"){
               regTime.test(item[i].Value);
               return this.$common.getTime(RegExp.$1);
-            } else if (data.type == "Picklist") {
+            } else if(data.type == "Picklist"){
               // console.log(data.id);
               return item[i].Value.Value
-            } else {
+            } else if(data.type == "Customer"){
+              return item[i].Value.Name
+            } else if(data.type == "Virtual"){
+              return item[i].Value.Value
+            } else if(data.type == "Lookup"){
+              return item[i].Value.Name
+            } else if(data.type == "Owner"){
+              return item[i].Value.Name
+            }else {
               return item[i].Value
             }
           }

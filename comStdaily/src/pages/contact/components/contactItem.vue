@@ -57,7 +57,13 @@
             } else if(data.type == "Picklist"){
               // console.log(data.id);
               return item[i].Value.Value
-            } else {
+            } else if(data.type == "Customer"){
+              return item[i].Value.Name
+            } else if(data.type == "Virtual"){
+              return item[i].Value.Value
+            } else if(data.type == "Lookup"){
+              return item[i].Value.Name
+            }else {
               return item[i].Value
             }
           }
