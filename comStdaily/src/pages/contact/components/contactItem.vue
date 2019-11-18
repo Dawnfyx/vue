@@ -6,9 +6,9 @@
         <div class="item"
              v-for="(itemData, key) of listData.Entities" :key="key">
 
-          <router-link :to="'/contact/detail/'+ itemData.Id">About
+          <router-link :to="'/contact/detail/'+ itemData.Id">
             <div v-for="item of listLayout.Fields">
-              {{item.label}} === {{getItemValue(itemData.Attributes,item.id)}}
+              {{item.label}}: {{getItemValue(itemData.Attributes,item)}}
             </div>
           </router-link>
         </div>
@@ -47,12 +47,22 @@
           }
         }
       },
-      getItemValue(item, id){
-          for (let i = 0; i <item.length ; i++) {
-              if(item[i].Key == id){
-                  return item[i].Value
-              }
+      getItemValue(item, data) {
+        let regTime = /^\/Date\((.*)\)\/$/;
+        for (let i = 0; i < item.length; i++) {
+          if (item[i].Key == data.id) {
+            if(data.type == "DateTime"){
+              regTime.test(item[i].Value);
+              return this.$common.getTime(RegExp.$1);
+            } else if(data.type == "Picklist"){
+              // console.log(data.id);
+              return item[i].Value.Value
+            } else {
+              return item[i].Value
+            }
           }
+        }
+
       }
     },
     watch: {

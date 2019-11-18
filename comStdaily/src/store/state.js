@@ -16,6 +16,19 @@ let apiStrConfig = {
   }
 }
 
+let sIsGetAllData = {
+  sHomePageData: false,
+  sCustomerEntityViewAndList: false,
+  sCustomerLayoutFormAndDetail: false,
+  sCustomerLayoutView: false,
+  sContactEntityViewAndList: false,
+  sContactLayoutFormAndDetail: false,
+  sContactLayoutView: false,
+  sExamineEntityViewAndList: false,
+  sExamineLayoutFormAndDetail: false,
+  sExamineLayoutView: false,
+};
+
 let sHomePageData = {};
 let sCustomerEntityViewAndList = {};
 let sCustomerLayoutFormAndDetail = {};
@@ -55,4 +68,5 @@ export default {
   sExamineEntityViewAndList: sExamineEntityViewAndList,
   sExamineLayoutFormAndDetail: sExamineLayoutFormAndDetail,
   sExamineLayoutView: sExamineLayoutView,
+  sIsGetAllData: sIsGetAllData
 }

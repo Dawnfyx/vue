@@ -11,6 +11,8 @@ import store from './store'
 //自己封装的axios
 // import fyxaxios from './axios/http';
 
+import common from './common/common'
+
 //bootstrap
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -27,6 +29,7 @@ fastClick.attach(document.body)
 
 // 绑定到原型链上
 // Vue.prototype.$axios = fyxaxios;
+Vue.prototype.$common = common;
 
 Vue.use(BootstrapVue)
 
