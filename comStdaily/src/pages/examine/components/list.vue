@@ -32,7 +32,6 @@
               regTime.test(item[i].Value);
               return this.$common.getTime(RegExp.$1);
             } else if(data.type == "Picklist"){
-              // console.log(data.id);
               return item[i].Value.Value
             } else if(data.type == "Customer"){
               return item[i].Value.Name
@@ -47,7 +46,6 @@
             }
           }
         }
-
       }
     },
   }

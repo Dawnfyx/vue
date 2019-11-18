@@ -24,8 +24,9 @@ module.exports = {
 
     proxyTable: {
       "/api": {
-        target: "http://ttt.xtt.ink:5566/crmapp",
+        target: "https://122.144.212.178:9553/crmapp",
         changeOrigin: true, //是否跨域
+        secure: false,
         pathRewrite: {
           "^/api": ""
         }
