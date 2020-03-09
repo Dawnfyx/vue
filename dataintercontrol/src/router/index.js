@@ -22,6 +22,32 @@ export default new Router({
       ]
     },
     {
+      path: '/charts',
+      component: Layout,
+      redirect: '/charts',
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/charts/index'),
+          name: 'Charts',
+          meta: { title: 'Charts', icon: 'charts', affix: true }
+        }
+      ]
+    },
+    {
+      path: '/workshop',
+      component: Layout,
+      redirect: '/workshop',
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/workshop/index'),
+          name: 'workshop',
+          meta: { title: 'workshop', icon: 'workshop', affix: true }
+        }
+      ]
+    },
+    {
       path: '/test',
       component: Layout,
       children: [
