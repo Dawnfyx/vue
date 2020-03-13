@@ -1,12 +1,12 @@
 <template>
 <div>
-  workshop
+  Bigscreen
 </div>
 </template>
 
 <script>
     export default {
-        name: "",
+        name: ""
     }
 </script>
 

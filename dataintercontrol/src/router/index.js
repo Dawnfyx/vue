@@ -9,6 +9,11 @@ import Layout from '@/layout'
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: '/home',
+      component: Layout
+    },
+    {
       path: '/dashboard',
       component: Layout,
       redirect: '/dashboard',
@@ -18,6 +23,45 @@ export default new Router({
           component: () => import('@/views/dashboard/index'),
           name: 'Dashboard',
           meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        }
+      ]
+    },
+    {
+      path: '/reportform',
+      component: Layout,
+      redirect: '/reportform',
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/reportform/index'),
+          name: 'Reportform',
+          meta: { title: 'Reportform', icon: 'reportform', affix: true }
+        }
+      ]
+    },
+    {
+      path: '/maketopage',
+      component: Layout,
+      redirect: '/maketopage',
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/maketopage/index'),
+          name: 'Maketopage',
+          meta: { title: 'Maketopage', icon: 'maketopage', affix: true }
+        }
+      ]
+    },
+    {
+      path: '/bigscreen',
+      component: Layout,
+      redirect: '/bigscreen',
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/bigscreen/index'),
+          name: 'Bigscreen',
+          meta: { title: 'Bigscreen', icon: 'bigscreen', affix: true }
         }
       ]
     },

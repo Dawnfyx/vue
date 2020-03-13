@@ -60,7 +60,10 @@
     .sidebar-user-name{
       width: 100px;
       height: 50px;
-      float: right;
+      line-height: 50px;
+      font-size: 20px;
+      float: left;
+      margin-left: 10px;
     }
   }
 

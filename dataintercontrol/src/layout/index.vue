@@ -6,7 +6,7 @@
     <div class="main-container">
       <div>
         <navbar/>
-        <tags-view/>
+<!--        <tags-view/>-->
       </div>
       <app-main/>
     </div>
@@ -59,6 +59,10 @@
       transition: margin-left .28s;
       margin-left: 210px;
       position: relative;
+    }
+
+    .app-main{
+
     }
   }
 

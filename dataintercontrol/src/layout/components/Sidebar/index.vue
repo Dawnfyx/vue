@@ -8,27 +8,48 @@
             @open="handleOpen"
             @close="handleClose">
             <el-menu-item index="1">
-              <div @click="listToLink(toTest)">
-                <i class="el-icon-paperclip"></i>
-                <span>我看过的</span>
-              </div>
+              <app-link :to="toWorkshop">
+                  <i class="el-icon-paperclip"></i>
+                  <span>我看过的</span>
+              </app-link>
             </el-menu-item>
             <el-menu-item index="2">
-              <div @click="listToLink(toWorkshop)">
-                <i class="el-icon-s-management"></i>
-                <span slot="title">我的收藏</span>
-              </div>
+              <app-link :to="toWorkshop">
+                  <i class="el-icon-s-management"></i>
+                  <span>我的收藏</span>
+              </app-link>
             </el-menu-item>
             <el-menu-item index="3">
-              <div @click="listToLink(toDashboard)">
+              <app-link :to="toTest">
                 <i class="el-icon-bell"></i>
-                <span slot="title">信息中心</span>
-              </div>
+                <span>信息中心</span>
+              </app-link>
             </el-menu-item>
             <el-menu-item index="4">
-              <i class="el-icon-help"></i>
-              <span slot="title">相关讨论</span>
+              <app-link :to="toDashboard">
+                <i class="el-icon-help"></i>
+                <span>相关讨论</span>
+              </app-link>
             </el-menu-item>
+            <el-menu-item index="5">
+              <app-link :to="toreportform">
+                <i class="el-icon-help"></i>
+                <span>报表</span>
+              </app-link>
+            </el-menu-item>
+            <el-menu-item index="6">
+              <app-link :to="tomaketopage">
+                <i class="el-icon-help"></i>
+                <span>制作</span>
+              </app-link>
+            </el-menu-item>
+            <el-menu-item index="7">
+              <app-link :to="tobigscreen">
+                <i class="el-icon-help"></i>
+                <span>大屏</span>
+              </app-link>
+            </el-menu-item>
+
             <!--            <el-submenu index="5">-->
             <!--              <template slot="title">-->
             <!--                <i class="el-icon-location"></i>-->
@@ -47,6 +68,7 @@
             <!--                <el-menu-item index="1-4-1">选项1</el-menu-item>-->
             <!--              </el-submenu>-->
             <!--            </el-submenu>-->
+
           </el-menu>
           </el-col>
         </el-scrollbar>
@@ -57,6 +79,7 @@
 
   import userColumn from "./userColumn"
   import appLink from './link'
+  import { isExternal } from '@/utils/validate'
 
   export default {
       name: "",
@@ -64,7 +87,10 @@
           return{
               toTest: "/test/index",
               toDashboard: "/dashboard/index",
-              toWorkshop: "/workshop/index"
+              toWorkshop: "/workshop/index",
+              tobigscreen: "/bigscreen/index",
+              tomaketopage: "/maketopage/index",
+              toreportform: "/reportform/index"
           }
       },
       components:{
@@ -78,11 +104,14 @@
           handleClose(key, keyPath) {
               console.log(key, keyPath);
           },
-          listToLink(to){
-              if(this.$route.path == to){
-                  return;
+          resolvePath(routePath) {
+              if (isExternal(routePath)) {
+                  return routePath
               }
-              this.$router.push(to);
+              if (isExternal(this.basePath)) {
+                  return this.basePath
+              }
+              return path.resolve(this.basePath, routePath)
           }
       }
   }
@@ -99,6 +128,13 @@
       .is-active{
         background-color: #fff;
         border-left: 8px solid @color2;
+      }
+      .el-menu-item{
+        a{
+          display: block;
+          text-decoration: none;
+          color: #333;
+        }
       }
       .el-menu-item:focus,
       .el-menu-item:hover{

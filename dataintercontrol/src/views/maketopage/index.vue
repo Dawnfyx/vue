@@ -1,12 +1,12 @@
 <template>
-<div>
-  workshop
-</div>
+  <div>
+    maketopage
+  </div>
 </template>
 
 <script>
     export default {
-        name: "",
+        name: ""
     }
 </script>
 
