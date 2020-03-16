@@ -2,30 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46bb26ad-f3e2-41ed-a033-2e1185eeb878" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mock/article.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mock/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mock/mock-server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mock/remote-search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mock/role/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mock/role/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mock/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Breadcrumb/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layout/components/Sidebar/sidebarItem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/bigscreen/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/maketopage/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/reportform/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/133901.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/133901.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_4439.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_4451.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_4500.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_4510.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_4518.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_4528.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_4548.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_4559.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_4701.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/i_qlik.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/svg/svgartfrom.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/svg/svgdelete.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/svg/svgedit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/svg/svgeye.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/svg/svgread.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/svg/svgsend.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/svg/svgzan.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/myread/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/qlikview/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/reportform/components/TabPane.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.dev.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.dev.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/i_20200309094439.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/i_20200309094451.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/i_20200309094500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/i_20200309094510.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/i_20200309094518.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/i_20200309094528.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/i_20200309094548.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/i_20200309094559.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/i_20200309094701.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Breadcrumb/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Breadcrumb/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/components/Appmain/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/Appmain/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layout/components/Navbar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/Navbar/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layout/components/Sidebar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/Sidebar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/components/Sidebar/link.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/Sidebar/link.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/components/Sidebar/userColumn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/Sidebar/userColumn.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/workshop/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/workshop/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/bigscreen/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/bigscreen/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/maketopage/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/maketopage/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/reportform/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportform/index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +65,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1YF5gREBIj5gffsrC7q5ic8f4bK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -123,7 +145,8 @@
       <workItem from="1583977280072" duration="6189000" />
       <workItem from="1583990271031" duration="792000" />
       <workItem from="1583991185993" duration="13179000" />
-      <workItem from="1584062558703" duration="21537000" />
+      <workItem from="1584062558703" duration="21975000" />
+      <workItem from="1584350040883" duration="32358000" />
     </task>
     <servers />
   </component>
@@ -142,5 +165,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

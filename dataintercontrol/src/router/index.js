@@ -66,6 +66,32 @@ export default new Router({
       ]
     },
     {
+      path: '/myread',
+      component: Layout,
+      redirect: '/myread',
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/myread/index'),
+          name: 'Myread',
+          meta: { title: 'Myread', icon: 'myread', affix: true }
+        }
+      ]
+    },
+    {
+      path: '/qlikview',
+      component: Layout,
+      redirect: '/qlikview',
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/qlikview/index'),
+          name: 'Qlikview',
+          meta: { title: 'Qlikview', icon: 'myread', affix: true }
+        }
+      ]
+    },
+    {
       path: '/charts',
       component: Layout,
       redirect: '/charts',

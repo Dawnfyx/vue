@@ -8,7 +8,7 @@
             @open="handleOpen"
             @close="handleClose">
             <el-menu-item index="1">
-              <app-link :to="toWorkshop">
+              <app-link :to="tomyread">
                   <i class="el-icon-paperclip"></i>
                   <span>我看过的</span>
               </app-link>
@@ -27,7 +27,7 @@
             </el-menu-item>
             <el-menu-item index="4">
               <app-link :to="toDashboard">
-                <i class="el-icon-help"></i>
+                <i class="el-icon-notebook-2"></i>
                 <span>相关讨论</span>
               </app-link>
             </el-menu-item>
@@ -85,12 +85,15 @@
       name: "",
       data(){
           return{
-              toTest: "/test/index",
               toDashboard: "/dashboard/index",
-              toWorkshop: "/workshop/index",
+
               tobigscreen: "/bigscreen/index",
               tomaketopage: "/maketopage/index",
-              toreportform: "/reportform/index"
+              toreportform: "/reportform/index",
+              tomyread: "/myread/index",
+
+              toWorkshop: "/workshop/index",
+              toTest: "/test/index",
           }
       },
       components:{

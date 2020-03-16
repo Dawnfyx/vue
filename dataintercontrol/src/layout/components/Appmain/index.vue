@@ -21,5 +21,9 @@
 </script>
 
 <style scoped>
-
+ .app-main{
+   height: 500px;
+   box-shadow: inset 0px 5px 5px -5px rgba(0, 0, 0, 0.5);
+   padding: 20px;
+ }
 </style>
