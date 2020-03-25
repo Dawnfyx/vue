@@ -5,10 +5,10 @@
         <div id="demo1" class="ning">
           <div class="itemList" v-for="(item, index) in datahref" :key="index">
             <div class="content">
-              <a :href="item.srchref" target="_self" style="position:relative;float:left;">
+              <div @click="handleTest(item.srchref)" style="position:relative;float:left;">
                 <img :src="item.srcimg" alt="">
                 <div class="text" style="position:absolute;left:0;bottom:0; float:left; height:30px; line-height:30px; padding-left:10px; font-size:16px;">{{item.srcmsg}}</div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
@@ -19,7 +19,7 @@
           <ul>
             <li v-for="(item , index) in itemData2" :key="index">
               <div class="content">
-                <div class="summary">
+                <div class="summary" @click="handleTest2(tocompform)">
                   <img :src="item.img" alt="">
                 </div>
                 <div class="text">
@@ -44,6 +44,8 @@
         name: "",
         data() {
             return {
+                toqlikview: "/qlikview/index",
+                tocompform: "/compform/index",
                 activeName: 'personfrom',
                 datahref:[
                     {
@@ -77,6 +79,14 @@
         methods: {
             handleClick(tab, event) {
                 console.log(tab, event);
+            },
+            handleTest(srchref){
+                this.$store.commit('mutationsIframeSrc', srchref);
+                console.log(this.$store.state.stateIframeSrc);
+                this.$router.push(this.toqlikview);
+            },
+            handleTest2(srchref){
+                this.$router.push(srchref);
             }
         }
     }
@@ -85,9 +95,9 @@
 <style lang="less" scoped>
 
   #demo1 {
+      padding: 0px 10px;
 
       &.ning {
-         padding-left: 10px;
          overflow: hidden;
 
         .itemList {

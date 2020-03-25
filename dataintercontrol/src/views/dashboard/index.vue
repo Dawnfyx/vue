@@ -1,7 +1,8 @@
 <template>
   <div class="dashboard-container">
-    this is dashboard pages
-<!--    <component :is="currentRole" />-->
+    <div style="padding: 20px">
+      正在施工中。。。
+    </div>
   </div>
 </template>
 

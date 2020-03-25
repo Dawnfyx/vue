@@ -11,7 +11,15 @@ export default new Router({
     {
       path: '/',
       name: '/home',
-      component: Layout
+      component: Layout,
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/myread/index'),
+          name: 'Myread',
+          meta: { title: 'Myread', icon: 'myread', affix: true }
+        }
+      ]
     },
     {
       path: '/dashboard',
@@ -22,7 +30,7 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/dashboard/index'),
           name: 'Dashboard',
-          meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+          meta: { title: 'Dashboard', icon: 'dashboard', affix: true, isfirstPage: true}
         }
       ]
     },
@@ -35,7 +43,7 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/reportform/index'),
           name: 'Reportform',
-          meta: { title: 'Reportform', icon: 'reportform', affix: true }
+          meta: { title: 'Reportform', icon: 'reportform', affix: true, isSecondPage: true}
         }
       ]
     },
@@ -48,7 +56,7 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/maketopage/index'),
           name: 'Maketopage',
-          meta: { title: 'Maketopage', icon: 'maketopage', affix: true }
+          meta: { title: 'Maketopage', icon: 'maketopage', affix: true, isSecondPage: true}
         }
       ]
     },
@@ -61,7 +69,20 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/bigscreen/index'),
           name: 'Bigscreen',
-          meta: { title: 'Bigscreen', icon: 'bigscreen', affix: true }
+          meta: { title: 'Bigscreen', icon: 'bigscreen', affix: true, isSecondPage: true}
+        }
+      ]
+    },
+    {
+      path: '/compform',
+      component: Layout,
+      redirect: '/compform',
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/compform/index'),
+          name: 'Compform',
+          meta: { title: 'Compform', icon: 'compform', affix: true, isSecondPage: true}
         }
       ]
     },
@@ -74,7 +95,7 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/myread/index'),
           name: 'Myread',
-          meta: { title: 'Myread', icon: 'myread', affix: true }
+          meta: { title: 'Myread', icon: 'myread', affix: true, isfirstPage: true}
         }
       ]
     },
@@ -87,7 +108,7 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/qlikview/index'),
           name: 'Qlikview',
-          meta: { title: 'Qlikview', icon: 'myread', affix: true }
+          meta: { title: 'Qlikview', icon: 'myread', affix: true, isfirstPage: true, isSecondPage: true}
         }
       ]
     },
@@ -100,7 +121,7 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/charts/index'),
           name: 'Charts',
-          meta: { title: 'Charts', icon: 'charts', affix: true }
+          meta: { title: 'Charts', icon: 'charts', affix: true, isfirstPage: true,}
         }
       ]
     },
@@ -113,7 +134,7 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/workshop/index'),
           name: 'workshop',
-          meta: { title: 'workshop', icon: 'workshop', affix: true }
+          meta: { title: 'workshop', icon: 'workshop', affix: true, isfirstPage: true}
         }
       ]
     },
@@ -125,7 +146,7 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/test/index'),
           name: 'Test',
-          meta: { title: 'Test', icon: 'test', affix: true }
+          meta: { title: 'Test', icon: 'test', affix: true, isfirstPage: true,}
         }
       ]
     },

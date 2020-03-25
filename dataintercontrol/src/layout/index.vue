@@ -33,7 +33,10 @@
 
   @color1: #ebedef;
 
+
   #app {
+    height: 100%;
+
     .app-wrapper {
       position: relative;
       height: 100%;
@@ -54,6 +57,7 @@
       overflow: hidden;
     }
     .main-container {
+      height: 100%;
       min-height: 100%;
       -webkit-transition: margin-left .28s;
       transition: margin-left .28s;
@@ -65,5 +69,6 @@
 
     }
   }
+
 
 </style>

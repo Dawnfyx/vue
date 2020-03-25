@@ -1,7 +1,7 @@
 <template>
-<div>
-  workshop
-</div>
+  <div style="padding: 20px">
+      正在施工中。。。
+  </div>
 </template>
 
 <script>

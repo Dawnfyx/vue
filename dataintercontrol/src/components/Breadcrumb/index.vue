@@ -14,6 +14,7 @@
 <script>
 
     import pathToRegexp from 'path-to-regexp';
+    // import {...}
 
     export default {
         data() {

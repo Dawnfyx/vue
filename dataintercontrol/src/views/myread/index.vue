@@ -2,10 +2,10 @@
     <div id="demo1">
         <div class="itemList" v-for="(item, index) in datahref" :key="index">
           <div class="content">
-            <a :href="item.srchref" target="_self" @click="handleTest(item.srchref)" style="position:relative;float:left;">
+            <div @click="handleTest(item.srchref)" style="position:relative;float:left;">
                 <img :src="item.srcimg" alt="">
                 <div class="text" style="position:absolute;left:0;bottom:0; float:left; height:30px; line-height:30px; padding-left:10px; font-size:16px;">Test_dr</div>
-            </a>
+            </div>
           </div>
           <div class="word">
             <div class="item">
@@ -37,7 +37,8 @@
       name: "",
       data(){
           return{
-              datahref:[
+              toqlikview: "/qlikview/index",
+              datahref: [
                   {
                       srchref: "https://10.219.100.76/extensions/test_doc/test_doc.html",
                       srcimg: imgqlik,
@@ -77,6 +78,7 @@
           handleTest(srchref){
               this.$store.commit('mutationsIframeSrc', srchref);
               console.log(this.$store.state.stateIframeSrc);
+              this.$router.push(this.toqlikview);
           }
       },
       created(){
@@ -87,6 +89,8 @@
 
 <style lang="less" scoped>
   #demo1 {
+    padding: 10px;
+
     &.ning {
       padding-left: 10px;
       overflow: hidden;

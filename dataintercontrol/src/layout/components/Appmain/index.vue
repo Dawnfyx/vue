@@ -22,8 +22,8 @@
 
 <style scoped>
  .app-main{
-   height: 500px;
+   height: calc(100% - 50px);
    box-shadow: inset 0px 5px 5px -5px rgba(0, 0, 0, 0.5);
-   padding: 20px;
+   /*padding: 20px;*/
  }
 </style>

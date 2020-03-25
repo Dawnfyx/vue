@@ -1,55 +1,59 @@
 <template>
       <div>
-        <userColumn />
+<!--        <userColumn />-->
         <el-scrollbar>
           <el-menu
             default-active="1"
             class="el-menu-vertical"
             @open="handleOpen"
             @close="handleClose">
-            <el-menu-item index="1">
-              <app-link :to="tomyread">
+
+            <template v-if="isfirstPage">
+              <el-menu-item index="1">
+                <app-link :to="tomyread">
                   <i class="el-icon-paperclip"></i>
                   <span>我看过的</span>
-              </app-link>
-            </el-menu-item>
-            <el-menu-item index="2">
-              <app-link :to="toWorkshop">
+                </app-link>
+              </el-menu-item>
+              <el-menu-item index="2">
+                <app-link :to="toWorkshop">
                   <i class="el-icon-s-management"></i>
                   <span>我的收藏</span>
-              </app-link>
-            </el-menu-item>
-            <el-menu-item index="3">
-              <app-link :to="toTest">
-                <i class="el-icon-bell"></i>
-                <span>信息中心</span>
-              </app-link>
-            </el-menu-item>
-            <el-menu-item index="4">
-              <app-link :to="toDashboard">
-                <i class="el-icon-notebook-2"></i>
-                <span>相关讨论</span>
-              </app-link>
-            </el-menu-item>
-            <el-menu-item index="5">
-              <app-link :to="toreportform">
-                <i class="el-icon-help"></i>
-                <span>报表</span>
-              </app-link>
-            </el-menu-item>
-            <el-menu-item index="6">
-              <app-link :to="tomaketopage">
-                <i class="el-icon-help"></i>
-                <span>制作</span>
-              </app-link>
-            </el-menu-item>
-            <el-menu-item index="7">
-              <app-link :to="tobigscreen">
-                <i class="el-icon-help"></i>
-                <span>大屏</span>
-              </app-link>
-            </el-menu-item>
-
+                </app-link>
+              </el-menu-item>
+              <el-menu-item index="3">
+                <app-link :to="toTest">
+                  <i class="el-icon-bell"></i>
+                  <span>信息中心</span>
+                </app-link>
+              </el-menu-item>
+              <el-menu-item index="4">
+                <app-link :to="toDashboard">
+                  <i class="el-icon-notebook-2"></i>
+                  <span>相关讨论</span>
+                </app-link>
+              </el-menu-item>
+            </template>
+            <template v-if="isSecondPage">
+              <el-menu-item index="5">
+                <app-link :to="toreportform">
+                  <i class="el-icon-help"></i>
+                  <span>报表</span>
+                </app-link>
+              </el-menu-item>
+              <el-menu-item index="6">
+                <app-link :to="tomaketopage">
+                  <i class="el-icon-help"></i>
+                  <span>制作</span>
+                </app-link>
+              </el-menu-item>
+              <el-menu-item index="7">
+                <app-link :to="tobigscreen">
+                  <i class="el-icon-help"></i>
+                  <span>大屏</span>
+                </app-link>
+              </el-menu-item>
+            </template>
             <!--            <el-submenu index="5">-->
             <!--              <template slot="title">-->
             <!--                <i class="el-icon-location"></i>-->
@@ -94,13 +98,34 @@
 
               toWorkshop: "/workshop/index",
               toTest: "/test/index",
+
+              isfirstPage: false,
+              isSecondPage: true,
           }
       },
       components:{
           userColumn,
           appLink
       },
+      watch: {
+          $route(to,from){
+              // debugger
+              // console.log(to.path);
+              // if(to.meta.isfirstPage){
+              //     debugger
+              //     if(to.meta.isfirstPage !== true){
+              //         this.isfirstPage = false
+              //     } else {
+              //         this.isfirstPage = true
+              //     }
+              // }
+              // if(to.meta.isSecondPage){
+              //   debugger
+              // }
+          }
+      },
       methods: {
+
           handleOpen(key, keyPath) {
               console.log(key, keyPath);
           },

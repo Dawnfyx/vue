@@ -1,6 +1,6 @@
 <template>
-    <div>
-      this is test pages
+    <div style="padding: 20px">
+      正在施工中。。。
     </div>
 </template>
 

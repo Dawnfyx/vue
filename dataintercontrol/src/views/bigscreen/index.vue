@@ -31,6 +31,8 @@
 
 <style lang="less" scoped>
   #demo6{
+    padding: 10px;
+
     .item{
       width: 20%;
       height: auto;
