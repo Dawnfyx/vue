@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46bb26ad-f3e2-41ed-a033-2e1185eeb878" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/model/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/compform/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Breadcrumb/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Breadcrumb/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/components/Appmain/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/Appmain/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/components/Navbar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/Navbar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/components/Sidebar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/Sidebar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/components/Sidebar/userColumn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/Sidebar/userColumn.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/getters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/mutations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/state.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/bigscreen/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/bigscreen/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/dashboard/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/dashboard/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/maketopage/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/maketopage/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/myread/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/myread/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/qlikview/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/qlikview/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/reportform/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportform/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/test/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/test/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/workshop/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/workshop/index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +32,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../appwheretogo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Github/Vue-mmPlayer" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -137,6 +115,8 @@
       <workItem from="1584933583921" duration="12857000" />
       <workItem from="1585012749652" duration="4694000" />
       <workItem from="1585100924224" duration="84000" />
+      <workItem from="1585124560414" duration="753000" />
+      <workItem from="1585127301853" duration="437000" />
     </task>
     <servers />
   </component>
