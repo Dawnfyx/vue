@@ -19,7 +19,7 @@
     "bootstrap-vue": "^2.0.2",
     "dingtalk-jsapi": "^2.7.6",
     "fastclick": "^1.0.6",
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.0",
     "vue": "^2.6.10",
     "vue-airbnb-style-datepicker": "^2.7.1",
     "vue-bootstrap-datetime-picker": "^1.0.4",
